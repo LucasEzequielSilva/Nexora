@@ -23,6 +23,21 @@ export const metadata: Metadata = {
     description:
       "Implementamos un sistema de captacion de clientes automatico para tu negocio.",
     type: "website",
+    images: [
+      {
+        url: "/thumbnail-profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nexora — Sistema de Clientes Predecible",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sistema de Clientes Predecible — Llena tu agenda cada mes",
+    description:
+      "Implementamos un sistema de captacion de clientes automatico para tu negocio.",
+    images: ["/thumbnail-profile.jpg"],
   },
 };
 

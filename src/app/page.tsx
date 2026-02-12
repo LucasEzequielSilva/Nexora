@@ -6,13 +6,9 @@ import PainPoints from "@/components/PainPoints";
 import Pillars from "@/components/Pillars";
 import Niches from "@/components/Niches";
 import Footer from "@/components/Footer";
-import Rays from "@/components/Rays";
-
 export default function Home() {
   return (
     <div className="relative z-[2]">
-      <Rays />
-
       <TopBar />
       <Hero />
       <VideoSection />

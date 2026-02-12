@@ -1,7 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
-import DotGrid from "./DotGrid";
+
 
 const pillars = [
   {
@@ -44,7 +44,7 @@ const pillars = [
 export default function Pillars() {
   return (
     <section className="max-w-[1000px] mx-auto px-6 pb-20 relative overflow-hidden">
-      <DotGrid fade="radial" />
+
       <FadeUp>
         <div className="text-center mb-12">
           <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight mb-3">
