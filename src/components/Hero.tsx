@@ -90,42 +90,110 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-[840px] mx-auto pt-15 pb-10 px-6 text-center">
+      <div className="relative z-10 max-w-[1100px] mx-auto pt-14 pb-14 px-6">
+
+        {/* Logo — full width, centered */}
         <FadeUp>
           <Image
             src="/logo_white.png"
             alt="Nexora"
             width={160}
             height={40}
-            className="mx-auto mb-8"
+            className="mx-auto mb-10"
             priority
           />
         </FadeUp>
 
-        <FadeUp>
-          <div className="inline-flex items-center gap-2 px-5 py-2 bg-accent-glow border border-[rgba(34,197,94,0.2)] rounded-full text-[13px] font-medium text-accent font-mono uppercase tracking-widest mb-7">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            En vivo &middot; Sistema probado
+        {/* Row on desktop, stack on mobile */}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+          {/* ── LEFT: copy ── */}
+          <div className="flex-1 text-center lg:text-left">
+            <FadeUp>
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-accent-glow border border-[rgba(34,197,94,0.2)] rounded-full text-[13px] font-medium text-accent font-mono uppercase tracking-widest mb-7">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                En vivo &middot; Sistema probado
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.1}>
+              <h1 className="text-[clamp(30px,3.8vw,52px)] font-extrabold leading-[1.1] mb-6 tracking-tight">
+                Deja de depender del boca en boca.
+                <br />
+                <span className="bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#059669] bg-clip-text text-transparent">
+                  Llenamos tu agenda cada mes.
+                </span>
+              </h1>
+            </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <p className="text-lg text-text-secondary leading-relaxed max-w-[520px] lg:mx-0 mx-auto">
+                Implementamos un sistema de captacion de clientes automatico para tu
+                negocio. Sin que tengas que entender de tecnologia. Sin perder tiempo
+                en redes. Sin depender de la suerte.
+              </p>
+            </FadeUp>
           </div>
-        </FadeUp>
 
-        <FadeUp delay={0.1}>
-          <h1 className="text-[clamp(32px,5vw,52px)] font-extrabold leading-[1.1] mb-6 tracking-tight">
-            Deja de depender del boca en boca.
-            <br />
-            <span className="bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#059669] bg-clip-text text-transparent">
-              Llenamos tu agenda cada mes.
-            </span>
-          </h1>
-        </FadeUp>
+          {/* ── RIGHT: step + video vertical ── */}
+          <div className="flex flex-col items-center flex-shrink-0">
 
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-text-secondary leading-relaxed max-w-[620px] mx-auto">
-            Implementamos un sistema de captacion de clientes automatico para tu
-            negocio. Sin que tengas que entender de tecnologia. Sin perder tiempo
-            en redes. Sin depender de la suerte.
-          </p>
-        </FadeUp>
+            {/* Step badge */}
+            <FadeUp delay={0.25}>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="px-4 py-1.5 bg-accent text-black text-[13px] font-extrabold font-mono rounded-full tracking-wide">
+                  Paso 1
+                </span>
+                <span className="text-text-secondary text-[15px] font-medium">
+                  Mira este breve video
+                </span>
+              </div>
+
+              {/* Chevron arrow */}
+              <div className="flex justify-center mb-3">
+                <svg
+                  className="w-5 h-5 text-accent opacity-70"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </FadeUp>
+
+            {/* Vertical video — 9:16 */}
+            <FadeUp delay={0.35}>
+              <div
+                className="relative rounded-2xl overflow-hidden border border-border bg-bg-secondary shadow-[0_0_60px_rgba(34,197,94,0.06)]"
+                style={{ width: "290px", aspectRatio: "9/16", maxHeight: "516px" }}
+              >
+                <video
+                  src="/vsl_web.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/thumbnail-profile.jpg"
+                />
+
+                {/* Fallback overlay si el video no carga */}
+                <noscript>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-bg-secondary">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#22c55e] via-[#10b981] to-[#059669] rounded-full flex items-center justify-center">
+                      <svg className="w-7 h-7 fill-black ml-1" viewBox="0 0 24 24">
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    </div>
+                  </div>
+                </noscript>
+              </div>
+            </FadeUp>
+
+          </div>
+        </div>
       </div>
     </section>
   );

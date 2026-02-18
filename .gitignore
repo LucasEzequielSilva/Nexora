@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large video files (original 4K - use vsl_web.mp4 compressed version)
+public/vsl.mp4
+
+# Windows reserved name artifact
+nul
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

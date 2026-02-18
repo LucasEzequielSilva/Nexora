@@ -1,6 +1,5 @@
 import TopBar from "@/components/TopBar";
 import Hero from "@/components/Hero";
-import VideoSection from "@/components/VideoSection";
 import CTACard from "@/components/CTACard";
 import PainPoints from "@/components/PainPoints";
 import Pillars from "@/components/Pillars";
@@ -11,7 +10,6 @@ export default function Home() {
     <div className="relative z-[2]">
       <TopBar />
       <Hero />
-      <VideoSection />
 
       <CTACard
         heading="&#191;Listo para llenar tu agenda?"

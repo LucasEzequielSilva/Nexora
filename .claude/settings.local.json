@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:coachverse.framer.website)",
+      "WebFetch(domain:ferrix.framer.website)",
+      "WebFetch(domain:www.nexoragrowth.es)"
+    ]
+  }
+}
