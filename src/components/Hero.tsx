@@ -172,9 +172,7 @@ export default function Hero() {
                 <video
                   src="/vsl_web.mp4"
                   className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
+                  controls
                   playsInline
                   poster="/thumbnail-profile.jpg"
                 />
