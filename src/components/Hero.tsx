@@ -165,28 +165,47 @@ export default function Hero() {
 
             {/* Vertical video — 9:16 */}
             <FadeUp delay={0.35}>
+              {/* Outer glow ring */}
               <div
-                className="relative rounded-2xl overflow-hidden border border-border bg-bg-secondary shadow-[0_0_60px_rgba(34,197,94,0.06)]"
-                style={{ width: "290px", aspectRatio: "9/16", maxHeight: "516px" }}
+                className="relative"
+                style={{ width: "300px" }}
               >
-                <video
-                  src="/vsl_web.mp4"
-                  className="w-full h-full object-cover"
-                  controls
-                  playsInline
-                  poster="/thumbnail-profile.jpg"
+                {/* Ambient glow behind the video */}
+                <div
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
+                  style={{
+                    background: "radial-gradient(ellipse at 50% 60%, rgba(34,197,94,0.18) 0%, transparent 70%)",
+                    filter: "blur(24px)",
+                    transform: "scale(1.08)",
+                  }}
                 />
 
-                {/* Fallback overlay si el video no carga */}
-                <noscript>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-bg-secondary">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#22c55e] via-[#10b981] to-[#059669] rounded-full flex items-center justify-center">
-                      <svg className="w-7 h-7 fill-black ml-1" viewBox="0 0 24 24">
-                        <polygon points="5,3 19,12 5,21" />
-                      </svg>
-                    </div>
-                  </div>
-                </noscript>
+                {/* Video container */}
+                <div
+                  className="relative rounded-3xl overflow-hidden"
+                  style={{
+                    aspectRatio: "9/16",
+                    maxHeight: "530px",
+                    boxShadow: "0 0 0 1px rgba(34,197,94,0.15), 0 32px 64px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <video
+                    src="/vsl_web.mp4"
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    poster="/thumbnail-profile.jpg"
+                  />
+
+                  {/* Bottom fade mask — blends video into page background */}
+                  <div
+                    className="absolute bottom-0 left-0 w-full pointer-events-none"
+                    style={{
+                      height: "96px",
+                      background: "linear-gradient(to top, #0a0a0b 0%, transparent 100%)",
+                    }}
+                  />
+                </div>
               </div>
             </FadeUp>
 
