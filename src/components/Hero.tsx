@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-x-hidden">
+    <section className="relative overflow-hidden">
 
       {/* Particles */}
       <Particles />
@@ -60,7 +60,7 @@ export default function Hero() {
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E\")",
-          opacity: 0.035,
+          opacity: 0.02,
           mixBlendMode: "overlay",
           zIndex: 0,
         }}
@@ -75,7 +75,7 @@ export default function Hero() {
             alt="Nexora"
             width={160}
             height={40}
-            className="mx-auto mb-10"
+            className="mx-auto lg:mx-0 mb-10"
             priority
           />
         </FadeUp>
@@ -186,15 +186,15 @@ export default function Hero() {
                   display: "inline-block",
                   borderRadius: "13px",
                   padding: "1px",
-                  background:
-                    "linear-gradient(135deg, rgba(74,222,128,0.75) 0%, rgba(34,197,94,0.45) 50%, rgba(5,150,105,0.75) 100%)",
+                    background:
+                      "linear-gradient(135deg, rgba(134,239,172,0.75) 0%, rgba(74,222,128,0.5) 50%, rgba(34,197,94,0.75) 100%)",
                 }}
               >
                 <button
                   data-cal-namespace="hero-30min"
                   data-cal-link={CAL_LINK}
                   data-cal-config='{"layout":"month_view"}'
-                  className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#059669] text-black font-bold text-base uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#16a34a] via-[#22c55e] to-[#4ade80] text-black font-bold text-base uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                   style={{
                     borderRadius: "12px",
                     boxShadow:

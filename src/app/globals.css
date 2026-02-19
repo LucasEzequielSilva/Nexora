@@ -41,7 +41,7 @@ body::before {
   background-size: 2px 2px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.045;
+  opacity: 0.03;
   mix-blend-mode: plus-lighter;
 }
 

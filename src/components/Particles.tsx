@@ -16,13 +16,13 @@ interface Particle {
 
 function createParticles(w: number, h: number): Particle[] {
   return Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
+    x: Math.random() * w * 0.6,
+    y: -(Math.random() * h * 0.3),
     size: 0.3 + Math.random() * 0.55,
     opacity: 0.04 + Math.random() * 0.12,
-    vx: (Math.random() - 0.5) * 0.12,
-    vy: 0.06 + Math.random() * 0.13,
-    isGreen: i < Math.floor(PARTICLE_COUNT * 0.22), // 22% green-tinted
+    vx: 0.02 + Math.random() * 0.08,
+    vy: 0.08 + Math.random() * 0.14,
+    isGreen: i < Math.floor(PARTICLE_COUNT * 0.22),
   }));
 }
 
@@ -63,11 +63,9 @@ export default function Particles() {
         p.x += p.vx;
         p.y += p.vy;
 
-        if (p.x < -2) p.x = w + 2;
-        if (p.x > w + 2) p.x = -2;
-        if (p.y > h + 2) {
-          p.y = -2;
-          p.x = Math.random() * w;
+        if (p.y > h + 2 || p.x > w + 2) {
+          p.y = -(Math.random() * 20);
+          p.x = Math.random() * w * 0.6;
         }
 
         ctx.beginPath();
