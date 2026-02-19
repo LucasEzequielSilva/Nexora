@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Outfit, Space_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const spaceMono = Space_Mono({
@@ -48,7 +49,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${outfit.variable} ${spaceMono.variable} antialiased`}>
+      <head>
+        {/* Fontshare — Satoshi (body) */}
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}>
         {children}
       </body>
     </html>

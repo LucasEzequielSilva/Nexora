@@ -42,7 +42,7 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="max-w-[1100px] mx-auto px-6 pb-24 relative overflow-hidden">
+    <section className="mx-auto px-6 pb-24 relative overflow-hidden" style={{ maxWidth: "1100px" }}>
 
       {/* Section header */}
       <FadeUp>
@@ -51,7 +51,7 @@ export default function Pillars() {
           <div className="inline-flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-accent opacity-50" />
             <span
-              className="font-mono text-[10px] uppercase tracking-[4px] text-accent"
+              className="font-mono text-[11px] uppercase tracking-widest text-accent"
             >
               El Sistema
             </span>
@@ -61,13 +61,6 @@ export default function Pillars() {
           <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-4 leading-tight">
             Como llenamos tu agenda en 30 dias
           </h2>
-
-          {/* Thin divider */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-accent opacity-40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-60" />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-accent opacity-40" />
-          </div>
 
           <p className="text-text-secondary text-base max-w-md mx-auto">
             Un sistema de 3 pasos. Predecible, automatizado, sin friccion.
@@ -81,11 +74,11 @@ export default function Pillars() {
         {pillars.map((pillar, i) => (
           <FadeUp key={pillar.number} delay={0.1 * (i + 1)}>
             {/* group wrapper for hover state coordination */}
-            <div className="group relative h-full rounded-2xl cursor-default">
+            <div className="group relative h-full rounded-2xl overflow-hidden cursor-default">
 
               {/* Green left accent border */}
               <div
-                className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl z-10 transition-opacity duration-300"
+                className="absolute left-0 top-0 bottom-0 w-[3px] z-10 transition-opacity duration-300"
                 style={{
                   background:
                     "linear-gradient(to bottom, rgba(34,197,94,0.85), rgba(34,197,94,0.08))",
@@ -142,7 +135,7 @@ export default function Pillars() {
                 <div className="relative z-10 flex flex-col h-full">
 
                   {/* Paso micro-label */}
-                  <div className="font-mono text-[10px] uppercase tracking-[2px] text-[#71717a] mb-3">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-text-muted mb-3">
                     Paso {pillar.number}
                   </div>
 
@@ -166,10 +159,7 @@ export default function Pillars() {
                   </h3>
 
                   {/* Description */}
-                  <p
-                    className="leading-relaxed"
-                    style={{ fontSize: "14px", color: "#71717a" }}
-                  >
+                  <p className="text-sm text-text-muted leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
@@ -178,16 +168,7 @@ export default function Pillars() {
           </FadeUp>
         ))}
 
-        {/* Desktop flow connectors — subtle dots between cards */}
-        <div className="hidden md:flex absolute inset-0 pointer-events-none items-center justify-between px-[calc(33.333%-12px)] z-20">
-          {[0, 1].map((k) => (
-            <div key={k} className="flex items-center gap-1 opacity-30">
-              <span className="block w-1 h-1 rounded-full bg-accent" />
-              <span className="block w-1 h-1 rounded-full bg-accent opacity-60" />
-              <span className="block w-1 h-1 rounded-full bg-accent opacity-30" />
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

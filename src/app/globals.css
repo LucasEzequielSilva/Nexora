@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-outfit);
+  --font-sans: 'Satoshi', system-ui, sans-serif;
+  --font-display: var(--font-plus-jakarta), 'Satoshi', system-ui, sans-serif;
   --font-mono: var(--font-space-mono);
 
   --color-bg-primary: #0a0a0b;
@@ -25,17 +26,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Noise texture overlay */
+/* Clash Display en todos los headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Dot-grain stipple texture (from 0800web-funnel) */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  inset: 0;
+  background-image: radial-gradient(at 20% 80%, #fff 1px, transparent 0);
+  background-size: 2px 2px;
   pointer-events: none;
   z-index: 1;
+  opacity: 0.045;
+  mix-blend-mode: plus-lighter;
 }
 
 /* Floating notification cards */

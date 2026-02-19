@@ -31,24 +31,27 @@ const pains = [
 
 export default function PainPoints() {
   return (
-    <section className="max-w-[860px] mx-auto px-6 pb-24">
+    <section className="mx-auto px-6 pt-16 pb-24" style={{ maxWidth: "860px" }}>
       <FadeUp>
         <div className="text-center mb-14">
-          {/* Section eyebrow */}
-          <span className="inline-block text-[11px] font-mono uppercase tracking-[3px] text-[#ef4444] opacity-80 mb-4">
-            Reconocés esto?
-          </span>
-          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-[1.1]">
-            El problema no sos vos.
-            <br />
-            <span className="text-text-secondary font-bold text-[clamp(20px,2.8vw,32px)]">
-              Es el sistema que usás.
+          {/* Eyebrow — red variant */}
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 opacity-50" style={{ background: "#ef4444" }} />
+            <span className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "#ef4444" }}>
+              Reconocés esto?
             </span>
+            <span className="h-px w-8 opacity-50" style={{ background: "#ef4444" }} />
+          </div>
+          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-[1.08] mb-3">
+            El problema no sos vos.
           </h2>
+          <p className="text-text-secondary text-[18px] leading-relaxed">
+            Es el sistema que usás.
+          </p>
         </div>
       </FadeUp>
 
-      <div className="grid gap-3">
+      <div className="grid gap-4">
         {pains.map((pain, i) => (
           <FadeUp key={i} delay={0.08 * (i + 1)}>
             <div

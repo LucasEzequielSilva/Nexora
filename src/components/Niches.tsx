@@ -50,12 +50,16 @@ const niches = [
 
 export default function Niches() {
   return (
-    <section className="max-w-[840px] mx-auto px-6 pb-20 text-center">
+    <section className="mx-auto px-6 pb-24 text-center" style={{ maxWidth: "1100px" }}>
       <FadeUp>
-        <p className="font-mono text-[11px] uppercase tracking-widest text-text-muted mb-4">
-          Rubros Validados
-        </p>
-        <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight mb-3">
+        <div className="inline-flex items-center gap-3 mb-5">
+          <span className="h-px w-8 bg-accent opacity-50" />
+          <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
+            Rubros Validados
+          </span>
+          <span className="h-px w-8 bg-accent opacity-50" />
+        </div>
+        <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-3">
           Probado en estos rubros
         </h2>
         <p className="text-text-secondary text-base mb-10">
@@ -63,11 +67,11 @@ export default function Niches() {
         </p>
       </FadeUp>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
         {niches.map((niche, i) => (
-          <FadeUp key={niche.title} delay={0.1 * (i + 1)}>
+          <FadeUp key={niche.title} delay={0.1 * (i + 1)} className="h-full">
             <div
-              className="relative rounded-[16px] py-8 px-5 transition-all duration-300 hover:-translate-y-1.5 group cursor-default"
+              className="relative h-full rounded-[16px] py-8 px-5 transition-all duration-300 hover:-translate-y-1.5 group cursor-default flex flex-col"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(24,24,27,0.9), rgba(20,20,24,0.95))",
@@ -88,9 +92,9 @@ export default function Niches() {
               {/* Stat badge */}
               <div className="absolute top-3 right-3">
                 <span
-                  className="text-[10px] font-mono text-accent rounded-full px-2 py-0.5"
+                  className="text-[10px] font-mono text-accent rounded-full px-2 py-1"
                   style={{
-                    background: "rgba(34,197,94,0.1)",
+                    background: "rgba(34,197,94,0.08)",
                     border: "1px solid rgba(34,197,94,0.2)",
                   }}
                 >
@@ -101,7 +105,7 @@ export default function Niches() {
               {/* Icon container */}
               <div className="flex justify-center mb-5">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center"
                   style={{
                     background: "rgba(34,197,94,0.07)",
                     border: "1px solid rgba(34,197,94,0.12)",
@@ -111,8 +115,8 @@ export default function Niches() {
                 </div>
               </div>
 
-              <h3 className="text-base font-semibold mb-1.5">{niche.title}</h3>
-              <p className="text-[13px] text-text-muted">{niche.description}</p>
+              <h3 className="text-[15px] font-semibold mb-1.5">{niche.title}</h3>
+              <p className="text-[13px] text-text-muted leading-relaxed flex-1">{niche.description}</p>
 
               {/* Radial green glow on hover */}
               <div

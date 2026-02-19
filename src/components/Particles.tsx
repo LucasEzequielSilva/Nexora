@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const PARTICLE_COUNT = 180;
+const PARTICLE_COUNT = 75;
 
 interface Particle {
   x: number;
@@ -11,16 +11,18 @@ interface Particle {
   opacity: number;
   vx: number;
   vy: number;
+  isGreen: boolean;
 }
 
 function createParticles(w: number, h: number): Particle[] {
-  return Array.from({ length: PARTICLE_COUNT }, () => ({
+  return Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
     x: Math.random() * w,
     y: Math.random() * h,
-    size: 0.4 + Math.random() * 0.9,
-    opacity: 0.04 + Math.random() * 0.18,
-    vx: (Math.random() - 0.5) * 0.18,
-    vy: 0.12 + Math.random() * 0.22,
+    size: 0.3 + Math.random() * 0.55,
+    opacity: 0.04 + Math.random() * 0.12,
+    vx: (Math.random() - 0.5) * 0.12,
+    vy: 0.06 + Math.random() * 0.13,
+    isGreen: i < Math.floor(PARTICLE_COUNT * 0.22), // 22% green-tinted
   }));
 }
 
@@ -61,7 +63,6 @@ export default function Particles() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // wrap horizontally, reset to top when exits bottom
         if (p.x < -2) p.x = w + 2;
         if (p.x > w + 2) p.x = -2;
         if (p.y > h + 2) {
@@ -71,7 +72,9 @@ export default function Particles() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.opacity})`;
+        ctx.fillStyle = p.isGreen
+          ? `rgba(34,197,94,${p.opacity * 0.65})`
+          : `rgba(255,255,255,${p.opacity})`;
         ctx.fill();
       }
 
