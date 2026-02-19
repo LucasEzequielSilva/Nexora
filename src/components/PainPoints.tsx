@@ -4,51 +4,101 @@ import FadeUp from "./FadeUp";
 
 const pains = [
   {
+    label: "01",
     text: "Publicás contenido todos los días...",
-    detail:
-      " y el 97% de tus seguidores jamás te compra. Los likes no pagan las cuentas.",
+    detail: "y el 97% de tus seguidores jamás te compra. Los likes no pagan las cuentas.",
+    glow: "rgba(239,68,68,0.06)",
   },
   {
+    label: "02",
     text: "Un mes lleno, el siguiente en silencio.",
-    detail:
-      " La inconsistencia te impide crecer. Sin sistema, no hay previsibilidad.",
+    detail: "La inconsistencia te impide crecer. Sin sistema, no hay previsibilidad.",
+    glow: "rgba(239,68,68,0.06)",
   },
   {
+    label: "03",
     text: "Perdiste ventas por no responder a tiempo.",
-    detail: " El que responde primero, vende. El resto pierde el cliente.",
+    detail: "El que responde primero, vende. El resto pierde el cliente.",
+    glow: "rgba(239,68,68,0.06)",
   },
   {
+    label: "04",
     text: "Probaste publicidad y quemaste plata.",
-    detail:
-      " Sin un sistema detrás que filtre y cierre, los ads son un pozo sin fondo.",
+    detail: "Sin un sistema detrás que filtre y cierre, los ads son un pozo sin fondo.",
+    glow: "rgba(239,68,68,0.06)",
   },
 ];
 
 export default function PainPoints() {
   return (
-    <section className="max-w-[840px] mx-auto px-6 pb-20">
+    <section className="max-w-[860px] mx-auto px-6 pb-24">
       <FadeUp>
-        <div className="text-center mb-10">
-          <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight">
-            &iquest;Cuanta facturacion perdiste por esto?
+        <div className="text-center mb-14">
+          {/* Section eyebrow */}
+          <span className="inline-block text-[11px] font-mono uppercase tracking-[3px] text-[#ef4444] opacity-80 mb-4">
+            Reconocés esto?
+          </span>
+          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-[1.1]">
+            El problema no sos vos.
+            <br />
+            <span className="text-text-secondary font-bold text-[clamp(20px,2.8vw,32px)]">
+              Es el sistema que usás.
+            </span>
           </h2>
-          <p className="text-text-secondary text-base mt-3">
-            Si alguno de estos te suena, el problema no sos vos &mdash; es el sistema que usas.
-          </p>
         </div>
       </FadeUp>
 
-      <div className="grid gap-4">
+      <div className="grid gap-3">
         {pains.map((pain, i) => (
-          <FadeUp key={i} delay={0.1 * (i + 1)}>
-            <div className="flex items-start gap-4 p-6 bg-bg-card border border-border rounded-xl transition-colors duration-300 hover:border-[rgba(239,68,68,0.3)]">
-              <div className="shrink-0 w-8 h-8 bg-[rgba(239,68,68,0.1)] rounded-lg flex items-center justify-center text-[#ef4444] font-bold text-base">
-                &#10005;
+          <FadeUp key={i} delay={0.08 * (i + 1)}>
+            <div
+              className="group relative flex items-start gap-5 p-6 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+              style={{
+                background: "linear-gradient(135deg, rgba(24,24,27,0.95) 0%, rgba(18,18,20,0.98) 100%)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+              }}
+            >
+              {/* Left red accent line */}
+              <div
+                className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl transition-all duration-300"
+                style={{
+                  background: "linear-gradient(to bottom, rgba(239,68,68,0.7), rgba(239,68,68,0.2))",
+                  opacity: 0.5,
+                }}
+              />
+
+              {/* Hover glow */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                style={{ background: `radial-gradient(ellipse at 0% 50%, ${pain.glow} 0%, transparent 60%)` }}
+              />
+
+              {/* Big watermark number */}
+              <div
+                className="absolute right-5 top-1/2 -translate-y-1/2 font-mono font-black text-[72px] leading-none pointer-events-none select-none"
+                style={{ color: "rgba(255,255,255,0.025)" }}
+              >
+                {pain.label}
               </div>
-              <p className="text-base leading-relaxed text-text-secondary">
-                <strong className="text-text-primary">{pain.text}</strong>
-                {pain.detail}
-              </p>
+
+              {/* Icon */}
+              <div className="shrink-0 w-9 h-9 rounded-xl flex items-center justify-center mt-0.5 relative z-10"
+                style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.15)" }}>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </div>
+
+              {/* Text */}
+              <div className="relative z-10 flex-1 min-w-0">
+                <p className="text-[16px] font-semibold text-text-primary leading-snug mb-1">
+                  {pain.text}
+                </p>
+                <p className="text-[14px] text-text-muted leading-relaxed">
+                  {pain.detail}
+                </p>
+              </div>
             </div>
           </FadeUp>
         ))}

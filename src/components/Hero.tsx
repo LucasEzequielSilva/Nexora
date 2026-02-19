@@ -22,34 +22,75 @@ export default function Hero() {
       {/* Snow particles */}
       <Particles />
 
-      {/* Layer 1a — Main volumetric glow from top center */}
+      {/* ── NEW LIGHTING SYSTEM: Straight crossed light beams ── */}
+
+      {/* Beam 1 — White, angled left, anchored top-center */}
       <div
-        className="hero-glow absolute inset-0 pointer-events-none"
+        className="absolute pointer-events-none"
         style={{
+          width: "280px",
+          height: "200vh",
+          top: "-10vh",
+          left: "50%",
+          transform: "translateX(-60%) rotate(-40deg)",
+          transformOrigin: "top center",
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34,197,94,0.45) 0%, rgba(34,197,94,0.2) 25%, rgba(16,185,129,0.1) 45%, transparent 70%)",
-          filter: "blur(80px)",
+            "linear-gradient(to right, transparent 0%, rgba(255,255,255,0.05) calc(50% - 8px), rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.05) calc(50% + 8px), transparent 100%)",
+          filter: "blur(3px)",
           zIndex: 0,
         }}
       />
 
-      {/* Layer 1b — Concentrated core glow */}
+      {/* Beam 2 — White, angled right */}
       <div
-        className="absolute pointer-events-none hero-glow"
+        className="absolute pointer-events-none"
         style={{
-          top: "-80px", left: "50%", transform: "translateX(-50%)",
-          width: "500px", height: "400px",
+          width: "240px",
+          height: "200vh",
+          top: "-10vh",
+          left: "50%",
+          transform: "translateX(10%) rotate(35deg)",
+          transformOrigin: "top center",
           background:
-            "radial-gradient(ellipse at 50% 0%, rgba(34,197,94,0.5) 0%, rgba(34,197,94,0.15) 40%, transparent 70%)",
-          filter: "blur(60px)",
+            "linear-gradient(to right, transparent 0%, rgba(255,255,255,0.04) calc(50% - 7px), rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.04) calc(50% + 7px), transparent 100%)",
+          filter: "blur(3px)",
           zIndex: 0,
         }}
       />
 
-      {/* Layer 1c — Light beams */}
-      <div className="absolute top-0 left-1/2 pointer-events-none" style={{ width: "180px", height: "70%", transform: "translateX(-140%) rotate(-8deg)", background: "linear-gradient(180deg, rgba(34,197,94,0.18) 0%, rgba(34,197,94,0.04) 50%, transparent 80%)", filter: "blur(30px)", transformOrigin: "top center", zIndex: 0 }} />
-      <div className="absolute top-0 left-1/2 pointer-events-none" style={{ width: "120px", height: "65%", transform: "translateX(-50%)", background: "linear-gradient(180deg, rgba(34,197,94,0.2) 0%, rgba(34,197,94,0.05) 45%, transparent 75%)", filter: "blur(25px)", transformOrigin: "top center", zIndex: 0 }} />
-      <div className="absolute top-0 left-1/2 pointer-events-none" style={{ width: "160px", height: "60%", transform: "translateX(40%) rotate(6deg)", background: "linear-gradient(180deg, rgba(34,197,94,0.15) 0%, rgba(16,185,129,0.03) 50%, transparent 80%)", filter: "blur(35px)", transformOrigin: "top center", zIndex: 0 }} />
+      {/* Beam 3 — Green-tinted, steep left angle */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: "300px",
+          height: "200vh",
+          top: "-5vh",
+          left: "50%",
+          transform: "translateX(-120%) rotate(-65deg)",
+          transformOrigin: "top center",
+          background:
+            "linear-gradient(to right, transparent 0%, rgba(34,197,94,0.06) calc(50% - 10px), rgba(34,197,94,0.20) 50%, rgba(34,197,94,0.06) calc(50% + 10px), transparent 100%)",
+          filter: "blur(3px)",
+          zIndex: 0,
+        }}
+      />
+
+      {/* Beam 4 — Green-tinted, shallow right angle */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: "260px",
+          height: "200vh",
+          top: "-8vh",
+          left: "50%",
+          transform: "translateX(55%) rotate(22deg)",
+          transformOrigin: "top center",
+          background:
+            "linear-gradient(to right, transparent 0%, rgba(34,197,94,0.05) calc(50% - 8px), rgba(34,197,94,0.16) 50%, rgba(34,197,94,0.05) calc(50% + 8px), transparent 100%)",
+          filter: "blur(3px)",
+          zIndex: 0,
+        }}
+      />
 
       {/* Layer 2 — Dot grid (faded at bottom) */}
       <div
@@ -194,13 +235,21 @@ export default function Hero() {
           {/* ── RIGHT: step + video vertical ── */}
           <div className="flex flex-col items-center flex-shrink-0">
 
-            {/* Step badge */}
+            {/* Step badge — premium pill */}
             <FadeUp delay={0.25}>
               <div className="flex items-center gap-3 mb-2">
-                <span className="px-4 py-1.5 bg-accent text-black text-[13px] font-extrabold font-mono rounded-full tracking-wide">
+                <span
+                  className="px-4 py-1.5 text-[12px] font-extrabold font-mono rounded-full tracking-widest uppercase"
+                  style={{
+                    background: "rgba(34,197,94,0.08)",
+                    border: "1px solid rgba(34,197,94,0.45)",
+                    color: "#4ade80",
+                    letterSpacing: "0.12em",
+                  }}
+                >
                   Paso 1
                 </span>
-                <span className="text-text-secondary text-[15px] font-medium">
+                <span className="text-text-secondary text-[15px] font-medium tracking-tight">
                   Mira este breve video
                 </span>
               </div>

@@ -38,23 +38,6 @@ body::before {
   z-index: 1;
 }
 
-/* Hero volumetric glow */
-@keyframes glowMove {
-  0% { transform: translateX(-3%) scale(1); }
-  100% { transform: translateX(3%) scale(1.02); }
-}
-
-@keyframes breathe {
-  0% { opacity: 0.85; }
-  100% { opacity: 1; }
-}
-
-.hero-glow {
-  animation:
-    glowMove 18s ease-in-out infinite alternate,
-    breathe 8s ease-in-out infinite alternate;
-}
-
 /* Floating notification cards */
 @keyframes floatY {
   0%, 100% { transform: translateY(0px); }

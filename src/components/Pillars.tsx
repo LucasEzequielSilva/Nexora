@@ -42,38 +42,152 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="max-w-[1000px] mx-auto px-6 pb-20 relative overflow-hidden">
+    <section className="max-w-[1100px] mx-auto px-6 pb-24 relative overflow-hidden">
 
+      {/* Section header */}
       <FadeUp>
-        <div className="text-center mb-12">
-          <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight mb-3">
+        <div className="text-center mb-14">
+          {/* Eyebrow label */}
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-accent opacity-50" />
+            <span
+              className="font-mono text-[10px] uppercase tracking-[4px] text-accent"
+            >
+              El Sistema
+            </span>
+            <span className="h-px w-8 bg-accent opacity-50" />
+          </div>
+
+          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-4 leading-tight">
             Como llenamos tu agenda en 30 dias
           </h2>
-          <p className="text-text-secondary text-base">
+
+          {/* Thin divider */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-accent opacity-40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-60" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-accent opacity-40" />
+          </div>
+
+          <p className="text-text-secondary text-base max-w-md mx-auto">
             Un sistema de 3 pasos. Predecible, automatizado, sin friccion.
           </p>
         </div>
       </FadeUp>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* Cards grid */}
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-5">
+
         {pillars.map((pillar, i) => (
           <FadeUp key={pillar.number} delay={0.1 * (i + 1)}>
-            <div className="bg-bg-card border border-border rounded-2xl p-9 px-7 transition-all duration-300 hover:border-[rgba(34,197,94,0.25)] hover:-translate-y-1">
-              <div className="font-mono text-[13px] text-accent font-bold mb-4 tracking-[2px]">
-                {pillar.number}
+            {/* group wrapper for hover state coordination */}
+            <div className="group relative h-full rounded-2xl cursor-default">
+
+              {/* Green left accent border */}
+              <div
+                className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl z-10 transition-opacity duration-300"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(34,197,94,0.85), rgba(34,197,94,0.08))",
+                }}
+              />
+
+              {/* Card */}
+              <div
+                className="relative h-full rounded-2xl overflow-hidden p-8 pl-9 transition-all duration-300"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget;
+                  el.style.borderColor = "rgba(34,197,94,0.3)";
+                  el.style.boxShadow =
+                    "0 0 0 1px rgba(34,197,94,0.15), 0 20px 40px rgba(0,0,0,0.4)";
+                  el.style.transform = "translateY(-6px)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget;
+                  el.style.borderColor = "rgba(255,255,255,0.06)";
+                  el.style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)";
+                  el.style.transform = "translateY(0)";
+                }}
+              >
+                {/* Radial glow on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at 0% 100%, rgba(34,197,94,0.08) 0%, transparent 60%)",
+                  }}
+                />
+
+                {/* Large watermark number */}
+                <div
+                  className="pointer-events-none absolute bottom-3 right-4 select-none z-0 leading-none"
+                  style={{
+                    fontSize: "120px",
+                    fontWeight: 900,
+                    color: "rgba(255,255,255,0.025)",
+                    fontFamily: "var(--font-outfit, sans-serif)",
+                  }}
+                  aria-hidden="true"
+                >
+                  {pillar.number}
+                </div>
+
+                {/* Card content */}
+                <div className="relative z-10 flex flex-col h-full">
+
+                  {/* Paso micro-label */}
+                  <div className="font-mono text-[10px] uppercase tracking-[2px] text-[#71717a] mb-3">
+                    Paso {pillar.number}
+                  </div>
+
+                  {/* Icon container */}
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300"
+                    style={{
+                      background: "rgba(34,197,94,0.08)",
+                      border: "1px solid rgba(34,197,94,0.15)",
+                    }}
+                  >
+                    {pillar.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="font-bold tracking-tight mb-3 text-white"
+                    style={{ fontSize: "18px" }}
+                  >
+                    {pillar.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="leading-relaxed"
+                    style={{ fontSize: "14px", color: "#71717a" }}
+                  >
+                    {pillar.description}
+                  </p>
+                </div>
               </div>
-              <div className="w-12 h-12 bg-accent-glow rounded-xl flex items-center justify-center mb-5">
-                {pillar.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3 tracking-tight">
-                {pillar.title}
-              </h3>
-              <p className="text-[15px] text-text-secondary leading-relaxed">
-                {pillar.description}
-              </p>
             </div>
           </FadeUp>
         ))}
+
+        {/* Desktop flow connectors — subtle dots between cards */}
+        <div className="hidden md:flex absolute inset-0 pointer-events-none items-center justify-between px-[calc(33.333%-12px)] z-20">
+          {[0, 1].map((k) => (
+            <div key={k} className="flex items-center gap-1 opacity-30">
+              <span className="block w-1 h-1 rounded-full bg-accent" />
+              <span className="block w-1 h-1 rounded-full bg-accent opacity-60" />
+              <span className="block w-1 h-1 rounded-full bg-accent opacity-30" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
