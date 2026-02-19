@@ -55,3 +55,8 @@ body::before {
     breathe 8s ease-in-out infinite alternate;
 }
 
+/* Floating notification cards */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}

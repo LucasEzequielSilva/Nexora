@@ -74,8 +74,10 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
+            "radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "16px 16px",
+          maskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 80%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 35%, transparent 80%)",
         }}
       />
 
@@ -112,25 +114,25 @@ export default function Hero() {
             <FadeUp>
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-accent-glow border border-[rgba(34,197,94,0.2)] rounded-full text-[13px] font-medium text-accent font-mono uppercase tracking-widest mb-7">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                En vivo &middot; Sistema probado
+                +127 negocios &middot; Resultados en 30 dias
               </div>
             </FadeUp>
 
             <FadeUp delay={0.1}>
               <h1 className="text-[clamp(30px,3.8vw,52px)] font-extrabold leading-[1.1] mb-6 tracking-tight">
-                Deja de depender del boca en boca.
+                Tu agenda llena, cada mes.
                 <br />
                 <span className="bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#059669] bg-clip-text text-transparent">
-                  Llenamos tu agenda cada mes.
+                  Garantizado. Sin publicar en redes.
                 </span>
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-lg text-text-secondary leading-relaxed max-w-[520px] lg:mx-0 mx-auto">
-                Implementamos un sistema de captacion de clientes automatico para tu
-                negocio. Sin que tengas que entender de tecnologia. Sin perder tiempo
-                en redes. Sin depender de la suerte.
+                Meta Ads + IA + seguimiento automatico. Atraemos prospectos calificados,
+                filtramos curiosos y llenamos tu agenda — mientras vos atendes tu negocio.
+                Sin tocar una red social.
               </p>
             </FadeUp>
           </div>
@@ -170,6 +172,49 @@ export default function Hero() {
                 className="relative"
                 style={{ width: "300px" }}
               >
+                {/* Floating card 1 — Nueva consulta */}
+                <div
+                  className="hidden lg:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl pointer-events-none"
+                  style={{
+                    position: 'absolute', top: '60px', left: '-168px', zIndex: 20,
+                    background: 'rgba(24,24,27,0.92)',
+                    border: '1px solid rgba(34,197,94,0.2)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+                    backdropFilter: 'blur(12px)',
+                    animation: 'floatY 5s ease-in-out infinite',
+                    minWidth: '155px',
+                  }}
+                >
+                  <span className="w-2 h-2 rounded-full bg-accent shrink-0" style={{ boxShadow: '0 0 6px rgba(34,197,94,0.8)' }} />
+                  <div>
+                    <p className="text-[11px] font-semibold text-text-primary leading-tight">Nueva consulta</p>
+                    <p className="text-[10px] text-text-muted leading-tight">Hace 2 minutos</p>
+                  </div>
+                </div>
+
+                {/* Floating card 2 — Stats */}
+                <div
+                  className="hidden lg:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl pointer-events-none"
+                  style={{
+                    position: 'absolute', bottom: '130px', left: '-168px', zIndex: 20,
+                    background: 'rgba(24,24,27,0.92)',
+                    border: '1px solid rgba(34,197,94,0.2)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+                    backdropFilter: 'blur(12px)',
+                    animation: 'floatY 5s ease-in-out infinite 1.8s',
+                    minWidth: '155px',
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" className="w-7 h-7 shrink-0" fill="none" stroke="rgba(34,197,94,1)" strokeWidth="2">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                    <polyline points="16 7 22 7 22 13" />
+                  </svg>
+                  <div>
+                    <p className="text-[13px] font-bold text-accent leading-tight">+47 clientes</p>
+                    <p className="text-[10px] text-text-muted leading-tight">este mes</p>
+                  </div>
+                </div>
+
                 {/* Ambient glow behind the video */}
                 <div
                   className="absolute inset-0 rounded-3xl pointer-events-none"
@@ -187,8 +232,47 @@ export default function Hero() {
                     aspectRatio: "9/16",
                     maxHeight: "530px",
                     boxShadow: "0 0 0 1px rgba(34,197,94,0.15), 0 32px 64px rgba(0,0,0,0.5)",
+                    position: "relative",
                   }}
                 >
+                  {/* Animated light ring */}
+                  <svg
+                    className="absolute inset-0 w-full h-full pointer-events-none"
+                    style={{ zIndex: 10 }}
+                    viewBox="0 0 300 534"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feMerge>
+                          <feMergeNode in="blur" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    {/* Permanent subtle base ring */}
+                    <rect x="1.5" y="1.5" width="297" height="531" rx="23" ry="23"
+                      fill="none" stroke="rgba(34,197,94,0.12)" strokeWidth="1.5" />
+                    {/* Traveling light arc */}
+                    <rect x="1.5" y="1.5" width="297" height="531" rx="23" ry="23"
+                      fill="none"
+                      stroke="rgba(74,222,128,0.95)"
+                      strokeWidth="2.5"
+                      strokeDasharray="130 1497"
+                      strokeLinecap="round"
+                      filter="url(#ringGlow)"
+                    >
+                      <animate
+                        attributeName="stroke-dashoffset"
+                        from="0"
+                        to="-1627"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      />
+                    </rect>
+                  </svg>
                   <video
                     src="/vsl_web.mp4"
                     className="w-full h-full object-cover"

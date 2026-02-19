@@ -4,23 +4,23 @@ import FadeUp from "./FadeUp";
 
 const pains = [
   {
-    text: "Publicas en redes todos los dias",
+    text: "Publicás contenido todos los días...",
     detail:
-      " pero no se convierte en clientes reales. Likes no pagan las cuentas.",
+      " y el 97% de tus seguidores jamás te compra. Los likes no pagan las cuentas.",
   },
   {
-    text: "Un mes te va bien, el siguiente silencio total.",
+    text: "Un mes lleno, el siguiente en silencio.",
     detail:
-      " Vivis con la incertidumbre de no saber cuantos clientes van a entrar.",
+      " La inconsistencia te impide crecer. Sin sistema, no hay previsibilidad.",
   },
   {
-    text: "Te escriben por WhatsApp y no llegas a responder a tiempo.",
-    detail: " Perdes ventas porque estas ocupado atendiendo.",
+    text: "Perdiste ventas por no responder a tiempo.",
+    detail: " El que responde primero, vende. El resto pierde el cliente.",
   },
   {
-    text: "Probaste publicidad y no funciono.",
+    text: "Probaste publicidad y quemaste plata.",
     detail:
-      " Gastaste plata sin ver resultados porque no habia un sistema detras.",
+      " Sin un sistema detrás que filtre y cierre, los ads son un pozo sin fondo.",
   },
 ];
 
@@ -30,8 +30,11 @@ export default function PainPoints() {
       <FadeUp>
         <div className="text-center mb-10">
           <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight">
-            &iquest;Te suena familiar?
+            &iquest;Cuanta facturacion perdiste por esto?
           </h2>
+          <p className="text-text-secondary text-base mt-3">
+            Si alguno de estos te suena, el problema no sos vos &mdash; es el sistema que usas.
+          </p>
         </div>
       </FadeUp>
 

@@ -2,13 +2,12 @@
 
 import FadeUp from "./FadeUp";
 
-
 const pillars = [
   {
     number: "01",
-    title: "Captacion Inteligente",
+    title: "Captacion con IA",
     description:
-      "Publicidad estrategica que atrae personas interesadas en tu servicio. No seguidores — clientes potenciales reales.",
+      "Meta Ads + inteligencia artificial identifican y atraen personas con intencion de compra real. No seguidores — prospectos que ya buscan lo que ofreces.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-accent fill-none stroke-2">
         <circle cx="11" cy="11" r="8" />
@@ -18,9 +17,9 @@ const pillars = [
   },
   {
     number: "02",
-    title: "Filtro Automatico",
+    title: "Filtro automatico",
     description:
-      "Un sistema que califica a cada interesado y solo te pasa a los que estan listos para comprar. Sin perder tiempo con curiosos.",
+      "El sistema califica cada prospecto y solo te agenda reuniones con quienes estan listos para comprar. Cero tiempo perdido con curiosos.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-accent fill-none stroke-2">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -30,9 +29,9 @@ const pillars = [
   },
   {
     number: "03",
-    title: "Seguimiento 24/7",
+    title: "Cierre automatico",
     description:
-      "Seguimiento automatico por WhatsApp y email que cierra ventas mientras dormis. El 80% de ventas se pierden sin seguimiento.",
+      "Seguimiento por WhatsApp e email que convierte mientras dorms. El 80% de las ventas requieren 5+ contactos — el sistema lo hace por vos.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-accent fill-none stroke-2">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -48,10 +47,10 @@ export default function Pillars() {
       <FadeUp>
         <div className="text-center mb-12">
           <h2 className="text-[clamp(24px,3.5vw,36px)] font-extrabold tracking-tight mb-3">
-            El Sistema de 3 Pilares
+            Como llenamos tu agenda en 30 dias
           </h2>
           <p className="text-text-secondary text-base">
-            Simple. Automatizado. Predecible.
+            Un sistema de 3 pasos. Predecible, automatizado, sin friccion.
           </p>
         </div>
       </FadeUp>

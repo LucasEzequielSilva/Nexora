@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
 
       <CTACard
-        heading="&#191;Listo para llenar tu agenda?"
-        description="Agenda una llamada estrategica gratuita de 20 minutos. Analizamos tu negocio y te mostramos tu sistema personalizado."
-        buttonText="AGENDAR MI LLAMADA GRATIS"
-        subtext="Sin compromiso · 100% gratuita · Sin letra chica"
+        heading="&#191;Funciona para tu negocio?"
+        description="20 minutos. Sin compromiso. Te mostramos exactamente que sistema usariamos para vos y cuantos clientes podrias sumar por mes."
+        buttonText="AGENDAR LLAMADA GRATUITA"
+        subtext="Sin compromiso · Solo 3 lugares disponibles"
       />
 
       <PainPoints />
@@ -24,10 +24,10 @@ export default function Home() {
 
       <CTACard
         variant="banner"
-        heading="Tu proximo cliente esta esperando"
-        description="20 minutos. Una llamada. El primer paso para dejar de depender del boca en boca para siempre."
-        buttonText="QUIERO MI LLAMADA ESTRATEGICA"
-        subtext="Solo 10 lugares disponibles este mes"
+        heading="3 lugares disponibles este mes"
+        description="Cada mes trabajamos con un numero limitado de negocios para garantizar resultados reales. Si el tuyo califica, empezamos esta semana."
+        buttonText="QUIERO MI LUGAR AHORA"
+        subtext="Cupos limitados · Sin letra chica · Resultados en 30 dias"
       />
 
       <Footer />

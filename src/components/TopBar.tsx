@@ -9,7 +9,7 @@ export default function TopBar() {
         animate={{ opacity: [1, 0.7, 1] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        &#9889; Llamadas estrategicas limitadas — Solo aceptamos 10 negocios por mes
+        &#9889; Solo quedan 3 lugares este mes &mdash; +127 negocios ya generan clientes con Nexora
       </motion.span>
     </div>
   );

@@ -1,0 +1,8 @@
+# Exclude original 4K video (904 MB) - use vsl_web.mp4 instead
+public/vsl.mp4
+
+# Exclude dev artifacts
+nul
+b3d5ca70-b2d9-4371-bd20-744516e24618.png
+docs/
+.claude/
