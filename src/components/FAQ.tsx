@@ -56,18 +56,17 @@ export default function FAQ() {
           const isOpen = open === i;
           return (
             <FadeUp key={i} delay={0.06 * i}>
-              <div
-                className="rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
-                style={{
-                  background: isOpen
-                    ? "linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(24,24,27,0.98) 100%)"
-                    : "linear-gradient(135deg, rgba(24,24,27,0.95) 0%, rgba(18,18,20,0.98) 100%)",
-                  border: isOpen
-                    ? "1px solid rgba(34,197,94,0.2)"
-                    : "1px solid rgba(255,255,255,0.06)",
-                }}
-                onClick={() => setOpen(isOpen ? null : i)}
-              >
+               <div
+                 className="rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
+                 style={{
+                   background: isOpen
+                     ? "linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(24,24,27,0.98) 100%)"
+                     : "linear-gradient(135deg, rgba(24,24,27,0.95) 0%, rgba(18,18,20,0.98) 100%)",
+                   border: "1px solid rgba(34,197,94,0.2)",
+                   boxShadow: "0 0 20px rgba(34,197,94,0.08)",
+                 }}
+                 onClick={() => setOpen(isOpen ? null : i)}
+               >
                 {/* Question row */}
                 <div className="flex items-center justify-between gap-4 px-7 py-6">
                   <span className="text-[16px] font-semibold text-text-primary leading-snug">
