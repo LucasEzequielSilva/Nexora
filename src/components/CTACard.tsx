@@ -27,33 +27,34 @@ function PremiumButton({
 }) {
   return (
     <div
-      style={{
-        display: "inline-block",
-        borderRadius: "13px",
-        padding: "1px",
-        background:
-          "linear-gradient(135deg, rgba(74,222,128,0.75) 0%, rgba(34,197,94,0.45) 50%, rgba(5,150,105,0.75) 100%)",
-        width: fullWidth ? "100%" : undefined,
-      }}
+       style={{
+         display: "inline-block",
+         borderRadius: "13px",
+         padding: "1px",
+         background:
+           "linear-gradient(135deg, rgba(74,222,128,0.85) 0%, rgba(34,197,94,0.55) 50%, rgba(5,150,105,0.85) 100%)",
+         boxShadow: "0 0 25px rgba(34,197,94,0.25)",
+         width: fullWidth ? "100%" : undefined,
+       }}
     >
       <button
         data-cal-namespace={calNamespace}
         data-cal-link={CAL_LINK}
         data-cal-config='{"layout":"month_view"}'
         className={`inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#22c55e] via-[#10b981] to-[#059669] text-black font-bold text-base rounded-xl uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer${fullWidth ? " w-full" : ""}`}
-        style={{
-          borderRadius: "12px",
-          boxShadow:
-            "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15)",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.boxShadow =
-            "inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.2), 0 8px 32px rgba(34,197,94,0.35)";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLButtonElement).style.boxShadow =
-            "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15)";
-        }}
+         style={{
+           borderRadius: "12px",
+           boxShadow:
+             "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(34,197,94,0.25)",
+         }}
+         onMouseEnter={(e) => {
+           (e.currentTarget as HTMLButtonElement).style.boxShadow =
+             "inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.2), 0 12px 40px rgba(34,197,94,0.4)";
+         }}
+         onMouseLeave={(e) => {
+           (e.currentTarget as HTMLButtonElement).style.boxShadow =
+             "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(34,197,94,0.25)";
+         }}
       >
         {children}
       </button>

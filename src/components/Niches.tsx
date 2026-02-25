@@ -70,25 +70,26 @@ export default function Niches() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
         {niches.map((niche, i) => (
           <FadeUp key={niche.title} delay={0.1 * (i + 1)} className="h-full">
-            <div
-              className="relative h-full rounded-[16px] py-8 px-5 transition-all duration-300 hover:-translate-y-1.5 group cursor-default flex flex-col"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(24,24,27,0.9), rgba(20,20,24,0.95))",
-                border: "1px solid rgba(255,255,255,0.07)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.border =
-                  "1px solid rgba(34,197,94,0.25)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 0 40px rgba(34,197,94,0.08), 0 20px 40px rgba(0,0,0,0.3)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.border =
-                  "1px solid rgba(255,255,255,0.07)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-              }}
-            >
+             <div
+               className="relative h-full rounded-[16px] py-8 px-5 transition-all duration-300 hover:-translate-y-1.5 group cursor-default flex flex-col"
+               style={{
+                 background:
+                   "linear-gradient(135deg, rgba(24,24,27,0.9), rgba(20,20,24,0.95))",
+                 border: "1px solid rgba(34,197,94,0.2)",
+                 boxShadow: "0 0 30px rgba(34,197,94,0.08)",
+               }}
+               onMouseEnter={(e) => {
+                 (e.currentTarget as HTMLDivElement).style.border =
+                   "1px solid rgba(34,197,94,0.4)";
+                 (e.currentTarget as HTMLDivElement).style.boxShadow =
+                   "0 0 40px rgba(34,197,94,0.15), 0 20px 40px rgba(0,0,0,0.3)";
+               }}
+               onMouseLeave={(e) => {
+                 (e.currentTarget as HTMLDivElement).style.border =
+                   "1px solid rgba(34,197,94,0.2)";
+                 (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 30px rgba(34,197,94,0.08)";
+               }}
+             >
               {/* Stat badge */}
               <div className="absolute top-3 right-3">
                 <span
@@ -118,14 +119,14 @@ export default function Niches() {
               <h3 className="text-[15px] font-semibold mb-1.5">{niche.title}</h3>
               <p className="text-[13px] text-text-muted leading-relaxed flex-1">{niche.description}</p>
 
-              {/* Radial green glow on hover */}
-              <div
-                className="absolute inset-0 rounded-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 50% 80%, rgba(34,197,94,0.06) 0%, transparent 70%)",
-                }}
-              />
+               {/* Radial green glow — always on */}
+               <div
+                 className="absolute inset-0 rounded-[16px] opacity-100 transition-opacity duration-300 pointer-events-none"
+                 style={{
+                   background:
+                     "radial-gradient(ellipse at 50% 80%, rgba(34,197,94,0.08) 0%, transparent 70%)",
+                 }}
+               />
             </div>
           </FadeUp>
         ))}

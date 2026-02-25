@@ -76,46 +76,46 @@ export default function Pillars() {
             {/* group wrapper for hover state coordination */}
             <div className="group relative h-full rounded-2xl overflow-hidden cursor-default">
 
-              {/* Green left accent border */}
-              <div
-                className="absolute left-0 top-0 bottom-0 w-[3px] z-10 transition-opacity duration-300"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(34,197,94,0.85), rgba(34,197,94,0.08))",
-                }}
-              />
+              {/* Green left accent border — always visible */}
+               <div
+                 className="absolute left-0 top-0 bottom-0 w-[3px] z-10 transition-opacity duration-300"
+                 style={{
+                   background:
+                     "linear-gradient(to bottom, rgba(34,197,94,0.9), rgba(34,197,94,0.4))",
+                 }}
+               />
 
-              {/* Card */}
-              <div
-                className="relative h-full rounded-2xl overflow-hidden p-8 pl-9 transition-all duration-300"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.25)",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.borderColor = "rgba(34,197,94,0.3)";
-                  el.style.boxShadow =
-                    "0 0 0 1px rgba(34,197,94,0.15), 0 20px 40px rgba(0,0,0,0.4)";
-                  el.style.transform = "translateY(-6px)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.borderColor = "rgba(255,255,255,0.06)";
-                  el.style.boxShadow = "0 4px 24px rgba(0,0,0,0.25)";
-                  el.style.transform = "translateY(0)";
-                }}
-              >
-                {/* Radial glow on hover */}
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at 0% 100%, rgba(34,197,94,0.08) 0%, transparent 60%)",
-                  }}
-                />
+               {/* Card */}
+               <div
+                 className="relative h-full rounded-2xl overflow-hidden p-8 pl-9 transition-all duration-300"
+                 style={{
+                   background:
+                     "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
+                   border: "1px solid rgba(34,197,94,0.25)",
+                   boxShadow: "0 0 20px rgba(34,197,94,0.1), 0 4px 24px rgba(0,0,0,0.25)",
+                 }}
+                 onMouseEnter={(e) => {
+                   const el = e.currentTarget;
+                   el.style.borderColor = "rgba(34,197,94,0.5)";
+                   el.style.boxShadow =
+                     "0 0 0 1px rgba(34,197,94,0.2), 0 20px 40px rgba(34,197,94,0.15), 0 4px 24px rgba(0,0,0,0.4)";
+                   el.style.transform = "translateY(-6px)";
+                 }}
+                 onMouseLeave={(e) => {
+                   const el = e.currentTarget;
+                   el.style.borderColor = "rgba(34,197,94,0.25)";
+                   el.style.boxShadow = "0 0 20px rgba(34,197,94,0.1), 0 4px 24px rgba(0,0,0,0.25)";
+                   el.style.transform = "translateY(0)";
+                 }}
+               >
+                 {/* Radial glow — always on */}
+                 <div
+                   className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-500 z-0"
+                   style={{
+                     background:
+                       "radial-gradient(ellipse at 0% 100%, rgba(34,197,94,0.1) 0%, transparent 60%)",
+                   }}
+                 />
 
                 {/* Large watermark number */}
                 <div

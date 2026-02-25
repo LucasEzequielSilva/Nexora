@@ -72,9 +72,12 @@ export default function Comparison() {
 
       <FadeUp delay={0.15}>
         <div
-          className="overflow-x-auto rounded-2xl"
-          style={{ border: "1px solid rgba(255,255,255,0.07)" }}
-        >
+           className="overflow-x-auto rounded-2xl"
+           style={{ 
+             border: "1px solid rgba(34,197,94,0.2)",
+             boxShadow: "0 0 30px rgba(34,197,94,0.08)"
+           }}
+         >
           <table className="w-full min-w-[560px]" style={{ borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
@@ -87,14 +90,15 @@ export default function Comparison() {
                 </th>
 
                 {/* Nexora — highlighted */}
-                <th
-                  className="px-6 py-5"
-                  style={{
-                    background: "rgba(34,197,94,0.06)",
-                    borderLeft: "1px solid rgba(34,197,94,0.14)",
-                    borderRight: "1px solid rgba(34,197,94,0.14)",
-                  }}
-                >
+                 <th
+                   className="px-6 py-5"
+                   style={{
+                     background: "rgba(34,197,94,0.08)",
+                     borderLeft: "1px solid rgba(34,197,94,0.25)",
+                     borderRight: "1px solid rgba(34,197,94,0.25)",
+                     boxShadow: "inset 0 0 20px rgba(34,197,94,0.06)"
+                   }}
+                 >
                   <div className="flex flex-col items-center gap-1.5">
                     <span
                       className="text-[10px] font-mono uppercase tracking-widest text-accent rounded-full px-2.5 py-0.5"
@@ -131,14 +135,14 @@ export default function Comparison() {
                   <td className="px-6 py-4 text-[14px] text-text-secondary font-medium">
                     {f.label}
                   </td>
-                  <td
-                    className="px-6 py-4"
-                    style={{
-                      background: "rgba(34,197,94,0.04)",
-                      borderLeft: "1px solid rgba(34,197,94,0.1)",
-                      borderRight: "1px solid rgba(34,197,94,0.1)",
-                    }}
-                  >
+                   <td
+                     className="px-6 py-4"
+                     style={{
+                       background: "rgba(34,197,94,0.06)",
+                       borderLeft: "1px solid rgba(34,197,94,0.15)",
+                       borderRight: "1px solid rgba(34,197,94,0.15)",
+                     }}
+                   >
                     <Cell value={f.nexora} />
                   </td>
                   <td className="px-6 py-4"><Cell value={f.agency} /></td>
