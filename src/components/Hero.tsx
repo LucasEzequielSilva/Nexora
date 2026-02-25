@@ -87,16 +87,16 @@ export default function Hero() {
             alt="Nexora"
             width={160}
             height={40}
-            className="mx-auto lg:mx-0 mb-10"
+            className="mb-10"
             priority
           />
         </FadeUp>
 
         {/* Row: copy left | video right */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
 
           {/* ── LEFT: copy column ── */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-left">
 
             {/* Eyebrow badge — mismo formato que el resto */}
             <FadeUp>
@@ -106,7 +106,6 @@ export default function Hero() {
                   <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse shrink-0" />
                   +127 negocios &middot; Resultados en 30 dias
                 </span>
-                <span className="h-px w-8 bg-accent opacity-50" />
               </div>
             </FadeUp>
 
@@ -135,7 +134,7 @@ export default function Hero() {
 
             {/* Paragraph */}
             <FadeUp delay={0.2}>
-              <p className="text-[17px] text-text-secondary leading-relaxed max-w-[500px] lg:mx-0 mx-auto mb-8">
+              <p className="text-[17px] text-text-secondary leading-relaxed max-w-[500px] mb-8">
                 Meta Ads + IA + seguimiento automatico. Atraemos prospectos calificados,
                 filtramos curiosos y llenamos tu agenda &mdash; sin que toques una red social.
               </p>
@@ -143,7 +142,7 @@ export default function Hero() {
 
             {/* Social proof — pill card style */}
             <FadeUp delay={0.3}>
-              <div className="flex justify-center lg:justify-start mb-8">
+              <div className="flex justify-start mb-8">
                 <div
                   className="inline-flex items-center gap-4 pl-2 pr-5 py-2 rounded-2xl relative group/card"
                   style={{

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const PARTICLE_COUNT = 75;
+const PARTICLE_COUNT = 120;
 
 interface Particle {
   x: number;
@@ -16,13 +16,13 @@ interface Particle {
 
 function createParticles(w: number, h: number): Particle[] {
   return Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
-    x: Math.random() * w * 0.6,
-    y: -(Math.random() * h * 0.3),
-    size: 0.3 + Math.random() * 0.55,
-    opacity: 0.04 + Math.random() * 0.12,
-    vx: 0.02 + Math.random() * 0.08,
-    vy: 0.08 + Math.random() * 0.14,
-    isGreen: i < Math.floor(PARTICLE_COUNT * 0.22),
+    x: Math.random() * w * 0.4,
+    y: -(Math.random() * h * 0.5),
+    size: 0.4 + Math.random() * 0.7,
+    opacity: 0.08 + Math.random() * 0.15,
+    vx: 0.05 + Math.random() * 0.15,
+    vy: 0.15 + Math.random() * 0.25,
+    isGreen: i < Math.floor(PARTICLE_COUNT * 0.3),
   }));
 }
 
@@ -65,7 +65,7 @@ export default function Particles() {
 
         if (p.y > h + 2 || p.x > w + 2) {
           p.y = -(Math.random() * 20);
-          p.x = Math.random() * w * 0.6;
+          p.x = Math.random() * w * 0.4;
         }
 
         ctx.beginPath();
