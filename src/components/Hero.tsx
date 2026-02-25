@@ -9,8 +9,20 @@ import Particles from "./Particles";
 const CAL_LINK = "nexoragrowth/30min";
 
 const CalendarIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-4 h-4 shrink-0" style={{ fill: "currentColor" }}>
-    <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM112,184a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm56-8a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136a23.76,23.76,0,0,1-4.84,14.45L152,176ZM48,80V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80Z" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-5 h-5 shrink-0" style={{ filter: "drop-shadow(0 0 2px rgba(34,197,94,0.5))" }}>
+    <path 
+      d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Z" 
+      fill="none" 
+      stroke="black" 
+      strokeWidth="16" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+    />
+    <path 
+      d="M176,128a12,12,0,1,1-12-12A12,12,0,0,1,176,128Z" 
+      fill="black" 
+    />
+    <line x1="32" y1="80" x2="224" y2="80" fill="none" stroke="black" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -106,7 +118,7 @@ export default function Hero() {
                 <span
                   style={{
                     background:
-                      "linear-gradient(to bottom, #16a34a 0%, #22c55e 35%, #4ade80 70%, #86efac 100%)",
+                      "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -133,13 +145,16 @@ export default function Hero() {
             <FadeUp delay={0.3}>
               <div className="flex justify-center lg:justify-start mb-8">
                 <div
-                  className="inline-flex items-center gap-4 pl-2 pr-5 py-2 rounded-2xl"
+                  className="inline-flex items-center gap-4 pl-2 pr-5 py-2 rounded-2xl relative group/card"
                   style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(8px)",
+                    background: "rgba(255,255,255,0.03)",
+                    border: "0.5px solid rgba(255,255,255,0.12)",
+                    backdropFilter: "blur(12px)",
+                    boxShadow: "0 10px 30px -10px rgba(0,0,0,0.5)",
                   }}
                 >
+                  {/* Subtle card glow */}
+                  <div className="absolute inset-0 rounded-2xl bg-accent/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
                   {/* Avatar stack — fotos reales */}
                   <div className="flex">
                     {[
@@ -187,26 +202,27 @@ export default function Hero() {
                   borderRadius: "13px",
                   padding: "1px",
                     background:
-                      "linear-gradient(135deg, rgba(134,239,172,0.75) 0%, rgba(74,222,128,0.5) 50%, rgba(34,197,94,0.75) 100%)",
+                      "linear-gradient(135deg, rgba(240,253,244,1) 0%, rgba(34,197,94,0.6) 50%, rgba(22,163,74,1) 100%)",
+                    boxShadow: "0 0 20px rgba(34,197,94,0.2)",
                 }}
               >
                 <button
                   data-cal-namespace="hero-30min"
                   data-cal-link={CAL_LINK}
                   data-cal-config='{"layout":"month_view"}'
-                  className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#16a34a] via-[#22c55e] to-[#4ade80] text-black font-bold text-base uppercase tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-b from-[#22c55e] to-[#16a34a] text-black font-bold text-base uppercase tracking-wide transition-all duration-300 hover:-translate-y-1 active:translate-y-0 cursor-pointer group"
                   style={{
                     borderRadius: "12px",
                     boxShadow:
-                      "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15)",
+                      "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2), 0 10px 20px -10px rgba(34,197,94,0.5)",
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                      "inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.2), 0 8px 32px rgba(34,197,94,0.35)";
+                      "inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.3), 0 15px 30px -10px rgba(34,197,94,0.6)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                      "inset 0 2px 0 rgba(255,255,255,0.15), inset 0 -2px 0 rgba(0,0,0,0.15)";
+                      "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2), 0 10px 20px -10px rgba(34,197,94,0.5)";
                   }}
                 >
                   Agendar llamada gratis
@@ -225,14 +241,17 @@ export default function Hero() {
 
             {/* Step badge */}
             <FadeUp delay={0.25}>
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-3 mb-2 relative group/step">
+                {/* Glow ring behind badge */}
+                <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-0 group-hover/step:opacity-100 transition-opacity duration-700" />
                 <span
-                  className="px-4 py-1.5 text-[12px] font-extrabold font-mono rounded-full tracking-widest uppercase"
+                  className="px-4 py-1.5 text-[12px] font-extrabold font-mono rounded-full tracking-[0.15em] uppercase relative"
                   style={{
-                    background: "rgba(34,197,94,0.08)",
-                    border: "1px solid rgba(34,197,94,0.45)",
+                    background: "linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.05) 100%)",
+                    border: "0.5px solid rgba(74,222,128,0.5)",
                     color: "#4ade80",
-                    letterSpacing: "0.12em",
+                    boxShadow: "0 0 15px rgba(34,197,94,0.1)",
+                    backdropFilter: "blur(4px)",
                   }}
                 >
                   Paso 1
@@ -262,9 +281,9 @@ export default function Hero() {
                 <div
                   className="absolute inset-0 rounded-3xl pointer-events-none"
                   style={{
-                    background: "radial-gradient(ellipse at 50% 60%, rgba(34,197,94,0.15) 0%, transparent 70%)",
-                    filter: "blur(24px)",
-                    transform: "scale(1.08)",
+                    background: "radial-gradient(ellipse at 50% 60%, rgba(34,197,94,0.25) 0%, transparent 70%)",
+                    filter: "blur(32px)",
+                    transform: "scale(1.2)",
                   }}
                 />
 
@@ -274,9 +293,11 @@ export default function Hero() {
                   style={{
                     aspectRatio: "9/16",
                     maxHeight: "480px",
-                    boxShadow: "0 0 0 1px rgba(34,197,94,0.15), 0 32px 64px rgba(0,0,0,0.5)",
+                    boxShadow: "0 0 0 1px rgba(34,197,94,0.2), 0 32px 64px -16px rgba(0,0,0,0.8)",
                   }}
                 >
+                  {/* Rim light effect */}
+                  <div className="absolute inset-0 pointer-events-none rounded-3xl" style={{ boxShadow: "inset 0 1px 1px rgba(255,255,255,0.1), inset 0 -1px 1px rgba(34,197,94,0.2)" }} />
                   {/* Animated light ring */}
                   <svg
                     className="absolute inset-0 w-full h-full pointer-events-none"
@@ -322,6 +343,17 @@ export default function Hero() {
                     }}
                   />
                 </div>
+
+                {/* Ground Reflection / Pedestal */}
+                <div 
+                  className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] h-32 pointer-events-none opacity-20 hidden sm:block"
+                  style={{
+                    background: "linear-gradient(to bottom, rgba(34,197,94,0.15) 0%, transparent 80%)",
+                    filter: "blur(24px)",
+                    borderRadius: "50% / 100% 100% 0 0",
+                    transform: "translateX(-50%) rotateX(60deg)",
+                  }}
+                />
               </div>
             </FadeUp>
 
