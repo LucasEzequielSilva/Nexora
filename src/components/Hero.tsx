@@ -145,15 +145,15 @@ export default function Hero() {
               <div className="flex justify-start mb-8">
                 <div
                   className="inline-flex items-center gap-4 pl-2 pr-5 py-2 rounded-2xl relative group/card"
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    border: "0.5px solid rgba(255,255,255,0.12)",
-                    backdropFilter: "blur(12px)",
-                    boxShadow: "0 10px 30px -10px rgba(0,0,0,0.5)",
-                  }}
+                   style={{
+                     background: "rgba(255,255,255,0.03)",
+                     border: "0.5px solid rgba(34,197,94,0.5)",
+                     backdropFilter: "blur(12px)",
+                     boxShadow: "0 0 20px rgba(34,197,94,0.15), 0 10px 30px -10px rgba(0,0,0,0.5)",
+                   }}
                 >
-                  {/* Subtle card glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-accent/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                  {/* Subtle card glow — always on */}
+                   <div className="absolute inset-0 rounded-2xl bg-accent/8 opacity-100 transition-opacity duration-500" />
                   {/* Avatar stack — fotos reales */}
                   <div className="flex">
                     {[
@@ -241,8 +241,8 @@ export default function Hero() {
             {/* Step badge */}
             <FadeUp delay={0.25}>
               <div className="flex items-center gap-3 mb-2 relative group/step">
-                {/* Glow ring behind badge */}
-                <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-0 group-hover/step:opacity-100 transition-opacity duration-700" />
+                 {/* Glow ring behind badge — always on */}
+                 <div className="absolute inset-0 bg-accent/25 blur-xl rounded-full opacity-100 transition-opacity duration-700" />
                 <span
                   className="px-4 py-1.5 text-[12px] font-extrabold font-mono rounded-full tracking-[0.15em] uppercase relative"
                   style={{

@@ -38,6 +38,7 @@ yarn-error.log*
 
 # large video files (original 4K - use vsl_web.mp4 compressed version)
 public/vsl.mp4
+public/vsl_web_old.mp4
 
 # Windows reserved name artifact
 nul
