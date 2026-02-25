@@ -59,24 +59,25 @@ export default function Testimonials() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {testimonials.map((t, i) => (
           <FadeUp key={t.name} delay={0.1 * (i + 1)}>
-             <div
-               className="relative h-full rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1 cursor-default"
-               style={{
-                 background: "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
-                 border: "1px solid rgba(34,197,94,0.3)",
-                 boxShadow: "0 0 20px rgba(34,197,94,0.12), 0 4px 24px rgba(0,0,0,0.25)",
-               }}
-               onMouseEnter={(e) => {
-                 const el = e.currentTarget as HTMLDivElement;
-                 el.style.borderColor = "rgba(34,197,94,0.5)";
-                 el.style.boxShadow = "0 0 0 1px rgba(34,197,94,0.2), 0 20px 40px rgba(34,197,94,0.15), 0 4px 24px rgba(0,0,0,0.25)";
-               }}
-               onMouseLeave={(e) => {
-                 const el = e.currentTarget as HTMLDivElement;
-                 el.style.borderColor = "rgba(34,197,94,0.3)";
-                 el.style.boxShadow = "0 0 20px rgba(34,197,94,0.12), 0 4px 24px rgba(0,0,0,0.25)";
-               }}
-             >
+              <div
+                className="relative h-full rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1 cursor-default group/card"
+                style={{
+                  background: "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
+                  border: "1px solid rgba(34,197,94,0.3)",
+                  boxShadow: "0 0 20px rgba(34,197,94,0.12), 0 4px 24px rgba(0,0,0,0.25)",
+                  overflow: "hidden",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.borderColor = "rgba(34,197,94,0.5)";
+                  el.style.boxShadow = "0 0 0 1px rgba(34,197,94,0.2), 0 20px 40px rgba(34,197,94,0.15), 0 4px 24px rgba(0,0,0,0.25)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.borderColor = "rgba(34,197,94,0.3)";
+                  el.style.boxShadow = "0 0 20px rgba(34,197,94,0.12), 0 4px 24px rgba(0,0,0,0.25)";
+                }}
+              >
               {/* Top green accent line */}
               <div
                 className="absolute top-0 left-6 right-6 h-[2px] rounded-full"

@@ -110,27 +110,43 @@ export default function Hero() {
             </FadeUp>
 
             {/* H1 */}
-            <FadeUp delay={0.1}>
-              <h1 className="text-[clamp(34px,4.2vw,58px)] font-extrabold leading-[1.08] mb-6 tracking-tight">
-                Tu agenda llena,{" "}
-                <br className="hidden sm:block" />
-                <span
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  cada mes,
-                </span>
-                <br />
-                <span className="text-white">
-                  garantizado
-                </span>
-              </h1>
-            </FadeUp>
+             <FadeUp delay={0.1}>
+               <h1 className="text-[clamp(34px,4.2vw,58px)] font-extrabold leading-[1.08] mb-6 tracking-tight relative">
+                 {/* Glow effect behind H1 */}
+                 <div
+                   style={{
+                     position: "absolute",
+                     top: "50%",
+                     left: "30%",
+                     width: "400px",
+                     height: "200px",
+                     background: "radial-gradient(ellipse at center, rgba(34,197,94,0.2) 0%, transparent 70%)",
+                     filter: "blur(40px)",
+                     pointerEvents: "none",
+                     transform: "translate(-50%, -50%)",
+                     zIndex: -1,
+                   }}
+                 />
+                 Tu agenda llena,{" "}
+                 <br className="hidden sm:block" />
+                 <span
+                   style={{
+                     background:
+                       "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)",
+                     WebkitBackgroundClip: "text",
+                     WebkitTextFillColor: "transparent",
+                     backgroundClip: "text",
+                     filter: "drop-shadow(0 0 10px rgba(34,197,94,0.3))",
+                   }}
+                 >
+                   cada mes,
+                 </span>
+                 <br />
+                 <span className="text-white">
+                   garantizado
+                 </span>
+               </h1>
+             </FadeUp>
 
             {/* Paragraph */}
             <FadeUp delay={0.2}>
@@ -195,16 +211,37 @@ export default function Hero() {
 
             {/* CTA button */}
             <FadeUp delay={0.4}>
-              <div
-                style={{
-                  display: "inline-block",
-                  borderRadius: "13px",
-                  padding: "1px",
-                    background:
-                      "linear-gradient(135deg, rgba(240,253,244,1) 0%, rgba(34,197,94,0.6) 50%, rgba(22,163,74,1) 100%)",
-                    boxShadow: "0 0 20px rgba(34,197,94,0.2)",
-                }}
-              >
+               <div
+                 style={{
+                   display: "inline-block",
+                   borderRadius: "13px",
+                   padding: "1px",
+                   position: "relative",
+                   overflow: "hidden",
+                     background:
+                       "linear-gradient(135deg, rgba(240,253,244,1) 0%, rgba(34,197,94,0.6) 50%, rgba(22,163,74,1) 100%)",
+                     boxShadow: "0 0 20px rgba(34,197,94,0.2), 0 0 40px rgba(34,197,94,0.1)",
+                 }}
+               >
+                 {/* Shine reflection effect */}
+                 <div
+                   style={{
+                     position: "absolute",
+                     top: "-50%",
+                     left: "-50%",
+                     width: "200%",
+                     height: "200%",
+                     background: "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)",
+                     animation: "shine 3s infinite",
+                     pointerEvents: "none",
+                   }}
+                 />
+                 <style>{`
+                   @keyframes shine {
+                     0% { transform: translate(-100%, -100%) rotate(0deg); }
+                     100% { transform: translate(100%, 100%) rotate(0deg); }
+                   }
+                 `}</style>
                 <button
                   data-cal-namespace="hero-30min"
                   data-cal-link={CAL_LINK}
