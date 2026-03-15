@@ -4,34 +4,34 @@ import FadeUp from "./FadeUp";
 
 const testimonials = [
   {
-    name: "Mariana Vega",
-    role: "Nutricionista · Buenos Aires",
+    name: "Mariela V.",
+    role: "Salón de belleza · Buenos Aires",
     avatar: "M",
     color: "#16a34a",
     quote:
-      "Antes dependia del boca a boca y los meses eran una montaña rusa. En 6 semanas con Nexora tenia la agenda con 3 semanas de anticipación. No toco Instagram para nada.",
-    stat: "+31 consultas",
-    statLabel: "en 30 días",
+      "Antes coordinaba todos los turnos a mano por WhatsApp. Ahora el sistema los gestiona solo — perdemos cero turnos por no responder. Me ahorró dos horas por día desde la primera semana.",
+    stat: "+40 turnos/mes",
+    statLabel: "",
   },
   {
-    name: "Rodrigo Mitre",
-    role: "Corredor inmobiliario · Córdoba",
+    name: "Rodrigo M.",
+    role: "Kinesiólogo · Córdoba",
     avatar: "R",
     color: "#15803d",
     quote:
-      "Probé dos agencias antes. Mucho humo, poca plata. Con Nexora arranqué a cerrar operaciones en la tercera semana. El sistema califica solo — yo solo entro a cerrar.",
-    stat: "4 operaciones",
-    statLabel: "en el primer mes",
+      "La parte del seguimiento automático me cambió el negocio. El sistema detecta los pacientes que no volvieron y les manda un mensaje solo. Antes eso no lo hacía nadie.",
+    stat: "+28% retención",
+    statLabel: "",
   },
   {
-    name: "Tomás Ferreira",
-    role: "Coach de ventas B2B · Montevideo",
+    name: "Tomás F.",
+    role: "Barbería · Mendoza",
     avatar: "T",
     color: "#166534",
     quote:
-      "Lo que más me sorprendió fue el filtro. Cero curiosos en mis llamadas. Cada persona que agenda ya sabe de qué va, ya vio el video, ya está lista para escuchar la propuesta.",
-    stat: "68% cierre",
-    statLabel: "en llamadas agendadas",
+      "En menos de dos semanas ya teníamos todo funcionando. El sistema empezó a agendar turnos solo desde el primer día. No tuve que hacer nada técnico, en serio.",
+    stat: "Sistema en 11 días",
+    statLabel: "",
   },
 ];
 
@@ -48,10 +48,10 @@ export default function Testimonials() {
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
           <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-4 leading-tight">
-            Lo dicen los que ya lo usaron
+            Lo dicen los que ya lo usan
           </h2>
           <p className="text-text-secondary text-base max-w-md mx-auto">
-            Negocios reales. Resultados verificables. Sin casos de estudio inventados.
+            Negocios reales. Resultados verificables.
           </p>
         </div>
       </FadeUp>

@@ -6,28 +6,32 @@ import FadeUp from "./FadeUp";
 
 const faqs = [
   {
-    q: "¿En qué se diferencia Nexora de contratar una agencia de publicidad?",
-    a: "Una agencia te trae tráfico. Nexora te trae reuniones agendadas con personas que ya quieren comprar. No pagás por clics ni por likes — pagás por resultados medibles: consultas calificadas en tu agenda. Sin nosotros siguiendo el proceso, la publicidad sola quema plata.",
+    q: "¿En qué se diferencia de una agencia de marketing?",
+    a: "Las agencias hacen publicidad. Nosotros instalamos el software que opera tu negocio — agenda, atención y seguimiento automático. No depende de ads para funcionar.",
   },
   {
-    q: "¿Cuánto tarda en funcionar?",
-    a: "El sistema queda configurado en 48 horas. Los primeros prospectos empiezan a entrar dentro de los primeros 7 días. Resultados consistentes se ven en las primeras 3 a 4 semanas, dependiendo del rubro y el volumen de inversión en ads.",
+    q: "¿En cuánto tiempo está funcionando?",
+    a: "Entre 10 y 14 días desde el onboarding. El tiempo depende en parte de qué tan rápido el negocio comparte el material necesario: logo, fotos, horarios y accesos. Cuando eso llega rápido, el sistema puede estar activo antes.",
   },
   {
-    q: "¿Funciona para negocios chicos o recién arrancando?",
-    a: "Sí, de hecho es donde más impacto genera. Un negocio chico sin sistema predecible está en modo supervivencia. Nuestro sistema más básico puede funcionar con una inversión en ads desde $300 USD/mes. La llamada diagnóstico te dice si calificás.",
+    q: "¿Qué pasa si dejo de usar el servicio?",
+    a: "En el modelo SaaS, el sistema se pausa y los datos quedan guardados para exportar. Si preferís ser dueño del código, existe la modalidad custom con un setup más alto.",
   },
   {
-    q: "¿Qué pasa si no veo resultados en 30 días?",
-    a: "Te devolvemos el dinero. Sin letra chica, sin excusas. Nuestra garantía existe porque estamos seguros del sistema. Si aplicamos el proceso completo y no generamos reuniones calificadas en el primer mes, devolvemos el 100% de lo invertido en el servicio.",
+    q: "¿Necesito saber de tecnología?",
+    a: "No. Configuramos absolutamente todo. El equipo solo usa el dashboard para ver métricas y recibe los turnos. Nada más.",
   },
   {
-    q: "¿Necesito saber de publicidad o tecnología?",
-    a: "Cero. Nosotros manejamos todo: ads, automatizaciones, seguimiento, integraciones. Vos solo tenés que aparecer a las llamadas y cerrar. El sistema trabaja solo — incluso mientras dormís.",
+    q: "¿Funciona para negocios chicos?",
+    a: "Sí, siempre que ya tengas clientes. El sistema está pensado para negocios que ya funcionan y quieren funcionar mejor, no para emprendimientos que recién arrancan.",
   },
   {
-    q: "¿Tengo que firmar un contrato largo?",
-    a: "No. Trabajamos mes a mes. Si en algún momento no estás conforme, podés parar. Pero en la práctica, nadie para cuando la agenda está llena.",
+    q: "¿Tienen garantía?",
+    a: "Si en 30 días no ves mejoras concretas en la gestión de turnos, devolvemos el setup. Sin discusión.",
+  },
+  {
+    q: "¿Qué es la modalidad custom?",
+    a: "Lucas construye algo completamente a medida. El código te pertenece. Para empresas medianas con necesidades muy específicas. Precio más alto, soporte mensual opcional.",
   },
 ];
 

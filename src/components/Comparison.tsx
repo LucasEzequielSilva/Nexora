@@ -2,16 +2,16 @@
 
 import FadeUp from "./FadeUp";
 
-type Val = true | "partial" | false;
+type Val = true | "partial" | false | "dim";
 
-const features: { label: string; nexora: Val; agency: Val; diy: Val }[] = [
-  { label: "Resultados en 30 días",          nexora: true,      agency: "partial", diy: false     },
-  { label: "Sistema automatizado 24/7",      nexora: true,      agency: false,     diy: false     },
-  { label: "Prospectos calificados",          nexora: true,      agency: "partial", diy: false     },
-  { label: "Sin tocar redes sociales",        nexora: true,      agency: false,     diy: false     },
-  { label: "Garantía o te devolvemos",        nexora: true,      agency: false,     diy: false     },
-  { label: "Setup en 48 horas",               nexora: true,      agency: false,     diy: false     },
-  { label: "Costo predecible mes a mes",      nexora: true,      agency: false,     diy: "partial" },
+const features: { label: string; nexora: Val; agency: Val; saas: Val; diy: Val }[] = [
+  { label: "Sistema instalado listo para usar",  nexora: true,  agency: false,  saas: "partial", diy: false },
+  { label: "Personalizado con tu marca",          nexora: true,  agency: "partial", saas: false, diy: "partial" },
+  { label: "Soporte local en español",            nexora: true,  agency: "dim",  saas: false,    diy: false },
+  { label: "Chatbot IA configurado",              nexora: true,  agency: "partial", saas: false, diy: false },
+  { label: "CRM + seguimiento automático",        nexora: true,  agency: false,  saas: "partial", diy: false },
+  { label: "Captación de clientes nuevos",         nexora: true,  agency: "dim",  saas: false,    diy: false },
+  { label: "Precio predecible mes a mes",          nexora: true,  agency: false,  saas: "dim",    diy: "partial" },
 ];
 
 function Cell({ value }: { value: Val }) {
@@ -23,6 +23,20 @@ function Cell({ value }: { value: Val }) {
           style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.22)" }}
         >
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+  if (value === "dim") {
+    return (
+      <div className="flex justify-center">
+        <div
+          className="w-7 h-7 rounded-full flex items-center justify-center"
+          style={{ background: "rgba(161,161,170,0.06)", border: "1px solid rgba(161,161,170,0.12)" }}
+        >
+          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2.5" strokeLinecap="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
@@ -61,12 +75,18 @@ export default function Comparison() {
     <section className="mx-auto px-6 pb-24" style={{ maxWidth: "900px" }}>
       <FadeUp>
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-accent opacity-50" />
+            <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
+              Por qué Nexora
+            </span>
+            <span className="h-px w-8 bg-accent opacity-50" />
+          </div>
           <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-3">
-            ¿Funciona para tu negocio?
+            ¿Por qué Nexora
+            <br />
+            y no las alternativas?
           </h2>
-          <p className="text-text-secondary text-base max-w-md mx-auto">
-            Mirá por qué cada vez más negocios eligen Nexora sobre las alternativas.
-          </p>
         </div>
       </FadeUp>
 
@@ -78,7 +98,7 @@ export default function Comparison() {
              boxShadow: "0 0 30px rgba(34,197,94,0.08)"
            }}
          >
-          <table className="w-full min-w-[560px]" style={{ borderCollapse: "collapse" }}>
+          <table className="w-full min-w-[640px]" style={{ borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
                 {/* Feature label col */}
@@ -113,11 +133,14 @@ export default function Comparison() {
                   </div>
                 </th>
 
-                <th className="px-6 py-5 text-center text-[13px] font-medium text-text-muted">
-                  Agencia<br />
-                  <span className="text-[11px] text-text-muted opacity-70">tradicional</span>
+                <th className="px-4 py-5 text-center text-[13px] font-medium text-text-muted">
+                  Agencia
                 </th>
-                <th className="px-6 py-5 text-center text-[13px] font-medium text-text-muted">
+                <th className="px-4 py-5 text-center text-[13px] font-medium text-text-muted">
+                  SaaS<br />
+                  <span className="text-[11px] text-text-muted opacity-70">genérico</span>
+                </th>
+                <th className="px-4 py-5 text-center text-[13px] font-medium text-text-muted">
                   Por tu<br />
                   <span className="text-[11px] text-text-muted opacity-70">cuenta</span>
                 </th>
@@ -145,8 +168,9 @@ export default function Comparison() {
                    >
                     <Cell value={f.nexora} />
                   </td>
-                  <td className="px-6 py-4"><Cell value={f.agency} /></td>
-                  <td className="px-6 py-4"><Cell value={f.diy} /></td>
+                  <td className="px-4 py-4"><Cell value={f.agency} /></td>
+                  <td className="px-4 py-4"><Cell value={f.saas} /></td>
+                  <td className="px-4 py-4"><Cell value={f.diy} /></td>
                 </tr>
               ))}
             </tbody>

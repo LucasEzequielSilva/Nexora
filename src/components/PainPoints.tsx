@@ -5,26 +5,26 @@ import FadeUp from "./FadeUp";
 const pains = [
   {
     label: "01",
-    text: "Publicás contenido todos los días...",
-    detail: "y el 97% de tus seguidores jamás te compra. Los likes no pagan las cuentas.",
+    text: "Coordinás turnos por WhatsApp todo el día",
+    detail: "Horas perdidas respondiendo uno por uno. Turnos que se pierden cuando no podés responder a tiempo.",
     glow: "rgba(239,68,68,0.06)",
   },
   {
     label: "02",
-    text: "Un mes lleno, el siguiente en silencio.",
-    detail: "La inconsistencia te impide crecer. Sin sistema, no hay previsibilidad.",
+    text: "Los clientes que no vuelven, desaparecen",
+    detail: "Sin seguimiento automático, el que no volvió esta semana no vuelve nunca. Y nadie lo llama.",
     glow: "rgba(239,68,68,0.06)",
   },
   {
     label: "03",
-    text: "Perdiste ventas por no responder a tiempo.",
-    detail: "El que responde primero, vende. El resto pierde el cliente.",
+    text: "Un mes lleno, el siguiente en silencio",
+    detail: "Sin captación activa, tus ingresos dependen de la suerte del boca en boca. No podés planificar.",
     glow: "rgba(239,68,68,0.06)",
   },
   {
     label: "04",
-    text: "Probaste publicidad y quemaste plata.",
-    detail: "Sin un sistema detrás que filtre y cierre, los ads son un pozo sin fondo.",
+    text: "No sabés los números de tu propio negocio",
+    detail: "Sin dashboard, estás tomando decisiones a ciegas. No sabés qué especialidad rinde más ni cuántos clientes perdiste.",
     glow: "rgba(239,68,68,0.06)",
   },
 ];
@@ -38,16 +38,15 @@ export default function PainPoints() {
           <div className="inline-flex items-center gap-3 mb-5">
             <span className="h-px w-8 opacity-50" style={{ background: "#ef4444" }} />
             <span className="font-mono text-[11px] uppercase tracking-widest" style={{ color: "#ef4444" }}>
-              Reconocés esto?
+              El problema
             </span>
             <span className="h-px w-8 opacity-50" style={{ background: "#ef4444" }} />
           </div>
           <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-[1.08] mb-3">
-            El problema no sos vos.
+            El problema no es tu negocio.
+            <br />
+            Es que no tiene sistema.
           </h2>
-          <p className="text-text-secondary text-[18px] leading-relaxed">
-            Es el sistema que usás.
-          </p>
         </div>
       </FadeUp>
 

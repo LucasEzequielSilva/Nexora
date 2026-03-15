@@ -4,9 +4,12 @@ import CTACard from "@/components/CTACard";
 import Comparison from "@/components/Comparison";
 import CalProvider from "@/components/CalProvider";
 import PainPoints from "@/components/PainPoints";
-import Pillars from "@/components/Pillars";
+import TransformSection from "@/components/TransformSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import Niches from "@/components/Niches";
 import Testimonials from "@/components/Testimonials";
+import PlansSection from "@/components/PlansSection";
+import ProcessSection from "@/components/ProcessSection";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -21,28 +24,37 @@ export default function Home() {
       {/* Problem — create empathy before asking for action */}
       <PainPoints />
 
-      {/* Solution — show how you fix it */}
-      <Pillars />
+      {/* Transform — before vs after with Nexora */}
+      <TransformSection />
 
-      {/* Proof of concept — validated niches */}
+      {/* How it works — 5 modules explained with tabs */}
+      <HowItWorksSection />
+
+      {/* Proof of concept — impact by industry */}
       <Niches />
 
       {/* Social proof — real testimonials */}
       <Testimonials />
 
+      {/* Pricing — three plans */}
+      <PlansSection />
+
+      {/* Comparison — Nexora vs alternatives */}
+      <Comparison />
+
+      {/* Process — from zero to active system */}
+      <ProcessSection />
+
       {/* Objection handling — FAQ */}
       <FAQ />
-
-      {/* Mid section — tabla comparativa antes del CTA final */}
-      <Comparison />
 
       {/* Final CTA — urgency + scarcity */}
       <CTACard
         variant="banner"
-        heading="3 cupos disponibles este mes"
-        description="Cada mes trabajamos con un numero limitado de negocios para garantizar resultados reales. Si el tuyo califica, empezamos esta semana."
-        buttonText="QUIERO MI CUPO AHORA"
-        subtext="Cupos limitados · Sin letra chica · Resultados en 30 dias"
+        heading="¿Funciona para tu negocio?"
+        description="Trabajamos con un número limitado de negocios por mes para garantizar resultados. Si el tuyo califica, arrancamos esta semana."
+        buttonText="AGENDAR REUNIÓN GRATIS"
+        subtext="30 minutos · Sin compromiso · Solo 3 cupos disponibles"
       />
 
       <Footer />
