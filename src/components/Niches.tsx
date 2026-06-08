@@ -6,22 +6,22 @@ const niches = [
   {
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-accent fill-none stroke-[1.5]">
-        <path d="M4 4h4v4H4zM16 4h4v4h-4zM8 8h8M12 8v12M8 16h8" />
-      </svg>
-    ),
-    title: "Barberías y salones",
-    before: { val: "5–10", desc: "turnos perdidos por semana por no responder a tiempo" },
-    after: { val: "~0", desc: "el sistema responde y agenda 24/7 sin intervención" },
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-accent fill-none stroke-[1.5]">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
     title: "Clínicas y consultorios",
     before: { val: "15–20%", desc: "ausentismo mensual sin recordatorios automáticos" },
     after: { val: "< 3%", desc: "recordatorio 24hs y 2hs antes con confirmación" },
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-accent fill-none stroke-[1.5]">
+        <path d="M4 4h4v4H4zM16 4h4v4h-4zM8 8h8M12 8v12M8 16h8" />
+      </svg>
+    ),
+    title: "Barberías y salones",
+    before: { val: "5–10", desc: "turnos perdidos por semana por no responder a tiempo" },
+    after: { val: "~0", desc: "el sistema responde y agenda 24/7 sin intervención" },
   },
   {
     icon: (

@@ -26,7 +26,7 @@ function createParticles(w: number, h: number): Particle[] {
   }));
 }
 
-export default function Particles() {
+export default function Particles({ fixed = false }: { fixed?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
@@ -88,10 +88,11 @@ export default function Particles() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
-    />
+    <div
+      className={`${fixed ? "fixed" : "absolute"} inset-0 pointer-events-none`}
+      style={{ zIndex: fixed ? 0 : 1 }}
+    >
+      <canvas ref={canvasRef} className="block w-full h-full" />
+    </div>
   );
 }

@@ -38,7 +38,7 @@ const plans: Plan[] = [
     tagline: "El sistema completo para operar y atender mejor.",
     features: [
       "Todo el Essential",
-      "Chatbot WhatsApp con IA",
+      "Asistente virtual de WhatsApp (con control manual)",
       "Lógica de urgencias y alertas",
       "Pagos integrados (MP + transferencia)",
       "Landing page personalizada",
@@ -58,7 +58,7 @@ const plans: Plan[] = [
       "Todo el Full System",
       "Motor de captación outbound",
       "Scraping de leads por zona y nicho",
-      "Mensajería IA multicanal",
+      "Mensajería personalizada multicanal",
       "Lead scoring automático",
       "Sesión estratégica mensual 1h",
       "Máx. 5 clientes — cupos limitados",

@@ -8,7 +8,7 @@ const features: { label: string; nexora: Val; agency: Val; saas: Val; diy: Val }
   { label: "Sistema instalado listo para usar",  nexora: true,  agency: false,  saas: "partial", diy: false },
   { label: "Personalizado con tu marca",          nexora: true,  agency: "partial", saas: false, diy: "partial" },
   { label: "Soporte local en español",            nexora: true,  agency: "dim",  saas: false,    diy: false },
-  { label: "Chatbot IA configurado",              nexora: true,  agency: "partial", saas: false, diy: false },
+  { label: "Asistente virtual configurada",        nexora: true,  agency: "partial", saas: false, diy: false },
   { label: "CRM + seguimiento automático",        nexora: true,  agency: false,  saas: "partial", diy: false },
   { label: "Captación de clientes nuevos",         nexora: true,  agency: "dim",  saas: false,    diy: false },
   { label: "Precio predecible mes a mes",          nexora: true,  agency: false,  saas: "dim",    diy: "partial" },

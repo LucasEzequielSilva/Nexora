@@ -5,9 +5,9 @@ import FadeUp from "./FadeUp";
 const pillars = [
   {
     number: "01",
-    title: "Captacion con IA",
+    title: "Captación automatizada",
     description:
-      "Meta Ads + inteligencia artificial identifican y atraen personas con intencion de compra real. No seguidores — prospectos que ya buscan lo que ofreces.",
+      "Meta Ads + el sistema identifican y atraen personas con intención de compra real. No seguidores — prospectos que ya buscan lo que ofrecés.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-accent fill-none stroke-2">
         <circle cx="11" cy="11" r="8" />

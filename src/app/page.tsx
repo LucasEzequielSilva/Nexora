@@ -1,4 +1,3 @@
-import TopBar from "@/components/TopBar";
 import Hero from "@/components/Hero";
 import CTACard from "@/components/CTACard";
 import Comparison from "@/components/Comparison";
@@ -7,7 +6,9 @@ import PainPoints from "@/components/PainPoints";
 import TransformSection from "@/components/TransformSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import Niches from "@/components/Niches";
+// import Showcase from "@/components/Showcase"; // GUARDADO: reactivar cuando cerremos con todos los clientes
 import Testimonials from "@/components/Testimonials";
+import LeadCapture from "@/components/LeadCapture";
 import PlansSection from "@/components/PlansSection";
 import ProcessSection from "@/components/ProcessSection";
 import FAQ from "@/components/FAQ";
@@ -16,39 +17,43 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="relative z-[2]">
-      {/* Single Cal.com initializer for "30min" namespace */}
       <CalProvider />
-      <TopBar />
       <Hero />
 
-      {/* Problem — create empathy before asking for action */}
+      {/* Problem */}
       <PainPoints />
 
-      {/* Transform — before vs after with Nexora */}
+      {/* Transform */}
       <TransformSection />
 
-      {/* How it works — 5 modules explained with tabs */}
+      {/* How it works — bento */}
       <HowItWorksSection />
 
-      {/* Proof of concept — impact by industry */}
+      {/* Proof of concept — rubros */}
       <Niches />
 
-      {/* Social proof — real testimonials */}
+      {/* Showcase — GUARDADO para cuando cerremos con todos los clientes */}
+      {/* <Showcase /> */}
+
+      {/* Caso de éxito — Raquel */}
       <Testimonials />
 
-      {/* Pricing — three plans */}
+      {/* Lead capture secundario — va al Growth Engine */}
+      <LeadCapture />
+
+      {/* Pricing */}
       <PlansSection />
 
-      {/* Comparison — Nexora vs alternatives */}
+      {/* Comparison */}
       <Comparison />
 
-      {/* Process — from zero to active system */}
+      {/* Process */}
       <ProcessSection />
 
-      {/* Objection handling — FAQ */}
+      {/* FAQ */}
       <FAQ />
 
-      {/* Final CTA — urgency + scarcity */}
+      {/* Final CTA */}
       <CTACard
         variant="banner"
         heading="¿Funciona para tu negocio?"

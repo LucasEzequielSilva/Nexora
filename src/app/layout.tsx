@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
+import Particles from "@/components/Particles";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -16,28 +17,28 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sistema de Clientes Predecible — Llena tu agenda cada mes",
+  title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
   description:
-    "Implementamos un sistema de captacion de clientes automatico para tu negocio. Sin que tengas que entender de tecnologia. Sin perder tiempo en redes. Sin depender de la suerte.",
+    "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes. Sistema activo en menos de 2 semanas.",
   openGraph: {
-    title: "Sistema de Clientes Predecible — Llena tu agenda cada mes",
+    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
     description:
-      "Implementamos un sistema de captacion de clientes automatico para tu negocio.",
+      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
     type: "website",
     images: [
       {
         url: "/thumbnail-profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Nexora — Sistema de Clientes Predecible",
+        alt: "Nexora — WhatsApp, Agenda y CRM automatizados",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sistema de Clientes Predecible — Llena tu agenda cada mes",
+    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
     description:
-      "Implementamos un sistema de captacion de clientes automatico para tu negocio.",
+      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
     images: ["/thumbnail-profile.jpg"],
   },
 };
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}>
+        <Particles fixed />
         {children}
       </body>
     </html>
