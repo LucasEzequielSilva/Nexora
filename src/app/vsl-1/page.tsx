@@ -1,8 +1,8 @@
-import VslHero from "@/components/VslHero";
+import VslHeroScene from "@/components/VslHeroScene";
 import VslVideo from "@/components/VslVideo";
 import CasosDeUso from "@/components/CasosDeUso";
 import VslPricing from "@/components/VslPricing";
-import Testimonials from "@/components/Testimonials";
+import ComoLoAplicamos from "@/components/ComoLoAplicamos";
 import FAQ from "@/components/FAQ";
 import CTACard from "@/components/CTACard";
 import Footer from "@/components/Footer";
@@ -13,27 +13,19 @@ export default function Vsl1() {
     <div className="relative z-[2]">
       <CalProvider />
 
-      {/* Hero funnel — oferta + VSL */}
-      <VslHero />
+      {/* Hero funnel — escena fusionada (cogne + consultorio IA) + UI en capas */}
+      <VslHeroScene />
 
-      {/* VSL — el sistema en vivo (video + rayos estilo Lubo) */}
       <VslVideo />
 
-      {/* Casos de uso — qué hace Asiri (switcher + video mobile) */}
       <CasosDeUso />
 
-      {/* Prueba — caso real Raquel */}
-      <div id="prueba">
-        <Testimonials />
-      </div>
-
-      {/* Oferta — planes con precio */}
       <VslPricing />
 
-      {/* Objeciones */}
       <FAQ />
 
-      {/* Cierre */}
+      <ComoLoAplicamos />
+
       <CTACard
         variant="banner"
         heading="Tu agenda puede estar llenándose esta semana."

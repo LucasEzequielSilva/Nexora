@@ -6,32 +6,32 @@ import FadeUp from "./FadeUp";
 
 const faqs = [
   {
-    q: "¿En qué se diferencia de una agencia de marketing?",
-    a: "Las agencias hacen publicidad. Nosotros instalamos el software que opera tu negocio — agenda, atención y seguimiento automático. No depende de ads para funcionar.",
+    q: "¿Reemplaza a mi recepcionista?",
+    a: "No: la libera. El asistente se hace cargo de lo repetitivo —contestar, agendar, recordar y confirmar— para que tu equipo se dedique al paciente que está en el consultorio.",
   },
   {
-    q: "¿En cuánto tiempo está funcionando?",
-    a: "Entre 10 y 14 días desde el onboarding. El tiempo depende en parte de qué tan rápido el negocio comparte el material necesario: logo, fotos, horarios y accesos. Cuando eso llega rápido, el sistema puede estar activo antes.",
+    q: "¿Tengo que instalar o aprender algo?",
+    a: "Nada. Lo configuramos e instalamos nosotros sobre el WhatsApp que ya usás. En menos de 2 semanas está andando — vos solo nos pasás la info por audio o WhatsApp.",
   },
   {
-    q: "¿Qué pasa si dejo de usar el servicio?",
-    a: "En el modelo SaaS, el sistema se pausa y los datos quedan guardados para exportar. Si preferís ser dueño del código, existe la modalidad custom con un setup más alto.",
+    q: "¿Y si responde cualquier cosa?",
+    a: "El asistente responde solo sobre tu consultorio: turnos, horarios, ubicación, obras sociales y urgencias, con la información que cargamos. Lo que necesita criterio humano, te lo deriva.",
   },
   {
-    q: "¿Necesito saber de tecnología?",
-    a: "No. Configuramos absolutamente todo. El equipo solo usa el dashboard para ver métricas y recibe los turnos. Nada más.",
+    q: "¿Y si el paciente quiere hablar con una persona?",
+    a: "Lo detecta y te pasa la conversación al instante. No se pierde nada: todo queda ordenado en un solo lugar.",
   },
   {
-    q: "¿Funciona para negocios chicos?",
-    a: "Sí, siempre que ya tengas clientes. El sistema está pensado para negocios que ya funcionan y quieren funcionar mejor, no para emprendimientos que recién arrancan.",
+    q: "¿Sirve para mi especialidad?",
+    a: "Funciona en ortodoncia, odontología, médicos, kinesiología y estética médica. Si perdés turnos por no contestar a tiempo, los recuperás.",
+  },
+  {
+    q: "¿Hay contrato largo?",
+    a: "No. Es mensual, lo dejás cuando quieras. Apostamos a que te quedás porque te llena la agenda, no por un contrato que te ata.",
   },
   {
     q: "¿Tienen garantía?",
-    a: "Si en 30 días no ves mejoras concretas en la gestión de turnos, devolvemos el setup. Sin discusión.",
-  },
-  {
-    q: "¿Qué es la modalidad custom?",
-    a: "Lucas construye algo completamente a medida. El código te pertenece. Para empresas medianas con necesidades muy específicas. Precio más alto, soporte mensual opcional.",
+    a: "Sí. Si en 30 días el sistema no está agendando y confirmando turnos solo como te prometimos, te devolvemos el mes. El riesgo lo corremos nosotros.",
   },
 ];
 

@@ -3,6 +3,16 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+/* Componentes motion estáticos (referencia estable).
+   OJO: nunca usar motion.create(as) dentro del render → crea un componente nuevo
+   en cada render, React remonta el subárbol y re-dispara la animación (jank al
+   cambiar estado en accordions/tabs/FAQ). */
+const MOTION = {
+  div: motion.div,
+  section: motion.section,
+  article: motion.article,
+} as const;
+
 interface FadeUpProps {
   children: ReactNode;
   delay?: number;
@@ -16,7 +26,7 @@ export default function FadeUp({
   className = "",
   as = "div",
 }: FadeUpProps) {
-  const Component = motion.create(as);
+  const Component = MOTION[as];
 
   return (
     <Component

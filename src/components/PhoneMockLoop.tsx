@@ -91,7 +91,7 @@ export default function PhoneMockLoop({ reduced, width = 300 }: { reduced: boole
         <div className="flex items-center gap-2 shrink-0" style={{ background: "#202c33", paddingLeft: 12, paddingRight: 12, paddingTop: Math.round(height * 0.052), paddingBottom: 8 }}>
           <span className="rounded-full flex items-center justify-center font-bold text-black shrink-0" style={{ width: 26, height: 26, fontSize: 12, background: "linear-gradient(135deg,#4ade80,#16a34a)" }}>A</span>
           <div className="leading-tight min-w-0">
-            <p className="font-semibold truncate" style={{ color: "#e9edef", fontSize: 11 }}>Asiri · Dra. Raquel</p>
+            <p className="font-semibold truncate" style={{ color: "#e9edef", fontSize: 11 }}>Recepción · Dra. Raquel</p>
             <p style={{ color: "#22c55e", fontSize: 8.5 }}>en línea · responde sola</p>
           </div>
         </div>

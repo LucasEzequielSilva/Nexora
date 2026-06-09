@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import FadeUp from "./FadeUp";
+import CardTexture from "./CardTexture";
 
 const CAL_LINK = "nexoragrowth/30min";
 
@@ -98,6 +100,67 @@ function PlanButton({ label, featured }: { label: string; featured?: boolean }) 
   );
 }
 
+/* Slider de un input del simulador */
+function Slider({ label, value, display, min, max, step, onChange }: { label: string; value: number; display: string; min: number; max: number; step: number; onChange: (n: number) => void }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-2.5">
+        <span className="text-[13px] text-text-secondary leading-tight">{label}</span>
+        <span className="text-[15px] font-extrabold text-white tabular-nums shrink-0 ml-2">{display}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        aria-label={label}
+        className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
+        style={{ accentColor: "#22c55e", background: "rgba(255,255,255,0.12)" }}
+      />
+    </div>
+  );
+}
+
+/* Simulador de ganancias perdidas (ROI). La cuenta sale de los números del propio cliente
+   → no inventamos métricas (regla 1). El precio queda ANTES de mostrar el plan (regla 3). */
+function ROISimulator() {
+  const [precio, setPrecio] = useState(40000);
+  const [turnosSem, setTurnosSem] = useState(4);
+  const [ausencias, setAusencias] = useState(10);
+  const perdida = (turnosSem * 4 + ausencias) * precio;
+  const fmt = (n: number) => "$" + n.toLocaleString("es-AR");
+
+  return (
+    <div className="max-w-3xl mx-auto mb-14 rounded-2xl p-7 md:p-9" style={{ background: "linear-gradient(135deg, #1a1a1e 0%, #16191f 100%)", border: "1px solid rgba(255,255,255,0.08)" }}>
+      <div className="flex items-center gap-2 mb-1">
+        <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#ef4444", boxShadow: "0 0 8px rgba(239,68,68,0.6)" }} />
+        <p className="text-[12px] font-bold uppercase tracking-wider" style={{ color: "#ef4444" }}>La plata que tu consultorio pierde, por mes</p>
+      </div>
+      <p className="text-[13px] text-text-muted mb-7">Movelo con tus números reales:</p>
+
+      <div className="grid sm:grid-cols-3 gap-x-7 gap-y-6 mb-7">
+        <Slider label="Precio de una consulta" value={precio} display={fmt(precio)} min={10000} max={150000} step={5000} onChange={setPrecio} />
+        <Slider label="Turnos que se te escapan / semana" value={turnosSem} display={String(turnosSem)} min={0} max={15} step={1} onChange={setTurnosSem} />
+        <Slider label="Ausencias / mes" value={ausencias} display={String(ausencias)} min={0} max={40} step={1} onChange={setAusencias} />
+      </div>
+
+      <div className="h-px mb-6" style={{ background: "rgba(255,255,255,0.08)" }} />
+
+      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+          <p className="text-[13px] text-text-muted mb-1.5">Estás dejando sobre la mesa, cada mes:</p>
+          <p className="text-[clamp(32px,5.5vw,46px)] font-extrabold leading-none tabular-nums" style={{ color: "#ef4444" }}>{fmt(perdida)}</p>
+        </div>
+        <p className="text-[13px] text-text-secondary max-w-[240px] sm:text-right leading-snug">
+          El sistema sale una <strong className="text-white font-semibold">fracción</strong> de eso — y se paga solo con los turnos que recuperás.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function VslPricing() {
   return (
     <section id="planes" className="relative py-24 px-6 overflow-hidden">
@@ -105,26 +168,31 @@ export default function VslPricing() {
 
       <div className="relative z-10 mx-auto" style={{ maxWidth: "1100px" }}>
         <FadeUp>
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="h-px w-8 bg-accent opacity-50" />
-              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Planes mensuales</span>
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Inversión</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
             <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-[1.08]">
-              Un retainer. Tu agenda trabajando todos los días.
+              El precio es una fracción de lo que ya estás perdiendo.
             </h2>
             <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">
-              Setup único + mensualidad. Sin contratos largos. Lo instalamos y queda andando.
+              Antes de ver el número, hacé esta cuenta:
             </p>
           </div>
+        </FadeUp>
+
+        {/* Simulador de ganancias perdidas (ROI) — antes del precio (regla 3). */}
+        <FadeUp delay={0.1}>
+          <ROISimulator />
         </FadeUp>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
           {plans.map((plan, i) => (
             <FadeUp key={plan.name} delay={0.1 * (i + 1)}>
               <div
-                className="relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="relative isolate rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{
                   background: plan.featured
                     ? "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)"
@@ -133,6 +201,7 @@ export default function VslPricing() {
                   boxShadow: plan.featured ? "0 0 30px rgba(34,197,94,0.12), 0 4px 24px rgba(0,0,0,0.25)" : "0 1px 3px rgba(0,0,0,0.3)",
                 }}
               >
+                {plan.featured && <CardTexture accent />}
                 {plan.featured && (
                   <div className="absolute inset-0 rounded-2xl pointer-events-none" style={{ boxShadow: "0 0 60px rgba(34,197,94,0.06)" }} />
                 )}

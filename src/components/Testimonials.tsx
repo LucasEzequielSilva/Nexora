@@ -1,6 +1,7 @@
 "use client";
 
 import FadeUp from "./FadeUp";
+import CardTexture from "./CardTexture";
 
 const beneficios = [
   { t: "Agenda sola, 24/7", s: "La asistente responde y agenda incluso fuera de horario — no se pierde el paciente que escribe a la noche." },
@@ -59,7 +60,7 @@ export default function Testimonials() {
               <video src="/raquel/agenda-asiri.mp4" autoPlay muted loop playsInline controls className="block w-full" />
             </div>
             <p className="text-[12px] text-text-muted mt-4 text-center">
-              Video real · <span className="text-accent font-semibold">Asiri</span> responde y agenda, 24/7.
+              Video real · <span className="text-accent font-semibold">el sistema</span> responde y agenda, 24/7.
             </p>
           </div>
         </FadeUp>
@@ -98,13 +99,14 @@ export default function Testimonials() {
 
           <Label>Lo que gana la clínica</Label>
           <div
-            className="relative rounded-2xl p-6"
+            className="relative isolate rounded-2xl p-6"
             style={{
               background: "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
               border: "1px solid rgba(34,197,94,0.25)",
               boxShadow: "0 0 20px rgba(34,197,94,0.08)",
             }}
           >
+            <CardTexture accent />
             <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="text-[12px] font-bold text-accent uppercase tracking-wider">Instalado y andando</span>

@@ -36,7 +36,7 @@ function ChatCard() {
       <div className="flex items-center gap-2 px-3.5 py-2.5" style={{ background: "rgba(34,197,94,0.10)", borderBottom: "1px solid rgba(34,197,94,0.18)" }}>
         <span className="w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-bold text-black shrink-0" style={{ background: "linear-gradient(135deg,#4ade80,#16a34a)" }}>A</span>
         <div className="leading-tight">
-          <p className="text-[12px] font-bold text-white">Asiri · Asistente</p>
+          <p className="text-[12px] font-bold text-white">Recepción virtual</p>
           <p className="text-[10px] text-accent">en línea · responde sola</p>
         </div>
       </div>
@@ -331,7 +331,7 @@ export function WhatsAppBg({ visible, typing, fade }: { visible: number; typing:
     { n: "Tomás Gil", m: "Buenas! quería un turno", t: "Mar" },
   ];
   const msgs: { from: "patient" | "asiri"; text: string; time: string }[] = [
-    { from: "asiri", text: "¡Hola! 🙋 Soy Asiri, la secretaria virtual de la Dra. Raquel. ¿En qué te ayudo?", time: "10:30" },
+    { from: "asiri", text: "¡Hola! 🙋 Soy la secretaria virtual de la Dra. Raquel. ¿En qué te ayudo?", time: "10:30" },
     { from: "patient", text: "Hola, quería un turno para ortodoncia 🦷", time: "10:31" },
     { from: "asiri", text: "¡Genial! Tengo jueves 15:30 o viernes 10:00. ¿Cuál te queda mejor?", time: "10:31" },
     { from: "patient", text: "Jueves 15:30", time: "10:32" },
@@ -364,7 +364,7 @@ export function WhatsAppBg({ visible, typing, fade }: { visible: number; typing:
       <div className="flex-1 flex flex-col min-w-0" style={{ background: "#0b141a" }}>
         <div className="flex items-center gap-3 px-5 shrink-0" style={{ background: "#202c33", height: "60px" }}>
           <span className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-bold text-black shrink-0" style={{ background: "linear-gradient(135deg,#4ade80,#16a34a)" }}>A</span>
-          <div className="leading-tight"><p className="text-[14px] font-semibold" style={{ color: "#e9edef" }}>Asiri · Dra. Raquel</p><p className="text-[11px]" style={{ color: "#22c55e" }}>en línea · responde sola</p></div>
+          <div className="leading-tight"><p className="text-[14px] font-semibold" style={{ color: "#e9edef" }}>Recepción · Dra. Raquel</p><p className="text-[11px]" style={{ color: "#22c55e" }}>en línea · responde sola</p></div>
         </div>
         <div className="flex-1 flex flex-col gap-2 justify-end px-8 py-6" style={{ opacity: fade ? 0 : 1, transition: "opacity 0.5s ease" }}>
           {msgs.slice(0, visible).map((m, i) => {
@@ -391,7 +391,7 @@ export function WhatsAppBg({ visible, typing, fade }: { visible: number; typing:
 /* ── Test B: teléfono mockup (marco premium placeholder) con la demo de chat mobile ── */
 function PhoneMock({ visible, typing, fade, reduced }: { visible: number; typing: TypingSide; fade: boolean; reduced: boolean }) {
   const msgs: { from: "patient" | "asiri"; text: string; time: string }[] = [
-    { from: "asiri", text: "¡Hola! 🙋 Soy Asiri, la secretaria virtual de la Dra. Raquel. ¿En qué te ayudo?", time: "10:30" },
+    { from: "asiri", text: "¡Hola! 🙋 Soy la secretaria virtual de la Dra. Raquel. ¿En qué te ayudo?", time: "10:30" },
     { from: "patient", text: "Hola, quería un turno para ortodoncia 🦷", time: "10:31" },
     { from: "asiri", text: "¡Genial! Tengo jueves 15:30 o viernes 10:00. ¿Cuál te queda mejor?", time: "10:31" },
     { from: "patient", text: "Jueves 15:30", time: "10:32" },
@@ -407,7 +407,7 @@ function PhoneMock({ visible, typing, fade, reduced }: { visible: number; typing
             <span style={{ color: "#aebac1", fontSize: 18 }}>‹</span>
             <span className="w-9 h-9 rounded-full flex items-center justify-center text-[14px] font-bold text-black shrink-0" style={{ background: "linear-gradient(135deg,#4ade80,#16a34a)" }}>A</span>
             <div className="leading-tight min-w-0">
-              <p className="text-[13px] font-semibold truncate" style={{ color: "#e9edef" }}>Asiri · Dra. Raquel</p>
+              <p className="text-[13px] font-semibold truncate" style={{ color: "#e9edef" }}>Recepción · Dra. Raquel</p>
               <p className="text-[10.5px]" style={{ color: "#22c55e" }}>en línea · responde sola</p>
             </div>
           </div>
@@ -580,22 +580,23 @@ export default function VslHero({ variant = "cogne" }: { variant?: "cogne" | "mo
           <FadeUp>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
               <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-              <span className="text-[12px] font-semibold text-accent uppercase tracking-wider">Sistema para consultorios y clínicas</span>
+              <span className="text-[12px] font-semibold text-accent uppercase tracking-wider">Solo para consultorios y clínicas</span>
             </div>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="text-[clamp(1.75rem,2.8vw,38px)] font-bold leading-[1.15] tracking-[-0.6px] mb-6">
-              La agenda de tu consultorio,{" "}
+            <h1 className="text-[clamp(1.6rem,2.5vw,34px)] font-bold leading-[1.2] tracking-[-0.5px] mb-6">
+              Le instalamos a tu consultorio una{" "}
               <span style={{ background: "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 50px rgba(34,197,94,0.3))" }}>
-                llena sola.
-              </span>
+                IA conversacional
+              </span>{" "}
+              que responde, agenda y confirma cada turno 24/7.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <p className="text-[17px] text-text-secondary leading-[1.7] max-w-[500px] mx-auto lg:mx-0 mb-7 font-light">
-              Cada paciente que escribe fuera de horario y no respondés a tiempo es un turno que se va a otro lado. El sistema responde, agenda y confirma <strong className="text-white font-semibold">solo — 24/7</strong> — y descarga a tu recepción. Vos solo atendés.
+              Un asistente en tu WhatsApp contesta al instante a cualquier hora, llena la agenda, confirma los turnos para que no falte nadie y reactiva a los pacientes que no volvieron. Lo dejamos <strong className="text-white font-semibold">andando en menos de 2 semanas</strong>. Vos solo te ocupás de lo importante.
             </p>
           </FadeUp>
 

@@ -6,7 +6,7 @@ import { useDemoLoop, usePrefersReducedMotion, CrmPill, ConfirmPill } from "./Vs
 
 const CAL_LINK = "nexoragrowth/30min";
 const VSL = "/vsl_web.mp4";
-const SCENE = "/tiaxe0s30E5ds5PmNPqsp_yVyeC20a.png";
+const SCENE = "/hero-cogne-2k-3.png";
 
 /* Test C — hero en capas sobre la escena fusionada (cogne + consultorio, generada por IA).
    La UI (cards, texto) va crisp en HTML encima; objetos blur dan profundidad estilo Lubo. */
@@ -26,16 +26,6 @@ export default function VslHeroScene() {
       <div className="absolute inset-0 pointer-events-none lg:hidden" style={{ background: "rgba(10,10,11,0.6)" }} />
 
       {/* ── CAPA 2 · Cards blurreadas (profundidad estilo Lubo) ── */}
-      {/* midground · detrás del sujeto */}
-      <div className="hidden lg:block absolute pointer-events-none" style={{ right: "36%", top: "9%", width: 232, zIndex: 2, filter: "blur(6px)", transform: "rotate(-6deg)", opacity: 0.7 }}>
-        <div className="flex items-center gap-3 px-4 py-3 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(26,32,30,0.78), rgba(12,18,16,0.72))", border: "1px solid rgba(34,197,94,0.18)" }}>
-          <span className="w-9 h-9 rounded-xl shrink-0" style={{ background: "linear-gradient(135deg,#4ade80,#16a34a)" }} />
-          <div className="flex-1">
-            <div className="h-2 rounded-full mb-1.5" style={{ background: "rgba(255,255,255,0.26)", width: "70%" }} />
-            <div className="h-2 rounded-full" style={{ background: "rgba(255,255,255,0.12)", width: "48%" }} />
-          </div>
-        </div>
-      </div>
       {/* foreground · delante del sujeto */}
       <div className="hidden lg:block absolute pointer-events-none" style={{ right: "4%", bottom: "8%", width: 254, zIndex: 14, filter: "blur(9px)", transform: "rotate(4deg)", opacity: 0.62 }}>
         <div className="flex items-center gap-3 px-4 py-3 rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(22,28,26,0.72), rgba(10,14,12,0.66))", border: "1px solid rgba(34,197,94,0.15)" }}>
@@ -51,7 +41,7 @@ export default function VslHeroScene() {
 
       {/* ── CAPA 3 · Notificaciones crisp (animadas por el demo loop) ── */}
       {(demo.crm || reduced) && (
-        <div className="hidden xl:block absolute right-[2%] top-[44%] pointer-events-none" style={{ zIndex: 20, opacity: demo.fade ? 0 : 1, transition: "opacity 0.5s ease" }}>
+        <div className="hidden xl:block absolute right-[20%] top-[53%] pointer-events-none" style={{ zIndex: 20, opacity: demo.fade ? 0 : 1, transition: "opacity 0.5s ease", transform: "rotate(-4deg)" }}>
           <div style={{ animation: reduced ? undefined : "popIn 0.5s ease-out both" }}><CrmPill /></div>
         </div>
       )}
@@ -73,22 +63,23 @@ export default function VslHeroScene() {
           <FadeUp>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
               <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-              <span className="text-[12px] font-semibold text-accent uppercase tracking-wider">Sistema para consultorios y clínicas</span>
+              <span className="text-[12px] font-semibold text-accent uppercase tracking-wider">Solo para consultorios y clínicas</span>
             </div>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="text-[clamp(1.75rem,2.8vw,38px)] font-bold leading-[1.15] tracking-[-0.6px] mb-6">
-              La agenda de tu consultorio,{" "}
+            <h1 className="text-[clamp(1.6rem,2.5vw,34px)] font-bold leading-[1.2] tracking-[-0.5px] mb-6">
+              Le instalamos a tu consultorio una{" "}
               <span style={{ background: "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 50px rgba(34,197,94,0.3))" }}>
-                llena sola.
-              </span>
+                IA conversacional
+              </span>{" "}
+              que responde, agenda y confirma cada turno 24/7.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <p className="text-[17px] text-text-secondary leading-[1.7] max-w-[500px] mx-auto lg:mx-0 mb-7 font-light">
-              Cada paciente que escribe fuera de horario y no respondés a tiempo es un turno que se va a otro lado. El sistema responde, agenda y confirma <strong className="text-white font-semibold">solo — 24/7</strong> — y descarga a tu recepción. Vos solo atendés.
+              Un asistente en tu WhatsApp contesta al instante a cualquier hora, llena la agenda, confirma los turnos para que no falte nadie y reactiva a los pacientes que no volvieron. Lo dejamos <strong className="text-white font-semibold">andando en menos de 2 semanas</strong>. Vos solo te ocupás de lo importante.
             </p>
           </FadeUp>
 
