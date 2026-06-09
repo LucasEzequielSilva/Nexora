@@ -472,7 +472,8 @@ export default function VslHero({ variant = "cogne" }: { variant?: "cogne" | "mo
       {/* ── Cogne + glow de silueta (duplicación de capa estilo Lubo, en CSS) ── */}
       {/* fade mask bottom→top: el bottom de cogne se desvanece y conecta con la sección siguiente */}
       <div className="absolute bottom-0 right-0 lg:right-[3%] h-[82%] pointer-events-none" style={{ zIndex: 11, WebkitMaskImage: "linear-gradient(to top, transparent 0%, black 28%)", maskImage: "linear-gradient(to top, transparent 0%, black 28%)" }}>
-        <div className="relative h-full">
+        <div className="relative h-full" style={{ transform: "perspective(1900px) rotateY(-7deg)", transformOrigin: "right center" }}>
+          {/* leve perspectiva alineada con la línea de fuga del panel */}
           {/* el rim light verde ya viene horneado del relight de Nano */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={COGNE} alt="" className="relative h-full w-auto object-contain object-bottom select-none opacity-90 md:opacity-90" style={{ filter: "drop-shadow(0 28px 56px rgba(0,0,0,0.5)) brightness(0.92) contrast(1.02) saturate(0.96)", maxWidth: "none" }} />
