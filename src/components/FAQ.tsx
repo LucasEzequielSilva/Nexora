@@ -49,7 +49,7 @@ export default function FAQ() {
             </span>
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
-          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-tight">
+          <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-tight">
             Todo lo que querés saber
           </h2>
         </div>

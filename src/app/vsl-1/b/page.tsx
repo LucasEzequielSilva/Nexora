@@ -1,4 +1,4 @@
-import VslHero from "@/components/VslHero";
+import VslHeroInterface from "@/components/VslHeroInterface";
 import VslVideo from "@/components/VslVideo";
 import CasosDeUso from "@/components/CasosDeUso";
 import VslPricing from "@/components/VslPricing";
@@ -8,18 +8,18 @@ import CTACard from "@/components/CTACard";
 import Footer from "@/components/Footer";
 import CalProvider from "@/components/CalProvider";
 
-export default function Vsl1() {
+export default function Vsl1B() {
   return (
     <div className="relative z-[2]">
       <CalProvider />
 
-      {/* Hero funnel — oferta + VSL */}
-      <VslHero />
+      {/* Hero funnel — Test B: full interfaz (WhatsApp en vivo), sin cogne */}
+      <VslHeroInterface />
 
-      {/* VSL — el sistema en vivo (video + rayos estilo Lubo) */}
+      {/* VSL — el sistema en vivo */}
       <VslVideo />
 
-      {/* Casos de uso — qué hace Asiri (switcher + video mobile) */}
+      {/* Casos de uso */}
       <CasosDeUso />
 
       {/* Prueba — caso real Raquel */}

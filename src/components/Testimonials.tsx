@@ -35,7 +35,7 @@ export default function Testimonials() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Caso de éxito</span>
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
-          <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-4 leading-tight">
+          <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
             Hechos. No promesas.
           </h2>
           <p className="text-text-secondary text-base max-w-xl mx-auto">

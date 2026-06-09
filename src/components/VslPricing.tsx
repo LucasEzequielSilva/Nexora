@@ -111,7 +111,7 @@ export default function VslPricing() {
               <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Planes mensuales</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
-            <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight leading-[1.08]">
+            <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-[1.08]">
               Un retainer. Tu agenda trabajando todos los días.
             </h2>
             <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">

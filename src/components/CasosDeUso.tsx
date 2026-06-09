@@ -36,9 +36,9 @@ const CheckCircle = () => (
 );
 
 const casos: Caso[] = [
-  { key: "agendamiento", label: "Agendamiento de turnos", desc: "El paciente escribe, Asiri ofrece los horarios libres y agenda al instante — 24/7, aunque sea de madrugada.", video: "/casos/agendamiento.mp4", Icon: Calendar },
-  { key: "cancelaciones", label: "Cancelaciones", desc: "Si un paciente cancela, Asiri libera el turno solo y lo ofrece a quien estaba esperando. Cero huecos.", video: "/casos/cancelaciones.mp4", Icon: XCircle },
-  { key: "reprogramacion", label: "Reprogramación", desc: "Mueve el turno a otro día y horario sin que tu recepción toque nada. El paciente elige, Asiri reacomoda.", video: "/casos/reprogramacion.mp4", Icon: Refresh },
+  { key: "agendamiento", label: "Agendamiento de turnos", desc: "El paciente escribe, la asistente ofrece los horarios libres y agenda al instante — 24/7, aunque sea de madrugada.", video: "/casos/agendamiento.mp4", Icon: Calendar },
+  { key: "cancelaciones", label: "Cancelaciones", desc: "Si un paciente cancela, la asistente libera el turno sola y lo ofrece a quien estaba esperando. Cero huecos.", video: "/casos/cancelaciones.mp4", Icon: XCircle },
+  { key: "reprogramacion", label: "Reprogramación", desc: "Mueve el turno a otro día y horario sin que tu recepción toque nada. El paciente elige, la asistente reacomoda.", video: "/casos/reprogramacion.mp4", Icon: Refresh },
   { key: "recordatorios", label: "Recordatorios", desc: "Avisa 24h y 2h antes para que nadie se olvide. Menos ausencias, agenda que rinde.", video: "/casos/recordatorios.mp4", Icon: Bell },
   { key: "confirmaciones", label: "Confirmaciones", desc: "Pide confirmación y actualiza la agenda según la respuesta. Sabés con anticipación quién viene.", video: "/casos/confirmaciones.mp4", Icon: CheckCircle },
 ];
@@ -57,8 +57,8 @@ export default function CasosDeUso() {
               <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Casos de uso</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
-            <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-4 leading-tight">
-              Asiri maneja el turno de punta a punta.
+            <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
+              La asistente maneja el turno de punta a punta.
             </h2>
             <p className="text-text-secondary text-base max-w-xl mx-auto">
               Desde que el paciente escribe hasta que confirma. Elegí un caso y mirá cómo lo resuelve sola.

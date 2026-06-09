@@ -173,7 +173,7 @@ export default function CTACard({
 
                 <h2
                   className="font-extrabold tracking-tight leading-[1.05] mb-3"
-                  style={{ fontSize: "clamp(26px, 3.5vw, 40px)" }}
+                  style={{ fontSize: "clamp(24px, 2.6vw, 30px)" }}
                 >
                   {heading}
                 </h2>
