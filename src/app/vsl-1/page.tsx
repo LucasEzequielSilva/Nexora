@@ -1,4 +1,5 @@
 import VslHero from "@/components/VslHero";
+import CasosDeUso from "@/components/CasosDeUso";
 import VslPricing from "@/components/VslPricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -13,6 +14,9 @@ export default function Vsl1() {
 
       {/* Hero funnel — oferta + VSL */}
       <VslHero />
+
+      {/* Casos de uso — qué hace Asiri (switcher + video mobile) */}
+      <CasosDeUso />
 
       {/* Prueba — caso real Raquel */}
       <div id="prueba">

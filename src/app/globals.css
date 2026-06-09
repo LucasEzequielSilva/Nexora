@@ -32,21 +32,34 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Dot-grain stipple texture (from 0800web-funnel) */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(at 20% 80%, #fff 1px, transparent 0);
-  background-size: 2px 2px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.03;
-  mix-blend-mode: plus-lighter;
-}
-
 /* Floating notification cards */
 @keyframes floatY {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-9px); }
+}
+
+/* Aparición escalonada de mensajes/chats (una sola vez) */
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Notificación que aparece (pills del CRM / turno confirmado) */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Puntitos de "escribiendo…" en el chat */
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ── PATRÓN: grilla de puntos (textura digital) ──
+   Reutilizable: poné la clase .dot-grid en un div absolute y enmascaralo
+   con mask-image radial para concentrarlo en la zona de luz y que se funda. */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(210, 255, 228, 0.07) 1px, transparent 1.5px);
+  background-size: 24px 24px;
 }
