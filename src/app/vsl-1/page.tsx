@@ -28,8 +28,8 @@ export default function Vsl1() {
 
       <CTACard
         variant="banner"
-        heading="Tu agenda puede estar llenándose esta semana."
-        description="Trabajamos con un número limitado de consultorios por mes para garantizar la instalación. Si el tuyo califica, arrancamos ya."
+        heading="Tu consultorio puede estar atendiendo solo esta semana."
+        description="Instalamos el sistema en pocos consultorios por mes para cuidar cada instalación. Si el tuyo califica, lo dejamos andando en menos de 2 semanas."
         buttonText="AGENDAR LLAMADA GRATIS"
         subtext="30 minutos · Sin compromiso · Solo 3 cupos este mes"
       />

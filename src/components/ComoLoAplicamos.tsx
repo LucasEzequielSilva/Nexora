@@ -12,7 +12,7 @@ export default function ComoLoAplicamos() {
   ];
 
   return (
-    <section id="caso" className="mx-auto px-6 pb-24" style={{ maxWidth: "1000px" }}>
+    <section id="caso" className="mx-auto px-6 py-24" style={{ maxWidth: "1080px" }}>
       <FadeUp>
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-3 mb-5">

@@ -166,7 +166,7 @@ export default function VslPricing() {
     <section id="planes" className="relative py-24 px-6 overflow-hidden">
       <div className="absolute pointer-events-none rounded-full" style={{ width: 800, height: 800, background: "#22c55e", opacity: 0.03, top: "50%", left: "50%", transform: "translate(-50%, -50%)", filter: "blur(120px)" }} />
 
-      <div className="relative z-10 mx-auto" style={{ maxWidth: "1100px" }}>
+      <div className="relative z-10 mx-auto" style={{ maxWidth: "1080px" }}>
         <FadeUp>
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3 mb-5">
@@ -174,7 +174,7 @@ export default function VslPricing() {
               <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Inversión</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
-            <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-[1.08]">
+            <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-tight">
               El precio es una fracción de lo que ya estás perdiendo.
             </h2>
             <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">

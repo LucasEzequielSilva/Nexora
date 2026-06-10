@@ -92,7 +92,7 @@ export default function CasosDeUso() {
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">
-      <div className="relative z-10 mx-auto" style={{ maxWidth: "1060px" }}>
+      <div className="relative z-10 mx-auto" style={{ maxWidth: "1080px" }}>
         <FadeUp>
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-5">

@@ -39,7 +39,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="mx-auto px-6 pb-24" style={{ maxWidth: "760px" }}>
+    <section className="mx-auto px-6 py-24" style={{ maxWidth: "760px" }}>
       <FadeUp>
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-3 mb-5">

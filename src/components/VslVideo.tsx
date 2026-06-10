@@ -66,22 +66,23 @@ export default function VslVideo() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32" style={{ background: "#0a0a0b" }}>
+    <section className="relative overflow-hidden py-24" style={{ background: "#0a0a0b" }}>
       <div className="relative max-w-[1080px] mx-auto px-6 text-center" style={{ zIndex: 10 }}>
         <FadeUp>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
-            <span className="w-1.5 h-1.5 bg-accent rounded-full" />
-            <span className="text-[11px] font-semibold text-accent uppercase tracking-wider font-mono">El sistema en vivo</span>
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-accent opacity-50" />
+            <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Cómo funciona</span>
+            <span className="h-px w-8 bg-accent opacity-50" />
           </div>
         </FadeUp>
         <FadeUp delay={0.1}>
-          <h2 className="text-[clamp(24px,2.6vw,30px)] font-bold tracking-tight leading-[1.15] mb-4">
-            Mirá cómo <span style={{ color: "#22c55e" }}>el sistema agenda un turno solo</span>, de punta a punta.
+          <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-tight mb-4">
+            Todo lo que hace el sistema, <span style={{ color: "#22c55e" }}>en 3 minutos.</span>
           </h2>
         </FadeUp>
         <FadeUp delay={0.2}>
-          <p className="text-text-secondary text-[16px] max-w-xl mx-auto mb-9 font-light">
-            3 minutos. El flujo real andando en el consultorio de la Dra. Raquel — sin ediciones, sin humo.
+          <p className="text-text-secondary text-base max-w-xl mx-auto mb-9">
+            Sabemos que no tenés tiempo. En pocos minutos ves todo lo que el sistema hace por tu consultorio — sin teoría, sin humo.
           </p>
         </FadeUp>
 
