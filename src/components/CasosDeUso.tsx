@@ -190,11 +190,13 @@ export default function CasosDeUso() {
                       <span className="text-[9px] font-mono uppercase tracking-wider text-accent">Real</span>
                     </div>
                     <video
+                      key={caso.key}
                       src={caso.video}
                       autoPlay
                       muted
                       loop
                       playsInline
+                      preload="auto"
                       className="block w-full h-full object-cover"
                       onError={(e) => {
                         const v = e.currentTarget;
