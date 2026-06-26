@@ -4,17 +4,17 @@ import FadeUp from "./FadeUp";
 import CardTexture from "./CardTexture";
 
 const beneficios = [
-  { t: "Agenda sola, 24/7", s: "La asistente responde y agenda incluso fuera de horario — no se pierde el paciente que escribe a la noche." },
+  { t: "Agenda sola, 24/7", s: "El asistente responde y agenda incluso fuera de horario — no se pierde el cliente que escribe a la noche." },
   { t: "Menos ausencias", s: "Recuerda y confirma cada turno solo, 24h y 2h antes." },
   { t: "Recepción liberada", s: "Todo cae ordenado en su sistema de gestión, sin cargar nada a mano." },
-  { t: "Urgencias directo a la doctora", s: "El triage detecta lo urgente y se lo deriva al instante." },
-  { t: "La encuentran en Google", s: "Web propia con SEO local — más pacientes nuevos." },
+  { t: "Reprograma sin fricción", s: "El cliente pide otro día y la agenda se reacomoda sola." },
+  { t: "La encuentran en Google", s: "Web propia con SEO local — más clientes nuevos." },
 ];
 
 const recordatorio: { from: "patient" | "bot"; text: string; time: string; tag?: string; check?: boolean }[] = [
   { from: "bot", text: "Hola Ana 👋 Te recuerdo tu turno de mañana a las 10:30 con la Dra. Rodríguez. ¿Lo confirmás?", time: "10:30", tag: "24h antes" },
   { from: "patient", text: "Sí, confirmo", time: "10:32" },
-  { from: "bot", text: "¡Genial! Te esperamos. Si necesitás reprogramar, avisame con tiempo 🦷", time: "10:32", check: true },
+  { from: "bot", text: "¡Genial! Te esperamos. Si necesitás reprogramar, avisame con tiempo 🙌", time: "10:32", check: true },
 ];
 
 function Label({ children }: { children: React.ReactNode }) {
@@ -33,14 +33,14 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-accent opacity-50" />
-            <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Caso de éxito</span>
+            <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Prueba real</span>
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
           <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
             Hechos. No promesas.
           </h2>
           <p className="text-text-secondary text-base max-w-xl mx-auto">
-            La web y el sistema que le hicimos a la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Agenda sola, confirma los turnos sola, y la encuentran en Google.
+            Un negocio real que ya lo tiene andando: la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Le hicimos la web y el sistema: agenda solo, confirma los turnos solo, y la encuentran en Google.
           </p>
         </div>
       </FadeUp>
@@ -97,7 +97,7 @@ export default function Testimonials() {
             </p>
           </div>
 
-          <Label>Lo que gana la clínica</Label>
+          <Label>Lo que gana el negocio</Label>
           <div
             className="relative isolate rounded-2xl p-6"
             style={{
@@ -127,7 +127,7 @@ export default function Testimonials() {
       </div>
 
       <FadeUp delay={0.2}>
-        <Label>La clínica que lo usa hoy</Label>
+        <Label>El negocio que lo usa hoy</Label>
         <a
           href="https://raquelrodriguez.com.ar/"
           target="_blank"

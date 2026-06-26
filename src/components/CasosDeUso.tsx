@@ -7,14 +7,18 @@ import FadeUp from "./FadeUp";
    Cuando Lucas grabe cada flujo, dropear en /public/casos/<key>.mp4 */
 const PLACEHOLDER = "/raquel/agenda-asiri.mp4";
 
-type Caso = {
+/* icon por key (string) en vez de pasar el componente como prop:
+   así la página (server component) puede pasar `casos` sin romper la frontera RSC. */
+export type IconKey = "calendar" | "x" | "refresh" | "bell" | "check";
+
+export type Caso = {
   key: string;
   label: string;
   desc: string;
-  /* el dolor concreto que este caso le frena al consultorio (antes → ahora) */
+  /* el dolor concreto que este caso le frena al negocio (antes → ahora) */
   frena: string;
   video: string;
-  Icon: () => React.ReactNode;
+  icon: IconKey;
 };
 
 const Calendar = () => (
@@ -43,14 +47,23 @@ const CheckCircle = () => (
   </svg>
 );
 
-const casos: Caso[] = [
+const ICONS: Record<IconKey, () => React.ReactNode> = {
+  calendar: Calendar,
+  x: XCircle,
+  refresh: Refresh,
+  bell: Bell,
+  check: CheckCircle,
+};
+
+/* Versión clínica (default → la usa /vsl-1 sin pasar props). */
+const casosClinica: Caso[] = [
   {
     key: "agendamiento",
     label: "Agendamiento de turnos",
     desc: "El paciente escribe a cualquier hora, el sistema le ofrece los horarios libres y cierra el turno al instante. Aunque sean las 11 de la noche.",
     frena: "El turno que se iba porque nadie contestaba a tiempo.",
     video: "/casos/agendamiento.mp4",
-    Icon: Calendar,
+    icon: "calendar",
   },
   {
     key: "cancelaciones",
@@ -58,7 +71,7 @@ const casos: Caso[] = [
     desc: "Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo paciente. La agenda no queda con huecos.",
     frena: "Las horas muertas que igual pagás.",
     video: "/casos/cancelaciones.mp4",
-    Icon: XCircle,
+    icon: "x",
   },
   {
     key: "reprogramacion",
@@ -66,7 +79,7 @@ const casos: Caso[] = [
     desc: "El paciente pide otro día y el sistema reacomoda la agenda solo. Tu recepción no toca nada.",
     frena: "El ida y vuelta eterno por WhatsApp para mover un turno.",
     video: "/casos/reprogramacion.mp4",
-    Icon: Refresh,
+    icon: "refresh",
   },
   {
     key: "recordatorios",
@@ -74,7 +87,7 @@ const casos: Caso[] = [
     desc: "Avisa 24h y 2h antes. El paciente confirma de un toque y la agenda se actualiza sola.",
     frena: "El ausentismo que te come la agenda mes a mes.",
     video: "/casos/recordatorios.mp4",
-    Icon: Bell,
+    icon: "bell",
   },
   {
     key: "confirmaciones",
@@ -82,11 +95,27 @@ const casos: Caso[] = [
     desc: "Pide confirmación y te arma el día cerrado: sabés quién viene antes de abrir el consultorio.",
     frena: "Llegar a la mañana sin saber si la agenda es real.",
     video: "/casos/confirmaciones.mp4",
-    Icon: CheckCircle,
+    icon: "check",
   },
 ];
 
-export default function CasosDeUso() {
+interface CasosDeUsoProps {
+  heading?: string;
+  subheading?: string;
+  casos?: Caso[];
+  /* prefijo del caption bajo el celular; se le agrega " · {caso.label}".
+     default cita el consultorio de Raquel; la general lo reenmarca como "negocio real". */
+  captionPrefix?: React.ReactNode;
+}
+
+export default function CasosDeUso({
+  heading = "El sistema se ocupa del turno de punta a punta.",
+  subheading = "Desde que el paciente escribe hasta que confirma. Tocá un caso y mirá cómo lo resuelve solo.",
+  casos = casosClinica,
+  captionPrefix = (
+    <>Grabado en el consultorio de la <span className="text-text-secondary font-semibold">Dra. Raquel</span></>
+  ),
+}: CasosDeUsoProps = {}) {
   const [active, setActive] = useState(0);
   const caso = casos[active];
 
@@ -101,10 +130,10 @@ export default function CasosDeUso() {
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
             <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
-              El sistema se ocupa del turno de punta a punta.
+              {heading}
             </h2>
             <p className="text-text-secondary text-base max-w-xl mx-auto">
-              Desde que el paciente escribe hasta que confirma. Tocá un caso y mirá cómo lo resuelve solo.
+              {subheading}
             </p>
           </div>
         </FadeUp>
@@ -120,6 +149,7 @@ export default function CasosDeUso() {
             >
               {casos.map((c, i) => {
                 const on = i === active;
+                const CIcon = ICONS[c.icon];
                 return (
                   <button
                     key={c.key}
@@ -142,7 +172,7 @@ export default function CasosDeUso() {
                           color: on ? "#22c55e" : "#71717a",
                         }}
                       >
-                        <c.Icon />
+                        <CIcon />
                       </span>
                       <span className={`flex-1 text-[15px] font-bold tracking-tight transition-colors ${on ? "text-white" : "text-text-secondary group-hover:text-white"}`}>
                         {c.label}
@@ -206,7 +236,7 @@ export default function CasosDeUso() {
                   </div>
                 </div>
                 <p className="text-[12px] text-text-muted mt-5 text-center">
-                  Grabado en el consultorio de la <span className="text-text-secondary font-semibold">Dra. Raquel</span> · <span className="text-accent font-semibold">{caso.label}</span>
+                  {captionPrefix} · <span className="text-accent font-semibold">{caso.label}</span>
                 </p>
               </div>
             </div>

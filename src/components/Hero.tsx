@@ -161,7 +161,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-7 py-4 bg-gradient-to-b from-[#22c55e] to-[#16a34a] text-black font-bold text-[15px] rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                 style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.2), 0 10px 20px -10px rgba(34,197,94,0.5)" }}
               >
-                Quiero ver cómo funciona →
+                Agendá tu llamada →
               </button>
             </div>
 

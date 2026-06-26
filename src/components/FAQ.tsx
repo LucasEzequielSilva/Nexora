@@ -4,7 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeUp from "./FadeUp";
 
-const faqs = [
+type QA = { q: string; a: string };
+
+/* Default = versión clínica (la usa /vsl-1 sin pasar props). La general pasa su propio set. */
+const faqsClinica: QA[] = [
   {
     q: "¿Reemplaza a mi recepcionista?",
     a: "No: la libera. El asistente se hace cargo de lo repetitivo —contestar, agendar, recordar y confirmar— para que tu equipo se dedique al paciente que está en el consultorio.",
@@ -35,7 +38,7 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
