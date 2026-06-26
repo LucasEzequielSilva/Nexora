@@ -11,12 +11,6 @@ const beneficios = [
   { t: "La encuentran en Google", s: "Web propia con SEO local — más clientes nuevos." },
 ];
 
-const recordatorio: { from: "patient" | "bot"; text: string; time: string; tag?: string; check?: boolean }[] = [
-  { from: "bot", text: "Hola Ana 👋 Te recuerdo tu turno de mañana a las 10:30 con la Dra. Rodríguez. ¿Lo confirmás?", time: "10:30", tag: "24h antes" },
-  { from: "patient", text: "Sí, confirmo", time: "10:32" },
-  { from: "bot", text: "¡Genial! Te esperamos. Si necesitás reprogramar, avisame con tiempo 🙌", time: "10:32", check: true },
-];
-
 function Label({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2.5 mb-4">
@@ -45,73 +39,24 @@ export default function Testimonials() {
         </div>
       </FadeUp>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <FadeUp delay={0.1}>
-          <Label>Agenda los turnos sola</Label>
-          <div className="flex flex-col items-center">
-            <div
-              className="rounded-[26px] overflow-hidden mx-auto"
-              style={{
-                maxWidth: "270px",
-                border: "1px solid rgba(34,197,94,0.25)",
-                boxShadow: "0 0 30px rgba(34,197,94,0.12), 0 20px 50px rgba(0,0,0,0.5)",
-              }}
-            >
-              <video src="/raquel/agenda-asiri.mp4" autoPlay muted loop playsInline controls className="block w-full" />
-            </div>
-            <p className="text-[12px] text-text-muted mt-4 text-center">
-              Video real · <span className="text-accent font-semibold">el sistema</span> responde y agenda, 24/7.
-            </p>
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.15}>
-          <Label>Y confirma cada turno</Label>
-
-          <div
-            className="rounded-2xl overflow-hidden mb-6"
-            style={{ background: "linear-gradient(135deg, #1a1a1e 0%, #16191f 100%)", border: "1px solid rgba(34,197,94,0.2)" }}
-          >
-            <div className="flex flex-col gap-2.5 p-5" style={{ background: "rgba(0,0,0,0.18)" }}>
-              {recordatorio.map((m, i) => (
-                <div key={i} className={`flex ${m.from === "bot" ? "justify-end" : "justify-start"}`}>
-                  <div
-                    className="max-w-[82%] rounded-2xl px-3.5 py-2"
-                    style={{
-                      background: m.from === "bot" ? "rgba(34,197,94,0.14)" : "rgba(255,255,255,0.05)",
-                      border: m.from === "bot" ? "1px solid rgba(34,197,94,0.25)" : "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    {m.tag && <span className="text-[9px] font-bold text-accent uppercase tracking-wider block mb-1">{m.tag}</span>}
-                    <p className="text-[13px] text-text-secondary leading-snug">{m.text}</p>
-                    <div className="flex items-center justify-end gap-1 mt-1">
-                      <span className="text-[10px] text-text-muted">{m.time}</span>
-                      {m.check && <span className="text-[10px] text-accent">✓✓</span>}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-[10px] text-text-muted px-5 py-2.5 text-center" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-              Ejemplo del recordatorio · datos de muestra
-            </p>
-          </div>
-
+      {/* Card protagonista: lo que el negocio de Raquel tiene andando hoy */}
+      <FadeUp delay={0.1}>
+        <div className="max-w-[760px] mx-auto mb-10">
           <Label>Lo que gana el negocio</Label>
           <div
-            className="relative isolate rounded-2xl p-6"
+            className="relative isolate rounded-2xl p-7 md:p-8"
             style={{
               background: "linear-gradient(135deg, #1a1a1e 0%, #18181b 40%, #16191f 100%)",
               border: "1px solid rgba(34,197,94,0.25)",
-              boxShadow: "0 0 20px rgba(34,197,94,0.08)",
+              boxShadow: "0 0 24px rgba(34,197,94,0.08)",
             }}
           >
             <CardTexture accent />
-            <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
+            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="text-[12px] font-bold text-accent uppercase tracking-wider">Instalado y andando</span>
             </div>
-            <ul className="flex flex-col gap-3.5">
+            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
               {beneficios.map((b) => (
                 <li key={b.t} className="flex items-start gap-2.5">
                   <span className="text-accent mt-1 shrink-0">→</span>
@@ -123,10 +68,11 @@ export default function Testimonials() {
               ))}
             </ul>
           </div>
-        </FadeUp>
-      </div>
+        </div>
+      </FadeUp>
 
       <FadeUp delay={0.2}>
+        <div className="max-w-[760px] mx-auto">
         <Label>El negocio que lo usa hoy</Label>
         <a
           href="https://raquelrodriguez.com.ar/"
@@ -164,6 +110,7 @@ export default function Testimonials() {
             />
           </div>
         </a>
+        </div>
       </FadeUp>
     </section>
   );
