@@ -8,6 +8,7 @@ const beneficios = [
   { t: "Menos ausencias", s: "Recuerda y confirma cada turno solo, 24h y 2h antes." },
   { t: "Recepción liberada", s: "Todo cae ordenado en su sistema de gestión, sin cargar nada a mano." },
   { t: "Reprograma sin fricción", s: "El cliente pide otro día y la agenda se reacomoda sola." },
+  { t: "Cancelaciones sin huecos", s: "Si un turno se cae, libera el horario y se lo ofrece al próximo." },
   { t: "La encuentran en Google", s: "Web propia con SEO local — más clientes nuevos." },
 ];
 
