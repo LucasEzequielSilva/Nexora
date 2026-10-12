@@ -1,7 +1,7 @@
 import VslHeroScene from "@/components/VslHeroScene";
 import VslVideo from "@/components/VslVideo";
 import CasosDeUso from "@/components/CasosDeUso";
-import VslPricing from "@/components/VslPricing";
+import SistemaCompleto from "@/components/SistemaCompleto";
 import ComoLoAplicamos from "@/components/ComoLoAplicamos";
 import FAQ from "@/components/FAQ";
 import CTACard from "@/components/CTACard";
@@ -20,7 +20,7 @@ export default function Vsl1() {
 
       <CasosDeUso />
 
-      <VslPricing />
+      <SistemaCompleto variant="consultorio" />
 
       <FAQ />
 

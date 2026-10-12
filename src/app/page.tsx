@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import CasosDeUso, { type Caso } from "@/components/CasosDeUso";
 import Niches from "@/components/Niches";
-import PlansSection from "@/components/PlansSection";
+import SistemaCompleto from "@/components/SistemaCompleto";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTACard from "@/components/CTACard";
@@ -10,7 +10,7 @@ import CalProvider from "@/components/CalProvider";
 
 /* Página general: mismo esqueleto que /vsl-1 con otra piel, sin precios (el número se ve en la llamada).
    Estructura espejada de la VSL:
-   Hero → Casos de uso → Para quién (rubros) → Planes + Calculador → Prueba (Raquel) → FAQ → CTA.
+   Hero → Casos de uso → Para quién (rubros) → Calculador + Sistema completo → Prueba (Raquel) → FAQ → CTA.
 
    Secciones de la general que quedaron fuera de este flujo (siguen en el repo, listas para
    reactivar si se quiere: PainPoints, TransformSection, HowItWorksSection, Comparison,
@@ -108,8 +108,8 @@ export default function Home() {
       {/* Para quién — qué cambia en cada tipo de negocio */}
       <Niches />
 
-      {/* Planes (sin precio) + calculador */}
-      <PlansSection />
+      {/* Calculador + el sistema completo (sin precio, un solo botón) */}
+      <SistemaCompleto variant="negocio" />
 
       {/* Prueba — la Dra. Raquel como negocio real andando */}
       <Testimonials />
