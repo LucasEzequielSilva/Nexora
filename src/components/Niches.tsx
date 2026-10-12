@@ -11,7 +11,7 @@ const niches = [
     ),
     title: "Clínicas y consultorios",
     pain: "Turnos que se pierden o quedan vacíos cuando nadie contesta a tiempo",
-    change: "Cada consulta se contesta, se agenda y se confirma antes del turno",
+    change: "Se contesta, se agenda y se confirma el turno por WhatsApp, al lado de tu equipo",
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const niches = [
       </svg>
     ),
     title: "Barberías y salones",
-    pain: "El turno que se pierde porque nadie contestó a tiempo",
-    change: "Se responde y se agenda en el momento",
+    pain: "Mensajes que quedan sin contestar mientras estás con un cliente",
+    change: "Se responde y se agenda por WhatsApp",
   },
   {
     icon: (
@@ -31,8 +31,8 @@ const niches = [
       </svg>
     ),
     title: "Gimnasios y studios",
-    pain: "Horas por día en gestión manual de clases y turnos",
-    change: "Una pantalla donde ves qué pasa y el resto lo resuelve el sistema",
+    pain: "Clases y turnos que se gestionan a mano",
+    change: "Pide confirmación y te arma el día cerrado",
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const niches = [
     ),
     title: "Inmobiliarias",
     pain: "Consultas que se enfrían esperando respuesta",
-    change: "Cada consulta se contesta al instante y queda ordenada",
+    change: "Las consultas se contestan por WhatsApp y quedan ordenadas",
   },
   {
     icon: (
@@ -53,8 +53,8 @@ const niches = [
       </svg>
     ),
     title: "Veterinarias",
-    pain: "Pacientes que no vuelven a control",
-    change: "Recordatorios para que no se pase el control",
+    pain: "El control que se pasa porque nadie se acuerda de avisar",
+    change: "Recordatorios antes de cada turno de control",
   },
   {
     icon: (
@@ -66,8 +66,8 @@ const niches = [
       </svg>
     ),
     title: "Estudios profesionales",
-    pain: "Invisibles en Google para quien busca el servicio",
-    change: "Web propia donde te encuentran y sacan turno online",
+    pain: "Sin una web propia que muestre tu trabajo",
+    change: "Web propia con tu marca",
   },
 ];
 
@@ -83,12 +83,12 @@ export default function Niches() {
           <span className="h-px w-8 bg-accent opacity-50" />
         </div>
         <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-3">
-          Qué cambia en cada
+          Qué cambia
           <br />
-          tipo de negocio
+          en cada tipo de negocio
         </h2>
         <p className="text-text-secondary text-base mb-10">
-          Lo que más se repite en cada rubro.
+          Hoy lo tenemos andando en un consultorio de ortodoncia; en otros rubros lo armamos a medida y lo vemos en la llamada.
         </p>
       </FadeUp>
 
@@ -136,15 +136,15 @@ export default function Niches() {
               {/* El dolor / Lo que cambia */}
               <div className="grid grid-cols-2 gap-3 flex-1">
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-[9.5px] font-bold uppercase tracking-wider text-text-muted">
-                    El dolor
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted">
+                    Hoy
                   </span>
                   <span className="text-[12.5px] text-text-secondary leading-snug">
                     {niche.pain}
                   </span>
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-[9.5px] font-bold uppercase tracking-wider text-accent">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent">
                     Lo que cambia
                   </span>
                   <span className="text-[12.5px] text-text-primary leading-snug">

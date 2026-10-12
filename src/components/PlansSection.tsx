@@ -27,10 +27,9 @@ const plans: Plan[] = [
     tagline: "El sistema base para no perder un turno más desde el día uno.",
     features: [
       "Agenda online con tu marca",
-      "Asistente de WhatsApp que agenda solo 24/7",
+      "Asistente de WhatsApp que agenda turnos a cualquier hora",
       "Recordatorios antes de cada turno",
       "CRM de clientes",
-      "Soporte por WhatsApp",
     ],
   },
   {
@@ -42,7 +41,6 @@ const plans: Plan[] = [
       "Confirmación y reprogramación de turnos",
       "Web propia con tu marca",
       "Una pantalla donde ves qué turnos hay y cuántas ausencias tenés",
-      "Una llamada mensual de revisión",
     ],
     featured: true,
   },
@@ -54,8 +52,6 @@ const plans: Plan[] = [
       "Todo lo del Pro",
       "Multi-profesional / multi-agenda",
       "Motor de captación de clientes nuevos",
-      "Campañas de reactivación por WhatsApp",
-      "Soporte prioritario",
     ],
   },
 ];

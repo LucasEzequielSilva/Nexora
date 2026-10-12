@@ -4,10 +4,10 @@ import FadeUp from "./FadeUp";
 import CardTexture from "./CardTexture";
 
 const beneficios = [
-  { t: "Agenda por WhatsApp", s: "El asistente responde y agenda incluso fuera de horario — no se pierde el cliente que escribe a la noche." },
+  { t: "Agenda por WhatsApp", s: "El asistente responde y agenda también fuera de horario." },
   { t: "Recuerda y confirma", s: "Avisa antes de cada turno y pide confirmación." },
-  { t: "Recepción liberada", s: "Todo cae ordenado en su sistema de gestión, sin cargar nada a mano." },
-  { t: "Reprograma", s: "El cliente pide otro día y la agenda se reacomoda." },
+  { t: "Recepción liberada", s: "Todo queda ordenado en un solo lugar." },
+  { t: "Reprograma", s: "El cliente pide otro día y el sistema reacomoda la agenda." },
   { t: "Cancelaciones", s: "Si un turno se cae, libera el horario y ofrece reprogramar." },
   { t: "Web propia", s: "Con su marca, hecha por Nexora." },
 ];
@@ -32,10 +32,10 @@ export default function Testimonials() {
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
           <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
-            Lo que tiene andando hoy.
+            Lo que tiene instalado la Dra. Raquel.
           </h2>
           <p className="text-text-secondary text-base max-w-xl mx-auto">
-            Un negocio real que ya lo tiene andando: la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Le hicimos la web y el sistema: agenda y confirma los turnos por WhatsApp.
+            Un negocio real: la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Le hicimos la web y el sistema: agenda y confirma los turnos por WhatsApp.
           </p>
         </div>
       </FadeUp>
@@ -43,7 +43,7 @@ export default function Testimonials() {
       {/* Card protagonista: lo que el negocio de Raquel tiene andando hoy */}
       <FadeUp delay={0.1}>
         <div className="max-w-[760px] mx-auto mb-10">
-          <Label>Lo que gana el negocio</Label>
+          <Label>Lo que hace el sistema</Label>
           <div
             className="relative isolate rounded-2xl p-7 md:p-8"
             style={{

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import FadeUp from "./FadeUp";
 import { useDemoLoop, usePrefersReducedMotion, CrmPill, ConfirmPill } from "./VslHero";
@@ -18,14 +18,38 @@ export default function VslHeroScene() {
   const reduced = usePrefersReducedMotion();
   const demo = useDemoLoop(reduced);
 
-  /* Escape cierra el video. */
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  /* Modal del video: el foco entra al botón de cerrar, Tab queda dentro del
+     diálogo, Escape cierra y el foco vuelve a quien lo abrió. */
   useEffect(() => {
     if (!showVsl) return;
+    const opener = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowVsl(false);
+      if (e.key === "Escape") {
+        setShowVsl(false);
+        return;
+      }
+      /* Shift+Tab desde "Cerrar video" salta al reproductor, sin salir del diálogo. */
+      if (e.key === "Tab" && e.shiftKey && document.activeElement === closeRef.current) {
+        e.preventDefault();
+        dialogRef.current?.querySelector<HTMLElement>("video")?.focus();
+      }
+    };
+    /* Si el foco sale del diálogo, vuelve al botón de cerrar. */
+    const onFocusIn = (e: FocusEvent) => {
+      if (dialogRef.current && !dialogRef.current.contains(e.target as Node)) closeRef.current?.focus();
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    document.addEventListener("focusin", onFocusIn);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("focusin", onFocusIn);
+      opener?.focus();
+    };
   }, [showVsl]);
 
   return (
@@ -131,8 +155,8 @@ export default function VslHeroScene() {
       {/* ── Modal VSL ── */}
       {showVsl && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(4px)" }} onClick={() => setShowVsl(false)}>
-          <div role="dialog" aria-modal="true" aria-label="Video de presentación" className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <button type="button" aria-label="Cerrar video" onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
+          <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Video de presentación" className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
+            <button ref={closeRef} type="button" aria-label="Cerrar video" onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
             <video src={VSL} controls autoPlay playsInline className="w-full rounded-xl" style={{ border: "1px solid rgba(34,197,94,0.3)", boxShadow: "0 0 60px rgba(34,197,94,0.15)" }} />
           </div>
         </div>

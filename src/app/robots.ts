@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 
 const SITE = "https://www.nexoragrowth.es";
 
-/* Se indexa el sitio entero salvo los endpoints (/api/) y la página del pitch deck. */
+/* Se indexa el sitio entero salvo los endpoints (/api/). */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/vsl-1/pitch-deck"],
+      disallow: ["/api/"],
     },
     sitemap: `${SITE}/sitemap.xml`,
   };

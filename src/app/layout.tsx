@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Particles from "@/components/Particles";
+import MotionProvider from "@/components/MotionProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "./" },
   title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
   description:
-    "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
+    "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
   openGraph: {
     title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
     type: "website",
     images: [
       {
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
     images: ["/thumbnail-profile.jpg"],
   },
 };
@@ -62,7 +63,7 @@ export default function RootLayout({
       </head>
       <body className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}>
         <Particles fixed />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

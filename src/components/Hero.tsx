@@ -66,14 +66,14 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="text-[18px] text-text-muted leading-[1.75] max-w-[560px] mx-auto mb-9 font-light">
-            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma 24/7, y tu equipo se queda con lo que necesita a una persona.
+          <p className="text-[18px] text-text-secondary leading-[1.75] max-w-[560px] mx-auto mb-9 font-light">
+            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma turnos por WhatsApp a cualquier hora, y tu equipo se queda con lo que necesita a una persona.
           </p>
         </FadeUp>
 
         <FadeUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-6 mb-10">
-            {["Puesta en marcha acordada por escrito", "Soporte WhatsApp incluido"].map((item, i) => (
+            {["Puesta en marcha acordada por escrito"].map((item, i) => (
               <span key={i} className="flex items-center gap-2 text-[13px] text-text-muted">
                 <span className="text-accent font-bold text-[14px]">✓</span>
                 {item}

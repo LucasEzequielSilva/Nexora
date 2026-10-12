@@ -60,8 +60,8 @@ export default function VslVideo() {
   };
 
   const formula = [
-    { k: "Te escriben", sub: "a cualquier hora" },
-    { k: "El sistema responde", sub: "24/7, al lado de tu recepción" },
+    { k: "Te escriben", sub: "por WhatsApp" },
+    { k: "El sistema responde", sub: "a cualquier hora, al lado de tu recepción" },
     { k: "Turno confirmado", sub: "agendado y al CRM" },
   ];
 

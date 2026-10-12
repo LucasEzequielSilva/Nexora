@@ -8,16 +8,15 @@ import CTACard from "@/components/CTACard";
 import Footer from "@/components/Footer";
 import CalProvider from "@/components/CalProvider";
 
-/* Página GENERAL — mismo esqueleto que /vsl-1 pero "otra piel": le habla a cualquier
-   negocio que viva de turnos (clínicas, barberías, estética, gimnasios, veterinarias…),
-   sin precios (el número se ve en la llamada). Estructura espejada de la VSL:
+/* Página general: mismo esqueleto que /vsl-1 con otra piel, sin precios (el número se ve en la llamada).
+   Estructura espejada de la VSL:
    Hero → Casos de uso → Para quién (rubros) → Planes + Calculador → Prueba (Raquel) → FAQ → CTA.
 
    Secciones de la general que quedaron fuera de este flujo (siguen en el repo, listas para
    reactivar si se quiere: PainPoints, TransformSection, HowItWorksSection, Comparison,
    ProcessSection, LeadCapture). Se priorizó el flujo de la VSL para no duplicar el discurso. */
 
-/* Casos de uso generalizados (mismos demos que la VSL: "cliente" en vez de "paciente"). */
+/* Casos de uso generalizados (mismos demos que la VSL, redactados para cualquier negocio de turnos). */
 const casosGeneral: Caso[] = [
   {
     key: "agendamiento",
@@ -31,14 +30,14 @@ const casosGeneral: Caso[] = [
     key: "cancelaciones",
     label: "Cancelaciones",
     desc: "Si alguien cancela, el sistema libera el horario y le ofrece una nueva fecha.",
-    frena: "Las horas muertas que igual pagás.",
+    frena: "El turno cancelado que quedaba sin nueva fecha.",
     video: "/casos/cancelaciones.mp4",
     icon: "x",
   },
   {
     key: "reprogramacion",
     label: "Reprogramación",
-    desc: "Si te piden otro día, el sistema reacomoda la agenda. Tu recepción no toca nada.",
+    desc: "Si te piden otro día, el sistema reacomoda la agenda. Tu equipo no tiene que mover nada a mano.",
     frena: "El ida y vuelta eterno por WhatsApp para mover un turno.",
     video: "/casos/reprogramacion.mp4",
     icon: "refresh",
@@ -76,8 +75,8 @@ const faqsGeneral = [
     a: "El asistente responde solo sobre tu negocio: turnos, horarios, ubicación, servicios y precios, con la información que cargamos. Lo que necesita criterio humano, te lo deriva.",
   },
   {
-    q: "¿Y si el cliente quiere hablar con una persona?",
-    a: "Lo detecta y te pasa la conversación al instante. No se pierde nada: todo queda ordenado en un solo lugar.",
+    q: "¿Y si quien escribe quiere hablar con una persona?",
+    a: "Lo detecta y te pasa la conversación. Todo queda ordenado en un solo lugar.",
   },
   {
     q: "¿Sirve para mi rubro?",
@@ -104,11 +103,6 @@ export default function Home() {
       <CasosDeUso
         casos={casosGeneral}
         subheading="Desde que te escriben hasta que confirman. Tocá un caso y mirá cómo se resuelve."
-        captionPrefix={
-          <>
-            Así responde el sistema de la <span className="text-text-secondary font-semibold">Dra. Raquel</span>
-          </>
-        }
       />
 
       {/* Para quién — qué cambia en cada tipo de negocio */}
@@ -127,9 +121,9 @@ export default function Home() {
       <CTACard
         variant="banner"
         heading="¿Tu negocio vive de turnos? Puede tener un empleado nuevo atendiendo el WhatsApp."
-        description="Instalamos el sistema en pocos negocios por mes para cuidar cada instalación. Contanos cómo trabajás y te mostramos cómo se vería en tu negocio."
+        description="Contanos cómo trabajás y te mostramos cómo se vería en tu negocio."
         buttonText="Agendá tu llamada"
-        subtext="Una llamada corta para ver cómo trabajás hoy · Sin compromiso"
+        subtext="Una llamada corta · Sin compromiso"
       />
 
       <Footer />

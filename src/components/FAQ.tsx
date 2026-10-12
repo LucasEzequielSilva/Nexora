@@ -18,11 +18,11 @@ const faqsClinica: QA[] = [
   },
   {
     q: "¿Y si responde cualquier cosa?",
-    a: "El asistente responde solo sobre tu consultorio: turnos, horarios, ubicación y obras sociales, con la información que cargamos. Si alguien pregunta algo urgente o clínico, no opina: te lo pasa a vos.",
+    a: "El asistente responde solo sobre tu consultorio: turnos, horarios, ubicación y obras sociales, con la información que cargamos. Si alguien pregunta algo urgente o clínico, el asistente no opina: te lo pasa a vos.",
   },
   {
-    q: "¿Y si el paciente quiere hablar con una persona?",
-    a: "Lo detecta y te pasa la conversación al instante. No se pierde nada: todo queda ordenado en un solo lugar.",
+    q: "¿Y si quien escribe quiere hablar con una persona?",
+    a: "Lo detecta y te pasa la conversación. Todo queda ordenado en un solo lugar.",
   },
   {
     q: "¿Sirve para mi especialidad?",
@@ -81,7 +81,7 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
                   id={buttonId}
                   type="button"
                   aria-expanded={isOpen}
-                  aria-controls={panelId}
+                  aria-controls={isOpen ? panelId : undefined}
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-7 py-6 text-left cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
                 >
@@ -128,7 +128,7 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
                       transition={{ duration: 0.32, ease: [0.4, 0, 0.2, 1] }}
                       style={{ overflow: "hidden" }}
                     >
-                      <p className="px-7 pb-6 text-[15px] text-text-muted leading-relaxed">
+                      <p className="px-7 pb-6 text-[15px] text-text-secondary leading-relaxed">
                         {faq.a}
                       </p>
                     </motion.div>
