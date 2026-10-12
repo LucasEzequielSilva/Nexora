@@ -3,7 +3,7 @@
 import FadeUp from "./FadeUp";
 
 /* Prueba honesta — NO "casos de éxito" inflados. Un solo cliente real, andando.
-   La transparencia genera más confianza que el humo. Cierra con el framing productizado. */
+   La transparencia genera más confianza que el humo. Cierra aclarando que cada implementación es a medida. */
 export default function ComoLoAplicamos() {
   const corre = [
     "Agenda los turnos por WhatsApp, también fuera de hora.",
@@ -69,10 +69,10 @@ export default function ComoLoAplicamos() {
         </div>
       </FadeUp>
 
-      {/* framing productizado — el sistema ya existe, se adapta */}
+      {/* A medida: primero se entiende cómo trabaja cada consultorio, después se define el alcance y la fecha */}
       <FadeUp delay={0.15}>
         <p className="text-center text-[15px] text-text-secondary max-w-2xl mx-auto mt-8 leading-relaxed">
-          El sistema <strong className="text-white font-semibold">ya está desarrollado y andando</strong> — no se construye de cero. Lo adaptamos a tu consultorio en <strong className="text-white font-semibold">menos de 2 semanas</strong>.
+          Lo que armamos para la Dra. Raquel funciona hoy. El tuyo lo armamos a medida: primero entendemos cómo trabajás y con eso te decimos qué incluye y cuándo estaría andando.
         </p>
       </FadeUp>
     </section>

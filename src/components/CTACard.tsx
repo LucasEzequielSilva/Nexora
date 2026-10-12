@@ -112,15 +112,6 @@ export default function CTACard({
                 {buttonText} <CalendarIcon />
               </PremiumButton>
             </div>
-
-            {/* Trust row */}
-            <div className="relative z-10 mt-5 flex items-center justify-center gap-4 flex-wrap">
-              <span className="text-[12px] text-text-muted">✓ Sin contrato</span>
-              <span className="text-[12px] text-text-muted">·</span>
-              <span className="text-[12px] text-text-muted">✓ 30 días o devolvemos</span>
-              <span className="text-[12px] text-text-muted">·</span>
-              <span className="text-[12px] text-text-muted">✓ Configurado en 48hs</span>
-            </div>
           </div>
         )}
 
@@ -160,17 +151,6 @@ export default function CTACard({
 
               {/* Left: text */}
               <div className="flex-1 text-left">
-                {/* Scarcity pill */}
-                <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-orange-500" />
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-orange-400">
-                    Solo 3 cupos disponibles este mes
-                  </span>
-                </div>
-
                 <h2
                   className="font-extrabold tracking-tight leading-[1.05] mb-3"
                   style={{ fontSize: "clamp(24px, 2.6vw, 30px)" }}

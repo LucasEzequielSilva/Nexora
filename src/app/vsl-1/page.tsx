@@ -29,9 +29,9 @@ export default function Vsl1() {
       <CTACard
         variant="banner"
         heading="Tu consultorio puede tener un empleado nuevo atendiendo el WhatsApp."
-        description="Instalamos el sistema en pocos consultorios por mes para cuidar cada instalación. Si el tuyo califica, lo dejamos andando en menos de 2 semanas."
+        description="Instalamos el sistema en pocos consultorios por mes para cuidar cada instalación. Contanos cómo trabajás y te mostramos cómo se vería en tu consultorio."
         buttonText="Agendá tu llamada"
-        subtext="30 minutos · Sin compromiso · Solo 3 cupos este mes"
+        subtext="Una llamada corta para ver cómo trabajás hoy · Sin compromiso"
       />
 
       <Footer />

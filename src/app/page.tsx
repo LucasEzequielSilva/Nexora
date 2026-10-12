@@ -69,7 +69,7 @@ const faqsGeneral = [
   },
   {
     q: "¿Tengo que instalar o aprender algo?",
-    a: "Nada. Lo configuramos e instalamos nosotros sobre el WhatsApp que ya usás. En menos de 2 semanas está andando — vos solo nos pasás la info por audio o WhatsApp.",
+    a: "Nada. Lo configuramos e instalamos nosotros sobre el WhatsApp que ya usás: vos solo nos pasás la info por audio o WhatsApp. En la propuesta te decimos cuándo estaría andando.",
   },
   {
     q: "¿Y si responde cualquier cosa?",
@@ -84,12 +84,12 @@ const faqsGeneral = [
     a: "Lo armamos a medida de cómo trabaja cada negocio. Hoy el caso andando es un consultorio de ortodoncia; si el tuyo es de otro rubro, lo vemos en la llamada.",
   },
   {
-    q: "¿Hay contrato largo?",
-    a: "No. Es mensual, lo dejás cuando quieras. Apostamos a que te quedás porque te llena la agenda, no por un contrato que te ata.",
+    q: "¿Cómo son los plazos y las condiciones?",
+    a: "Los plazos y las condiciones los vemos en la llamada y quedan por escrito en la propuesta.",
   },
   {
-    q: "¿Tienen garantía?",
-    a: "Sí. Si en 30 días el sistema no está agendando y confirmando turnos solo como te prometimos, te devolvemos el mes. El riesgo lo corremos nosotros.",
+    q: "¿Cómo sé qué voy a recibir?",
+    a: "Lo que se entrega y cómo se mide queda por escrito en la propuesta que te presentamos en la llamada, antes de arrancar.",
   },
 ];
 
@@ -127,9 +127,9 @@ export default function Home() {
       <CTACard
         variant="banner"
         heading="¿Tu negocio vive de turnos? Puede tener un empleado nuevo atendiendo el WhatsApp."
-        description="Instalamos el sistema en pocos negocios por mes para cuidar cada instalación. Si el tuyo califica, lo dejamos andando en menos de 2 semanas."
+        description="Instalamos el sistema en pocos negocios por mes para cuidar cada instalación. Contanos cómo trabajás y te mostramos cómo se vería en tu negocio."
         buttonText="Agendá tu llamada"
-        subtext="30 minutos · Sin compromiso · Solo 3 cupos este mes"
+        subtext="Una llamada corta para ver cómo trabajás hoy · Sin compromiso"
       />
 
       <Footer />

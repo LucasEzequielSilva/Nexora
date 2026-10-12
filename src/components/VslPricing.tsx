@@ -49,7 +49,7 @@ const plans: Plan[] = [
     featured: true,
   },
   {
-    badge: "Cupos limitados",
+    badge: "Varios profesionales",
     name: "Clínica",
     price: "Precio en la llamada",
     tagline: "Para clínicas con varios profesionales y captación activa.",
@@ -59,7 +59,6 @@ const plans: Plan[] = [
       "Motor de captación de pacientes nuevos",
       "Campañas de reactivación por WhatsApp",
       "Soporte prioritario",
-      "Máx. 5 clínicas por mes",
     ],
     btnLabel: "Agendá tu llamada",
   },

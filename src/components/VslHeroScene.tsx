@@ -80,13 +80,13 @@ export default function VslHeroScene() {
 
           <FadeUp delay={0.2}>
             <p className="text-[17px] text-text-secondary leading-[1.7] max-w-[500px] mx-auto lg:mx-0 mb-7 font-light">
-              Un asistente en tu WhatsApp contesta al instante a cualquier hora, llena la agenda, confirma los turnos para que no falte nadie y reactiva a los pacientes que no volvieron. Lo dejamos <strong className="text-white font-semibold">andando en menos de 2 semanas</strong>. Vos solo te ocupás de lo importante.
+              Un asistente en tu WhatsApp contesta a cualquier hora, agenda y confirma los turnos. Vos solo te ocupás de lo importante.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.3}>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2.5 mb-9">
-              {["Andando en menos de 2 semanas", "Recordatorios que matan las ausencias", "Sin contrato largo"].map((item, i) => (
+              {["Puesta en marcha acordada por escrito", "Recordatorios antes de cada turno"].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-[13px] text-text-muted">
                   <span className="text-accent font-bold text-[14px]">✓</span>
                   {item}

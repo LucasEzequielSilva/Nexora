@@ -48,7 +48,7 @@ const plans: Plan[] = [
     featured: true,
   },
   {
-    badge: "Cupos limitados",
+    badge: "Varios profesionales",
     name: "Multi-local",
     tagline: "Para negocios con varios profesionales o sucursales y captación activa.",
     features: [
@@ -57,7 +57,6 @@ const plans: Plan[] = [
       "Motor de captación de clientes nuevos",
       "Campañas de reactivación por WhatsApp",
       "Soporte prioritario",
-      "Máx. 5 negocios por mes",
     ],
   },
 ];

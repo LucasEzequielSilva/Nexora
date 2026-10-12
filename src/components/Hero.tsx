@@ -73,7 +73,7 @@ export default function Hero() {
 
         <FadeUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-6 mb-10">
-            {["Sistema activo en menos de 2 semanas", "Soporte WhatsApp incluido", "Sin contrato largo"].map((item, i) => (
+            {["Puesta en marcha acordada por escrito", "Soporte WhatsApp incluido"].map((item, i) => (
               <span key={i} className="flex items-center gap-2 text-[13px] text-text-muted">
                 <span className="text-accent font-bold text-[14px]">✓</span>
                 {item}
