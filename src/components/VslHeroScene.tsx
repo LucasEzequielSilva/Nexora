@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import FadeUp from "./FadeUp";
 import { useDemoLoop, usePrefersReducedMotion, CrmPill, ConfirmPill } from "./VslHero";
 
 const CAL_LINK = "nexoragrowth/30min";
 const VSL = "/vsl_web.mp4";
 const SCENE = "/hero-cogne-2k-3.png";
+const SCENE_W = 2752;
+const SCENE_H = 1536;
 
 /* Test C — hero en capas sobre la escena fusionada (cogne + consultorio, generada por IA).
    La UI (cards, texto) va crisp en HTML encima; objetos blur dan profundidad estilo Lubo. */
@@ -15,12 +18,21 @@ export default function VslHeroScene() {
   const reduced = usePrefersReducedMotion();
   const demo = useDemoLoop(reduced);
 
+  /* Escape cierra el video. */
+  useEffect(() => {
+    if (!showVsl) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowVsl(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showVsl]);
+
   return (
     <section className="relative overflow-hidden lg:min-h-[100svh] lg:flex lg:items-center" style={{ background: "#0a0a0b" }}>
       {/* ── CAPA 1 · Fondo fusionado (cogne + consultorio, IA) ──
           Desktop: full-bleed con cogne a la derecha. Mobile: imagen ARRIBA (apilada), texto abajo. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={SCENE} alt="" className="block w-full h-[46vh] object-cover object-[72%_18%] select-none lg:absolute lg:inset-0 lg:h-full lg:object-right" />
+      <Image src={SCENE} alt="" width={SCENE_W} height={SCENE_H} sizes="100vw" preload fetchPriority="high" className="block w-full h-[46vh] object-cover object-[72%_18%] select-none lg:absolute lg:inset-0 lg:h-full lg:object-right" />
 
       {/* scrim izquierda → legibilidad del texto (solo desktop, donde el texto va encima) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, #0a0a0b 0%, rgba(10,10,11,0.92) 24%, rgba(10,10,11,0.55) 44%, rgba(10,10,11,0) 66%)" }} />
@@ -119,9 +131,8 @@ export default function VslHeroScene() {
       {/* ── Modal VSL ── */}
       {showVsl && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(4px)" }} onClick={() => setShowVsl(false)}>
-          <div className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <div role="dialog" aria-modal="true" aria-label="Video de presentación" className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
+            <button type="button" aria-label="Cerrar video" onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
             <video src={VSL} controls autoPlay playsInline className="w-full rounded-xl" style={{ border: "1px solid rgba(34,197,94,0.3)", boxShadow: "0 0 60px rgba(34,197,94,0.15)" }} />
           </div>
         </div>

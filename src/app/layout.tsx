@@ -17,6 +17,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nexoragrowth.es"),
+  alternates: { canonical: "./" },
   title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
   description:
     "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
@@ -28,14 +30,14 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/thumbnail-profile.jpg",
-        width: 1200,
-        height: 630,
+        width: 1024,
+        height: 1024,
         alt: "Logo de Nexora",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
       "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",

@@ -17,7 +17,7 @@ export default function Footer() {
         src="/logo_white.png"
         alt="Nexora"
         width={100}
-        height={25}
+        height={14}
         className="mx-auto mb-6 opacity-60"
       />
 

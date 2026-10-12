@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeUp from "./FadeUp";
 
@@ -40,6 +40,7 @@ const faqsClinica: QA[] = [
 
 export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
   const [open, setOpen] = useState<number | null>(null);
+  const uid = useId();
 
   return (
     <section className="mx-auto px-6 py-24" style={{ maxWidth: "760px" }}>
@@ -61,10 +62,12 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
       <div className="flex flex-col gap-3">
         {faqs.map((faq, i) => {
           const isOpen = open === i;
+          const panelId = `${uid}-faq-${i}`;
+          const buttonId = `${uid}-faq-q-${i}`;
           return (
             <FadeUp key={i} delay={0.06 * i}>
                <div
-                 className="rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
+                 className="rounded-2xl overflow-hidden transition-all duration-300"
                  style={{
                    background: isOpen
                      ? "linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(24,24,27,0.98) 100%)"
@@ -72,14 +75,20 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
                    border: "1px solid rgba(34,197,94,0.2)",
                    boxShadow: "0 0 20px rgba(34,197,94,0.08)",
                  }}
-                 onClick={() => setOpen(isOpen ? null : i)}
                >
-                {/* Question row */}
-                <div className="flex items-center justify-between gap-4 px-7 py-6">
+                {/* Question row — botón: foco y teclado (Enter / Espacio) */}
+                <button
+                  id={buttonId}
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="flex w-full items-center justify-between gap-4 px-7 py-6 text-left cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
+                >
                   <span className="text-[16px] font-semibold text-text-primary leading-snug">
                     {faq.q}
                   </span>
-                  <motion.div
+                  <motion.span
                     className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center"
                     animate={{
                       background: isOpen ? "rgba(34,197,94,0.15)" : "rgba(255,255,255,0.04)",
@@ -89,6 +98,7 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
                     style={{ border: "1px solid" }}
                   >
                     <motion.svg
+                      aria-hidden="true"
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
                       className="w-3.5 h-3.5"
@@ -101,14 +111,17 @@ export default function FAQ({ faqs = faqsClinica }: { faqs?: QA[] } = {}) {
                       <line x1="12" y1="5" x2="12" y2="19" />
                       <line x1="5" y1="12" x2="19" y2="12" />
                     </motion.svg>
-                  </motion.div>
-                </div>
+                  </motion.span>
+                </button>
 
                 {/* Answer — AnimatePresence para smooth height */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
                       key="answer"
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
