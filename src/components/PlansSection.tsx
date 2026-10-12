@@ -10,7 +10,7 @@ const CAL_LINK = "nexoragrowth/30min";
    Estos nombres (Negocio / Negocio Pro / Multi-local) espejan el escalonamiento de la VSL
    (Consultorio → Consultorio Pro → Clínica) pero generalizados para cualquier negocio de turnos.
    Si más adelante se quiere afinar el naming para un rubro puntual, es el único lugar a tocar.
-   A diferencia de la VSL: acá NO mostramos precio — el número se ve en la llamada (CTA único). */
+   Sin precio: el número se ve en la llamada (CTA único). */
 
 interface Plan {
   badge: string;
@@ -34,7 +34,7 @@ const plans: Plan[] = [
     ],
   },
   {
-    badge: "⭐ Más elegido",
+    badge: "Sistema completo",
     name: "Negocio Pro",
     tagline: "El sistema completo: agenda, confirma, reprograma y te trae clientes.",
     features: [
@@ -103,24 +103,21 @@ export default function PlansSection() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="h-px w-8 bg-accent opacity-50" />
-              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Planes</span>
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">El sistema</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
             <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-tight">
-              Lo que perdés hoy pesa más que lo que cuesta el sistema.
+              Hacé la cuenta con tus números.
             </h2>
             <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">
-              El precio te lo damos en la llamada. Antes, hacé esta cuenta con tus números:
+              El precio te lo damos en la llamada.
             </p>
           </div>
         </FadeUp>
 
         {/* Calculador (ROI) — mismo componente que la VSL, con labels para negocio de turnos. */}
         <FadeUp delay={0.1}>
-          <RoiSimulator
-            priceLabel="Precio de turno"
-            lostLabel="La plata que tu negocio pierde, por mes"
-          />
+          <RoiSimulator priceLabel="Precio de turno" />
         </FadeUp>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
@@ -178,9 +175,8 @@ export default function PlansSection() {
 
         <FadeUp delay={0.5}>
           <p className="text-center mt-6 text-[13px] text-text-muted">
-            Todos incluyen setup inicial único.{" "}
             <button data-cal-namespace="30min" data-cal-link={CAL_LINK} data-cal-config='{"layout":"month_view"}' className="text-accent hover:underline cursor-pointer">
-              Agendá una llamada y vemos cuál te sirve →
+              Agendá una llamada y vemos qué necesita tu negocio →
             </button>
           </p>
         </FadeUp>

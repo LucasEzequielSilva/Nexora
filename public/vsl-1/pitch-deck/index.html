@@ -96,6 +96,7 @@
   .calc-r{display:flex;justify-content:space-between;align-items:center;gap:1vw;background:var(--card);border:1px solid var(--cardbd);border-radius:.7vw;padding:.85vw 1.1vw}
   .calc-r label{font-size:1.05vw;color:#C7CBD1}
   .calc-r input{width:7vw;background:rgba(0,0,0,.4);border:1px solid var(--cardbd);color:var(--accent);font-weight:700;font-size:1.1vw;text-align:right;padding:.45vw .6vw;border-radius:.4vw;font-family:inherit}
+  .calc-r input::placeholder{color:var(--muted);font-weight:400}
   .calc-r input:focus{outline:2px solid var(--accent);outline-offset:1px}
   .calc-out{flex:.9;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.4);border-radius:1vw;padding:2vw;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 0 50px rgba(34,197,94,.12)}
   .calc-out .lbl{font-size:.92vw;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
@@ -202,18 +203,18 @@
 
     <!-- 3 COSTO / CALC -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="La fuga en plata"
-      data-note="'Hacé una cuenta conmigo. ¿Cuánto sale una consulta? Multiplicalo por los turnos que se te escapan cada semana, más las ausencias del mes. Ese número —que en muchos consultorios pasa el millón— es la fuga, en plata.'">
+      data-note="'Hacé una cuenta conmigo. ¿Cuánto sale una consulta? Multiplicalo por los turnos que se te escapan cada semana, más las ausencias del mes. Ese número es la fuga, en plata.'">
       <div class="kick">La fuga, en plata</div>
       <h1 class="s-md">Hacé la cuenta con <span class="accent">tus</span> números.</h1>
       <div class="calc">
         <div class="calc-in">
-          <div class="calc-r"><label for="c1">Precio de una consulta ($)</label><input id="c1" type="number" value="40000" /></div>
-          <div class="calc-r"><label for="c2">Turnos que se escapan / semana</label><input id="c2" type="number" value="4" /></div>
-          <div class="calc-r"><label for="c3">Ausencias / mes</label><input id="c3" type="number" value="10" /></div>
+          <div class="calc-r"><label for="c1">Precio de una consulta ($)</label><input id="c1" type="number" placeholder="—" /></div>
+          <div class="calc-r"><label for="c2">Turnos que se escapan / semana</label><input id="c2" type="number" placeholder="—" /></div>
+          <div class="calc-r"><label for="c3">Ausencias / mes</label><input id="c3" type="number" placeholder="—" /></div>
         </div>
         <div class="calc-out" aria-live="polite">
           <div class="lbl">Dejás sobre la mesa, por mes</div>
-          <div class="big" id="cout">$1.040.000</div>
+          <div class="big" id="cout">—</div>
           <div class="pm">y se va sin que la veas</div>
         </div>
       </div>
@@ -318,12 +319,12 @@
 
     <!-- 10 ROI -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="ROI"
-      data-note="'Acordate del número que sacaste antes: lo que se te va cada mes. El sistema sale una fracción de eso — se paga solo con los turnos que recuperás. El número exacto lo vemos en la llamada.'">
+      data-note="'Acordate del número que sacaste antes: lo que se te va cada mes. El número exacto lo vemos en la llamada.'">
       <div class="kick">La cuenta que importa</div>
-      <h1 class="s-lg">Cuesta una <span class="accent">fracción</span><br>de lo que ya perdés.</h1>
+      <h1 class="s-lg">El número lo vemos<br><span class="accent">en tu llamada.</span></h1>
       <div class="cardrow" style="max-width:62%">
-        <div class="card x"><div class="clbl">La fuga</div><div class="ctext">Cientos de miles, todos los meses.</div></div>
-        <div class="card"><div class="clbl">El sistema</div><div class="ctext">Una fracción — se paga solo con los turnos que recuperás.</div></div>
+        <div class="card x"><div class="clbl">La fuga</div><div class="ctext">Lo que se te escapa cada mes, con tus números.</div></div>
+        <div class="card"><div class="clbl">El sistema</div><div class="ctext">Se arma según tu consultorio; lo vemos en la llamada.</div></div>
       </div>
       <p class="body" style="margin-top:1.6vw;font-size:1.1vw">El número exacto lo vemos en la llamada, según tu consultorio.</p>
     </section>
@@ -428,7 +429,8 @@
     else if(e.key.toLowerCase()==='f'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
   });
   const c1=document.getElementById('c1'),c2=document.getElementById('c2'),c3=document.getElementById('c3'),cout=document.getElementById('cout');
-  function calc(){const v=(Number(c2.value)*4+Number(c3.value))*Number(c1.value)||0;cout.textContent='$'+v.toLocaleString('es-AR');}
+  const num=el=>Math.max(0,Number(el.value)||0);
+  function calc(){const v=(num(c2)*4+num(c3))*num(c1);cout.textContent=v>0?'$'+v.toLocaleString('es-AR'):'—';}
   [c1,c2,c3].forEach(el=>el.addEventListener('input',calc));calc();
   const caseData=[
     {chat:[['in','Hola! Quería sacar un turno esta semana','19:42'],['out','¡Hola! Te ayudo con tu turno 🤗 Tengo Mié 16:40 o Jue 10:30. ¿Cuál te queda?','19:42'],['in','Jueves 10:30','19:43'],['out','¡Buenísimo! Te agendé el jueves 10:30 ✅ Te recuerdo el día antes 😊','19:43']],d:'Te escriben a cualquier hora y el sistema ofrece los horarios libres y cierra el turno al instante.',f:'El turno que se iba porque nadie contestaba a tiempo.'},

@@ -10,21 +10,18 @@ interface Plan {
   badge: string;
   name: string;
   price: string;
-  period: string;
   tagline: string;
   features: string[];
   btnLabel: string;
   featured?: boolean;
 }
 
-/* ⚠ PRECIOS PLACEHOLDER — confirmar con Lucas (moneda + setup).
-   Anclados al rango: piso 250 / target ~500 / premium como ancla alta. */
+/* Sin precio: el número se ve en la llamada. */
 const plans: Plan[] = [
   {
     badge: "Para arrancar",
     name: "Consultorio",
-    price: "USD 250",
-    period: "/mes",
+    price: "Precio en la llamada",
     tagline: "El sistema base para no perder un turno más desde el día uno.",
     features: [
       "Agenda online con tu marca",
@@ -36,10 +33,9 @@ const plans: Plan[] = [
     btnLabel: "Empezar con Consultorio",
   },
   {
-    badge: "⭐ Más elegido",
+    badge: "Sistema completo",
     name: "Consultorio Pro",
-    price: "USD 490",
-    period: "/mes",
+    price: "Precio en la llamada",
     tagline: "El sistema completo: agenda, confirma, hace triage y te trae pacientes.",
     features: [
       "Todo lo de Consultorio",
@@ -55,8 +51,7 @@ const plans: Plan[] = [
   {
     badge: "Cupos limitados",
     name: "Clínica",
-    price: "USD 790",
-    period: "/mes",
+    price: "Precio en la llamada",
     tagline: "Para clínicas con varios profesionales y captación activa.",
     features: [
       "Todo lo del Pro",
@@ -110,19 +105,19 @@ export default function VslPricing() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-3 mb-5">
               <span className="h-px w-8 bg-accent opacity-50" />
-              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">Inversión</span>
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">El sistema</span>
               <span className="h-px w-8 bg-accent opacity-50" />
             </div>
             <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight leading-tight">
-              El precio es una fracción de lo que ya estás perdiendo.
+              Hacé la cuenta con tus números.
             </h2>
             <p className="text-text-secondary text-base mt-4 max-w-md mx-auto">
-              Antes de ver el número, hacé esta cuenta:
+              No hay precio de lista: depende del tamaño de tu operación. Lo vemos en la llamada.
             </p>
           </div>
         </FadeUp>
 
-        {/* Simulador de ganancias perdidas (ROI) — antes del precio (regla 3).
+        {/* Calculador con los números del propio visitante.
             Componente compartido con la general; acá usa los defaults (labels clínicas). */}
         <FadeUp delay={0.1}>
           <RoiSimulator />
@@ -158,8 +153,7 @@ export default function VslPricing() {
                 <h3 className="text-[22px] font-extrabold text-white tracking-tight mb-2">{plan.name}</h3>
 
                 <div className="flex items-end gap-1 mb-3">
-                  <span className="text-[34px] font-extrabold text-white leading-none tracking-tight">{plan.price}</span>
-                  <span className="text-[14px] text-text-muted mb-1">{plan.period}</span>
+                  <span className="text-[20px] font-extrabold text-accent leading-none tracking-tight">{plan.price}</span>
                 </div>
 
                 <p className="text-[14px] text-text-muted leading-relaxed mb-6">{plan.tagline}</p>
@@ -183,9 +177,8 @@ export default function VslPricing() {
 
         <FadeUp delay={0.5}>
           <p className="text-center mt-6 text-[13px] text-text-muted">
-            Todos incluyen setup inicial único.{" "}
             <button data-cal-namespace="30min" data-cal-link={CAL_LINK} data-cal-config='{"layout":"month_view"}' className="text-accent hover:underline cursor-pointer">
-              Agendá una llamada y vemos cuál te sirve →
+              Agendá una llamada y vemos qué necesita tu negocio →
             </button>
           </p>
         </FadeUp>
