@@ -46,7 +46,7 @@ const casosGeneral: Caso[] = [
   {
     key: "recordatorios",
     label: "Recordatorios",
-    desc: "Avisa 24h y 2h antes. Te confirman de un toque y tu agenda se actualiza.",
+    desc: "Avisa antes del turno. Te confirman de un toque y tu agenda se actualiza.",
     frena: "El ausentismo que te come la agenda mes a mes.",
     video: "/casos/recordatorios.mp4",
     icon: "bell",

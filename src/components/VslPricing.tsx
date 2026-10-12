@@ -26,7 +26,7 @@ const plans: Plan[] = [
     features: [
       "Agenda online con tu marca",
       "Asistente de WhatsApp que agenda sola 24/7",
-      "Recordatorios automáticos (24h y 2h antes)",
+      "Recordatorios antes de cada turno",
       "CRM de pacientes",
       "Soporte por WhatsApp",
     ],
@@ -40,10 +40,10 @@ const plans: Plan[] = [
     features: [
       "Todo lo de Consultorio",
       "Si algo es urgente o clínico, el sistema no opina: te lo pasa a vos",
-      "Web propia + SEO local (te encuentran en Google)",
+      "Web propia con tu marca",
       "Confirmación y reprogramación automática",
-      "Dashboard de métricas y ausencias",
-      "Call mensual de revisión",
+      "Una pantalla donde ves qué turnos hay y cuántas ausencias tenés",
+      "Una llamada mensual de revisión",
     ],
     btnLabel: "Agendá tu llamada",
     featured: true,

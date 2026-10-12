@@ -28,7 +28,7 @@ const plans: Plan[] = [
     features: [
       "Agenda online con tu marca",
       "Asistente de WhatsApp que agenda solo 24/7",
-      "Recordatorios automáticos (24h y 2h antes)",
+      "Recordatorios antes de cada turno",
       "CRM de clientes",
       "Soporte por WhatsApp",
     ],
@@ -40,10 +40,9 @@ const plans: Plan[] = [
     features: [
       "Todo lo de Negocio",
       "Confirmación y reprogramación automática",
-      "Web propia + SEO local (te encuentran en Google)",
-      "Dashboard de métricas y ausencias",
-      "Pagos integrados (MP + transferencia)",
-      "Call mensual de revisión",
+      "Web propia con tu marca",
+      "Una pantalla donde ves qué turnos hay y cuántas ausencias tenés",
+      "Una llamada mensual de revisión",
     ],
     featured: true,
   },
