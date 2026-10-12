@@ -118,7 +118,7 @@ export default function Hero() {
 
         <FadeUp delay={0.2}>
           <p className="text-[18px] text-text-muted leading-[1.75] max-w-[560px] mx-auto mb-9 font-light">
-            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma solo — 24/7, sin que tu equipo toque nada.
+            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma 24/7, y tu equipo se queda con lo que necesita a una persona.
           </p>
         </FadeUp>
 

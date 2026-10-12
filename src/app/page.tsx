@@ -22,7 +22,7 @@ const casosGeneral: Caso[] = [
   {
     key: "agendamiento",
     label: "Agendamiento de turnos",
-    desc: "El cliente escribe a cualquier hora, el sistema le ofrece los horarios libres y cierra el turno al instante. Aunque sean las 11 de la noche.",
+    desc: "Te escriben a cualquier hora y el sistema ofrece los horarios libres y cierra el turno al instante. Aunque sean las 11 de la noche.",
     frena: "El turno que se iba porque nadie contestaba a tiempo.",
     video: "/casos/agendamiento.mp4",
     icon: "calendar",
@@ -30,7 +30,7 @@ const casosGeneral: Caso[] = [
   {
     key: "cancelaciones",
     label: "Cancelaciones",
-    desc: "Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo cliente. La agenda no queda con huecos.",
+    desc: "Si alguien cancela, el sistema libera el horario y le ofrece una nueva fecha.",
     frena: "Las horas muertas que igual pagás.",
     video: "/casos/cancelaciones.mp4",
     icon: "x",
@@ -38,7 +38,7 @@ const casosGeneral: Caso[] = [
   {
     key: "reprogramacion",
     label: "Reprogramación",
-    desc: "El cliente pide otro día y el sistema reacomoda la agenda solo. Tu recepción no toca nada.",
+    desc: "Si te piden otro día, el sistema reacomoda la agenda. Tu recepción no toca nada.",
     frena: "El ida y vuelta eterno por WhatsApp para mover un turno.",
     video: "/casos/reprogramacion.mp4",
     icon: "refresh",
@@ -46,7 +46,7 @@ const casosGeneral: Caso[] = [
   {
     key: "recordatorios",
     label: "Recordatorios",
-    desc: "Avisa 24h y 2h antes. El cliente confirma de un toque y la agenda se actualiza sola.",
+    desc: "Avisa 24h y 2h antes. Te confirman de un toque y tu agenda se actualiza.",
     frena: "El ausentismo que te come la agenda mes a mes.",
     video: "/casos/recordatorios.mp4",
     icon: "bell",
@@ -103,7 +103,7 @@ export default function Home() {
       {/* Casos de uso — mismos demos que la VSL, generalizados */}
       <CasosDeUso
         casos={casosGeneral}
-        subheading="Desde que el cliente escribe hasta que confirma. Tocá un caso y mirá cómo lo resuelve solo."
+        subheading="Desde que te escriben hasta que confirman. Tocá un caso y mirá cómo se resuelve."
         captionPrefix={
           <>
             Grabado en un negocio real · <span className="text-text-secondary font-semibold">Dra. Raquel</span>
@@ -126,7 +126,7 @@ export default function Home() {
       {/* CTA final — CTA único: agendá tu llamada */}
       <CTACard
         variant="banner"
-        heading="¿Tu negocio vive de turnos? Puede estar atendiendo solo esta semana."
+        heading="¿Tu negocio vive de turnos? Puede tener un empleado nuevo atendiendo el WhatsApp."
         description="Instalamos el sistema en pocos negocios por mes para cuidar cada instalación. Si el tuyo califica, lo dejamos andando en menos de 2 semanas."
         buttonText="Agendá tu llamada"
         subtext="30 minutos · Sin compromiso · Solo 3 cupos este mes"
