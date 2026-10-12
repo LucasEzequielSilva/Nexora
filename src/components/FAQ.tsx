@@ -26,7 +26,7 @@ const faqsClinica: QA[] = [
   },
   {
     q: "¿Sirve para mi especialidad?",
-    a: "Funciona en ortodoncia, odontología, médicos, kinesiología y estética médica. Si perdés turnos por no contestar a tiempo, los recuperás.",
+    a: "Hoy el caso andando es un consultorio de ortodoncia. Si tu especialidad es otra, lo armamos a medida y lo vemos en la llamada.",
   },
   {
     q: "¿Hay contrato largo?",

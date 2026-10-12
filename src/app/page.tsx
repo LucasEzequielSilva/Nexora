@@ -81,7 +81,7 @@ const faqsGeneral = [
   },
   {
     q: "¿Sirve para mi rubro?",
-    a: "Funciona en cualquier negocio que viva de turnos: clínicas, barberías, estética, gimnasios, veterinarias, estudios profesionales. Si perdés turnos por no contestar a tiempo, los recuperás.",
+    a: "Lo armamos a medida de cómo trabaja cada negocio. Hoy el caso andando es un consultorio de ortodoncia; si el tuyo es de otro rubro, lo vemos en la llamada.",
   },
   {
     q: "¿Hay contrato largo?",
@@ -111,7 +111,7 @@ export default function Home() {
         }
       />
 
-      {/* Para quién — cualquier negocio que viva de turnos */}
+      {/* Para quién — qué cambia en cada tipo de negocio */}
       <Niches />
 
       {/* Planes (sin precio) + calculador */}
