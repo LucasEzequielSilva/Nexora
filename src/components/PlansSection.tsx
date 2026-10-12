@@ -36,7 +36,7 @@ const plans: Plan[] = [
   {
     badge: "Sistema completo",
     name: "Negocio Pro",
-    tagline: "El sistema completo: agenda, confirma, reprograma y te trae clientes.",
+    tagline: "El sistema completo: agenda, confirma y reprograma.",
     features: [
       "Todo lo de Negocio",
       "Confirmación y reprogramación automática",

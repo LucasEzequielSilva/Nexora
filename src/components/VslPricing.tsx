@@ -36,10 +36,10 @@ const plans: Plan[] = [
     badge: "Sistema completo",
     name: "Consultorio Pro",
     price: "Precio en la llamada",
-    tagline: "El sistema completo: agenda, confirma, hace triage y te trae pacientes.",
+    tagline: "El sistema completo: agenda, confirma y te pasa lo urgente a vos.",
     features: [
       "Todo lo de Consultorio",
-      "Triage de urgencias directo a la doctora",
+      "Si algo es urgente o clínico, el sistema no opina: te lo pasa a vos",
       "Web propia + SEO local (te encuentran en Google)",
       "Confirmación y reprogramación automática",
       "Dashboard de métricas y ausencias",

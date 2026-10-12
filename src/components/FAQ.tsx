@@ -18,7 +18,7 @@ const faqsClinica: QA[] = [
   },
   {
     q: "¿Y si responde cualquier cosa?",
-    a: "El asistente responde solo sobre tu consultorio: turnos, horarios, ubicación, obras sociales y urgencias, con la información que cargamos. Lo que necesita criterio humano, te lo deriva.",
+    a: "El asistente responde solo sobre tu consultorio: turnos, horarios, ubicación y obras sociales, con la información que cargamos. Si alguien pregunta algo urgente o clínico, no opina: te lo pasa a vos.",
   },
   {
     q: "¿Y si el paciente quiere hablar con una persona?",
