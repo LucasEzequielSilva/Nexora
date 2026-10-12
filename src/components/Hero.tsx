@@ -115,11 +115,11 @@ export default function Hero() {
             </div>
 
             <a
-              href="#planes"
+              href="#casos"
               className="inline-flex items-center px-7 py-4 text-[15px] font-medium rounded-lg transition-all duration-200 hover:border-accent hover:text-accent"
               style={{ color: "#e4e4e7", border: "1px solid rgba(255,255,255,0.08)", background: "transparent" }}
             >
-              Ver los planes
+              Ver cómo funciona
             </a>
           </div>
         </FadeUp>

@@ -119,7 +119,7 @@ export default function CasosDeUso({
   const caso = casos[active];
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section id="casos" className="relative py-24 px-6 overflow-hidden">
       <div className="relative z-10 mx-auto" style={{ maxWidth: "1080px" }}>
         <FadeUp>
           <div className="text-center mb-12">

@@ -30,7 +30,7 @@ export default function Vsl1() {
         variant="banner"
         heading="Tu consultorio puede tener un empleado nuevo atendiendo el WhatsApp."
         description="Instalamos el sistema en pocos consultorios por mes para cuidar cada instalación. Si el tuyo califica, lo dejamos andando en menos de 2 semanas."
-        buttonText="AGENDAR LLAMADA GRATIS"
+        buttonText="Agendá tu llamada"
         subtext="30 minutos · Sin compromiso · Solo 3 cupos este mes"
       />
 

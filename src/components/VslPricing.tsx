@@ -30,7 +30,7 @@ const plans: Plan[] = [
       "CRM de pacientes",
       "Soporte por WhatsApp",
     ],
-    btnLabel: "Empezar con Consultorio",
+    btnLabel: "Agendá tu llamada",
   },
   {
     badge: "Sistema completo",
@@ -45,7 +45,7 @@ const plans: Plan[] = [
       "Dashboard de métricas y ausencias",
       "Call mensual de revisión",
     ],
-    btnLabel: "Quiero el Pro →",
+    btnLabel: "Agendá tu llamada",
     featured: true,
   },
   {
@@ -61,7 +61,7 @@ const plans: Plan[] = [
       "Soporte prioritario",
       "Máx. 5 clínicas por mes",
     ],
-    btnLabel: "Ver disponibilidad",
+    btnLabel: "Agendá tu llamada",
   },
 ];
 
