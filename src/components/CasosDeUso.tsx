@@ -103,8 +103,7 @@ interface CasosDeUsoProps {
   heading?: string;
   subheading?: string;
   casos?: Caso[];
-  /* prefijo del caption bajo el celular; se le agrega " · {caso.label}".
-     default cita el consultorio de Raquel; la general lo reenmarca como "negocio real". */
+  /* prefijo del caption bajo el celular; se le agrega " · {caso.label}". */
   captionPrefix?: React.ReactNode;
 }
 
@@ -113,7 +112,7 @@ export default function CasosDeUso({
   subheading = "Desde que te escriben hasta que confirman. Tocá un caso y mirá cómo se resuelve.",
   casos = casosClinica,
   captionPrefix = (
-    <>Grabado en el consultorio de la <span className="text-text-secondary font-semibold">Dra. Raquel</span></>
+    <>Así responde el sistema de la <span className="text-text-secondary font-semibold">Dra. Raquel</span></>
   ),
 }: CasosDeUsoProps = {}) {
   const [active, setActive] = useState(0);
@@ -215,10 +214,6 @@ export default function CasosDeUso({
                 >
                   <div className="relative rounded-[34px] overflow-hidden" style={{ background: "#0b141a", aspectRatio: "9 / 19.3" }}>
                     <div className="absolute top-[9px] left-1/2 -translate-x-1/2 rounded-full z-20" style={{ width: 84, height: 21, background: "#000" }} />
-                    <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(0,0,0,0.45)", border: "1px solid rgba(34,197,94,0.3)", backdropFilter: "blur(6px)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                      <span className="text-[9px] font-mono uppercase tracking-wider text-accent">Real</span>
-                    </div>
                     <video
                       key={caso.key}
                       src={caso.video}

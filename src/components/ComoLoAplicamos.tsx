@@ -6,9 +6,9 @@ import FadeUp from "./FadeUp";
    La transparencia genera más confianza que el humo. Cierra con el framing productizado. */
 export default function ComoLoAplicamos() {
   const corre = [
-    "Agenda los turnos sola por WhatsApp, 24/7 — también fuera de hora.",
-    "Recuerda y confirma cada turno: bajan las ausencias.",
-    "La encuentran en Google — web propia con SEO local.",
+    "Agenda los turnos por WhatsApp, también fuera de hora.",
+    "Recuerda y confirma cada turno.",
+    "Web propia, hecha por Nexora.",
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function ComoLoAplicamos() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/raquel/raquel.png"
-            alt="Dra. Raquel Rodríguez en su consultorio"
+            alt="Retrato de la Dra. Raquel Rodríguez"
             className="rounded-[22px] mx-auto w-full max-w-[240px] block"
             style={{ border: "1px solid rgba(34,197,94,0.25)", boxShadow: "0 18px 50px rgba(0,0,0,0.5)" }}
           />

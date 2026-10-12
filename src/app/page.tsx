@@ -106,7 +106,7 @@ export default function Home() {
         subheading="Desde que te escriben hasta que confirman. Tocá un caso y mirá cómo se resuelve."
         captionPrefix={
           <>
-            Grabado en un negocio real · <span className="text-text-secondary font-semibold">Dra. Raquel</span>
+            Así responde el sistema de la <span className="text-text-secondary font-semibold">Dra. Raquel</span>
           </>
         }
       />

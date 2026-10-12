@@ -4,12 +4,12 @@ import FadeUp from "./FadeUp";
 import CardTexture from "./CardTexture";
 
 const beneficios = [
-  { t: "Agenda sola, 24/7", s: "El asistente responde y agenda incluso fuera de horario — no se pierde el cliente que escribe a la noche." },
-  { t: "Menos ausencias", s: "Recuerda y confirma cada turno solo, 24h y 2h antes." },
+  { t: "Agenda por WhatsApp", s: "El asistente responde y agenda incluso fuera de horario — no se pierde el cliente que escribe a la noche." },
+  { t: "Recuerda y confirma", s: "Avisa antes de cada turno y pide confirmación." },
   { t: "Recepción liberada", s: "Todo cae ordenado en su sistema de gestión, sin cargar nada a mano." },
-  { t: "Reprograma sin fricción", s: "El cliente pide otro día y la agenda se reacomoda sola." },
-  { t: "Cancelaciones sin huecos", s: "Si un turno se cae, libera el horario y se lo ofrece al próximo." },
-  { t: "La encuentran en Google", s: "Web propia con SEO local — más clientes nuevos." },
+  { t: "Reprograma", s: "El cliente pide otro día y la agenda se reacomoda." },
+  { t: "Cancelaciones", s: "Si un turno se cae, libera el horario y ofrece reprogramar." },
+  { t: "Web propia", s: "Con su marca, hecha por Nexora." },
 ];
 
 function Label({ children }: { children: React.ReactNode }) {
@@ -32,10 +32,10 @@ export default function Testimonials() {
             <span className="h-px w-8 bg-accent opacity-50" />
           </div>
           <h2 className="text-[clamp(24px,2.6vw,30px)] font-extrabold tracking-tight mb-4 leading-tight">
-            Hechos. No promesas.
+            Lo que tiene andando hoy.
           </h2>
           <p className="text-text-secondary text-base max-w-xl mx-auto">
-            Un negocio real que ya lo tiene andando: la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Le hicimos la web y el sistema: agenda solo, confirma los turnos solo, y la encuentran en Google.
+            Un negocio real que ya lo tiene andando: la <strong className="text-white font-semibold">Dra. Raquel Rodríguez</strong> — ortodoncia en Jujuy. Le hicimos la web y el sistema: agenda y confirma los turnos por WhatsApp.
           </p>
         </div>
       </FadeUp>
@@ -91,10 +91,10 @@ export default function Testimonials() {
               </div>
             </div>
             <p className="text-[13px] text-text-secondary leading-relaxed">
-              Le desarrollamos <strong className="text-white font-semibold">la web y el sistema</strong>. Con SEO local para que la encuentren en Google, y la asistente que agenda sola.
+              Le desarrollamos <strong className="text-white font-semibold">la web y el sistema</strong> que agenda, recuerda y confirma sus turnos por WhatsApp.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Web propia", "SEO local", "Sistema 24/7"].map((b) => (
+              {["Web propia", "Agenda y confirma por WhatsApp"].map((b) => (
                 <span key={b} className="text-[10px] font-semibold text-accent px-2.5 py-1 rounded-full" style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)" }}>{b}</span>
               ))}
             </div>

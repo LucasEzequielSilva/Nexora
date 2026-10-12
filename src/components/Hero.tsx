@@ -6,52 +6,6 @@ import FadeUp from "./FadeUp";
 
 const CAL_LINK = "nexoragrowth/30min";
 
-/* Capturas de funciones reales de las demos, flotando alrededor del título */
-const floats = [
-  { img: "/demos/sweet-zona.png", pos: "left-[1%] top-[11%]", rotate: "-6deg", w: 170, h: 300 },
-  { img: "/demos/barberia.png", pos: "left-[3%] top-[48%]", rotate: "4deg", w: 248, h: 150 },
-  { img: "/demos/tnw-booking.png", pos: "left-[6%] bottom-[6%]", rotate: "-3deg", w: 236, h: 150 },
-  { img: "/demos/lavadero.png", pos: "right-[2%] top-[12%]", rotate: "5deg", w: 270, h: 150 },
-  { img: "/demos/sweet-items.png", pos: "right-[1%] top-[43%]", rotate: "6deg", w: 170, h: 300 },
-  { img: "/demos/tapizados.png", pos: "right-[5%] bottom-[7%]", rotate: "-4deg", w: 248, h: 150 },
-];
-
-function FloatCard({ img, pos, rotate, w, h }: { img: string; pos: string; rotate: string; w: number; h: number }) {
-  return (
-    <div
-      className={`hidden xl:block absolute ${pos}`}
-      style={{ width: w, transform: `rotate(${rotate})`, zIndex: 1, opacity: 0.9 }}
-    >
-      <div
-        className="rounded-xl overflow-hidden"
-        style={{
-          border: "1px solid rgba(34,197,94,0.18)",
-          boxShadow: "0 24px 60px rgba(0,0,0,0.55)",
-          background: "#16191f",
-        }}
-      >
-        <div
-          className="flex items-center gap-1.5 px-3 py-2"
-          style={{ background: "rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
-        >
-          <span className="w-2 h-2 rounded-full" style={{ background: "#ff5f57" }} />
-          <span className="w-2 h-2 rounded-full" style={{ background: "#febc2e" }} />
-          <span className="w-2 h-2 rounded-full" style={{ background: "#28c840" }} />
-        </div>
-        <div
-          style={{
-            height: h,
-            backgroundColor: "#0e1014",
-            backgroundImage: `url(${img})`,
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-          }}
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function Hero() {
   useEffect(() => {
     (async () => {
@@ -77,11 +31,6 @@ export default function Hero() {
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 50%, transparent 90%)",
         }}
       />
-
-      {/* Capturas flotantes */}
-      {floats.map((f) => (
-        <FloatCard key={f.img} {...f} />
-      ))}
 
       {/* Contenido centrado */}
       <div className="relative w-full max-w-[760px] mx-auto py-20 px-6 text-center" style={{ zIndex: 2 }}>
