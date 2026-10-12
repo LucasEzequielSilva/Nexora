@@ -39,7 +39,7 @@ const plans: Plan[] = [
     tagline: "El sistema completo: agenda, confirma y reprograma.",
     features: [
       "Todo lo de Negocio",
-      "Confirmación y reprogramación automática",
+      "Confirmación y reprogramación de turnos",
       "Web propia con tu marca",
       "Una pantalla donde ves qué turnos hay y cuántas ausencias tenés",
       "Una llamada mensual de revisión",

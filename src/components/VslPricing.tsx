@@ -41,7 +41,7 @@ const plans: Plan[] = [
       "Todo lo de Consultorio",
       "Si algo es urgente o clínico, el sistema no opina: te lo pasa a vos",
       "Web propia con tu marca",
-      "Confirmación y reprogramación automática",
+      "Confirmación y reprogramación de turnos",
       "Una pantalla donde ves qué turnos hay y cuántas ausencias tenés",
       "Una llamada mensual de revisión",
     ],
