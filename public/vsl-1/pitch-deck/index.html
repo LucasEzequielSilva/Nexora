@@ -173,7 +173,7 @@
       <div style="position:relative;z-index:2;max-width:58%">
         <div class="pillkick">Solo para consultorios y clínicas</div>
         <h1 class="s-xl">Tu agenda se llena<br>y se confirma <span class="accent">sola.</span></h1>
-        <p class="body wide">Una IA conversacional agenda, confirma y recuerda cada turno por WhatsApp, 24/7. Vos dejás de contestar mensajes a las 11 de la noche.</p>
+        <p class="body wide">Un empleado nuevo que nunca duerme agenda, confirma y recuerda cada turno por WhatsApp. Vos dejás de contestar mensajes a las 11 de la noche.</p>
       </div>
       <div class="notif-stack" aria-hidden="true">
         <div class="notif"><div class="ni">✅</div><div><b>Turno agendado</b><span>Ana López · jueves 10:30 · vía WhatsApp</span></div></div>
@@ -234,10 +234,10 @@
 
     <!-- 5 MECANISMO (video vsl_web) -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="El mecanismo"
-      data-note="'Eso es lo que instalamos: un asistente con IA que vive en tu WhatsApp y se ocupa del turno de punta a punta. Paciente escribe, el sistema responde, turno confirmado y al CRM. Y vos no tocás nada.'">
+      data-note="'Eso es lo que instalamos: un empleado nuevo que vive en tu WhatsApp y se ocupa del turno de punta a punta. Paciente escribe, el sistema responde, turno confirmado y al CRM. Y vos no tocás nada.'">
       <div class="kick">Lo que instalamos</div>
       <h1 class="s-lg">Se ocupa del turno<br><span class="accent">de punta a punta.</span></h1>
-      <p class="body wide">Una IA conversacional vive en tu WhatsApp y trabaja al lado de tu agenda. Vos no tocás nada.</p>
+      <p class="body wide">Un empleado nuevo vive en tu WhatsApp y trabaja al lado de tu agenda. Vos no tocás nada.</p>
       <div class="eq">
         <div class="e"><b>Paciente escribe</b><span>a cualquier hora</span></div>
         <div class="op">+</div>
@@ -262,7 +262,7 @@
         </div>
         <div class="case-right" style="flex-direction:row;gap:2.6vw;align-items:center;justify-content:center">
           <div class="phone" style="width:16.5vw;flex:none;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 70px rgba(34,197,94,.18)" aria-hidden="true">
-            <div class="wa-top"><div class="wa-av">A</div><div><div class="wa-name">Asiri · Consultorio</div><div class="wa-status">en línea</div></div></div>
+            <div class="wa-top"><div class="wa-av">T</div><div><div class="wa-name">Tu consultorio</div><div class="wa-status">en línea</div></div></div>
             <div class="wa-body" id="wa-chat"></div>
           </div>
           <div role="tabpanel" aria-live="polite" style="width:25vw;flex:none;display:flex;flex-direction:column;justify-content:center">
@@ -431,8 +431,8 @@
   function calc(){const v=(Number(c2.value)*4+Number(c3.value))*Number(c1.value)||0;cout.textContent='$'+v.toLocaleString('es-AR');}
   [c1,c2,c3].forEach(el=>el.addEventListener('input',calc));calc();
   const caseData=[
-    {chat:[['in','Hola! Quería sacar un turno esta semana','19:42'],['out','¡Hola! Soy Asiri, la secretaria virtual 🤗 Tengo Mié 16:40 o Jue 10:30. ¿Cuál te queda?','19:42'],['in','Jueves 10:30','19:43'],['out','¡Buenísimo! Te agendé el jueves 10:30 ✅ Te recuerdo el día antes 😊','19:43']],d:'El paciente escribe a cualquier hora, el sistema ofrece los horarios libres y cierra el turno al instante.',f:'El turno que se iba porque nadie contestaba a tiempo.'},
-    {chat:[['in','Necesito cancelar mi turno de mañana','09:02'],['out','¡Hola! Soy Asiri 🤗 Listo, lo cancelé. ¿Querés que te ofrezca otra fecha?','09:02'],['note','Horario liberado para otro paciente']],d:'Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo paciente.',f:'Las horas muertas que igual pagás.'},
+    {chat:[['in','Hola! Quería sacar un turno esta semana','19:42'],['out','¡Hola! Te ayudo con tu turno 🤗 Tengo Mié 16:40 o Jue 10:30. ¿Cuál te queda?','19:42'],['in','Jueves 10:30','19:43'],['out','¡Buenísimo! Te agendé el jueves 10:30 ✅ Te recuerdo el día antes 😊','19:43']],d:'El paciente escribe a cualquier hora, el sistema ofrece los horarios libres y cierra el turno al instante.',f:'El turno que se iba porque nadie contestaba a tiempo.'},
+    {chat:[['in','Necesito cancelar mi turno de mañana','09:02'],['out','¡Hola! 🤗 Listo, lo cancelé. ¿Querés que te ofrezca otra fecha?','09:02'],['note','Horario liberado para otro paciente']],d:'Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo paciente.',f:'Las horas muertas que igual pagás.'},
     {chat:[['in','Me podés cambiar el turno para el jueves?','18:40'],['out','¡Claro! El jueves tengo 10:30 o 16:00. ¿Cuál preferís?','18:40'],['in','10:30','18:41'],['out','Listo, te reprogramé para el jueves 10:30 ✅','18:41']],d:'El paciente pide otro día y el sistema reacomoda la agenda solo. Tu recepción no toca nada.',f:'El ida y vuelta eterno por WhatsApp para mover un turno.'},
     {chat:[['out','✨ Recordatorio ✨ Te esperamos mañana a las 10:30. ¿Confirmás tu asistencia? 😊','19:00'],['in','Confirmo','19:12'],['out','¡Perfecto! Te esperamos 🤗','19:12']],d:'Avisa 24h y 2h antes. El paciente confirma de un toque y la agenda se actualiza sola.',f:'El ausentismo que te come la agenda mes a mes.'},
     {chat:[['out','¡Hola! Te recuerdo tu turno de hoy 16:00. ¿Seguís viniendo?','11:30'],['in','Sí 👍','11:35'],['out','¡Buenísimo 😊 la esperamos!','11:35'],['note','Día confirmado · agenda cerrada']],d:'Pide confirmación y te arma el día cerrado: sabés quién viene antes de abrir.',f:'Llegar a la mañana sin saber si la agenda es real.'}

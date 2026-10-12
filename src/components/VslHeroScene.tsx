@@ -71,11 +71,10 @@ export default function VslHeroScene() {
 
           <FadeUp delay={0.1}>
             <h1 className="text-[clamp(1.6rem,2.5vw,34px)] font-bold leading-[1.2] tracking-[-0.5px] mb-6">
-              Le instalamos a tu consultorio una{" "}
+              Instalamos en tu consultorio un{" "}
               <span style={{ background: "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 50px rgba(34,197,94,0.3))" }}>
-                IA conversacional
-              </span>{" "}
-              que responde, agenda y confirma cada turno 24/7.
+                empleado nuevo que nunca duerme
+              </span>: responde, agenda y confirma cada turno por WhatsApp.
             </h1>
           </FadeUp>
 

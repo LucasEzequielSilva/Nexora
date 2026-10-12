@@ -17,28 +17,28 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+  title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
   description:
-    "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes. Sistema activo en menos de 2 semanas.",
+    "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
   openGraph: {
-    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
     type: "website",
     images: [
       {
         url: "/thumbnail-profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Nexora — WhatsApp, Agenda y CRM automatizados",
+        alt: "Logo de Nexora",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo, para que tu negocio no pierda clientes.",
     images: ["/thumbnail-profile.jpg"],
   },
 };
