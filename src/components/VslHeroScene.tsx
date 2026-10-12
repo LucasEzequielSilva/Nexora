@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import FadeUp from "./FadeUp";
 import { useDemoLoop, usePrefersReducedMotion, CrmPill, ConfirmPill } from "./VslHero";
 
 const CAL_LINK = "nexoragrowth/30min";
 const VSL = "/vsl_web.mp4";
 const SCENE = "/hero-cogne-2k-3.png";
+const SCENE_W = 2752;
+const SCENE_H = 1536;
 
 /* Test C — hero en capas sobre la escena fusionada (cogne + consultorio, generada por IA).
    La UI (cards, texto) va crisp en HTML encima; objetos blur dan profundidad estilo Lubo. */
@@ -15,12 +18,45 @@ export default function VslHeroScene() {
   const reduced = usePrefersReducedMotion();
   const demo = useDemoLoop(reduced);
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  /* Modal del video: el foco entra al botón de cerrar, Tab queda dentro del
+     diálogo, Escape cierra y el foco vuelve a quien lo abrió. */
+  useEffect(() => {
+    if (!showVsl) return;
+    const opener = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowVsl(false);
+        return;
+      }
+      /* Shift+Tab desde "Cerrar video" salta al reproductor, sin salir del diálogo. */
+      if (e.key === "Tab" && e.shiftKey && document.activeElement === closeRef.current) {
+        e.preventDefault();
+        dialogRef.current?.querySelector<HTMLElement>("video")?.focus();
+      }
+    };
+    /* Si el foco sale del diálogo, vuelve al botón de cerrar. */
+    const onFocusIn = (e: FocusEvent) => {
+      if (dialogRef.current && !dialogRef.current.contains(e.target as Node)) closeRef.current?.focus();
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("focusin", onFocusIn);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("focusin", onFocusIn);
+      opener?.focus();
+    };
+  }, [showVsl]);
+
   return (
     <section className="relative overflow-hidden lg:min-h-[100svh] lg:flex lg:items-center" style={{ background: "#0a0a0b" }}>
       {/* ── CAPA 1 · Fondo fusionado (cogne + consultorio, IA) ──
           Desktop: full-bleed con cogne a la derecha. Mobile: imagen ARRIBA (apilada), texto abajo. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={SCENE} alt="" className="block w-full h-[46vh] object-cover object-[72%_18%] select-none lg:absolute lg:inset-0 lg:h-full lg:object-right" />
+      <Image src={SCENE} alt="" width={SCENE_W} height={SCENE_H} sizes="100vw" preload fetchPriority="high" className="block w-full h-[46vh] object-cover object-[72%_18%] select-none lg:absolute lg:inset-0 lg:h-full lg:object-right" />
 
       {/* scrim izquierda → legibilidad del texto (solo desktop, donde el texto va encima) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(90deg, #0a0a0b 0%, rgba(10,10,11,0.92) 24%, rgba(10,10,11,0.55) 44%, rgba(10,10,11,0) 66%)" }} />
@@ -71,23 +107,22 @@ export default function VslHeroScene() {
 
           <FadeUp delay={0.1}>
             <h1 className="text-[clamp(1.6rem,2.5vw,34px)] font-bold leading-[1.2] tracking-[-0.5px] mb-6">
-              Le instalamos a tu consultorio una{" "}
+              Instalamos en tu consultorio un{" "}
               <span style={{ background: "linear-gradient(to bottom, #22c55e 0%, #4ade80 50%, #f0fdf4 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", filter: "drop-shadow(0 0 50px rgba(34,197,94,0.3))" }}>
-                IA conversacional
-              </span>{" "}
-              que responde, agenda y confirma cada turno 24/7.
+                empleado nuevo que nunca duerme
+              </span>: responde, agenda y confirma cada turno por WhatsApp.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <p className="text-[17px] text-text-secondary leading-[1.7] max-w-[500px] mx-auto lg:mx-0 mb-7 font-light">
-              Un asistente en tu WhatsApp contesta al instante a cualquier hora, llena la agenda, confirma los turnos para que no falte nadie y reactiva a los pacientes que no volvieron. Lo dejamos <strong className="text-white font-semibold">andando en menos de 2 semanas</strong>. Vos solo te ocupás de lo importante.
+              Un asistente en tu WhatsApp contesta a cualquier hora, agenda y confirma los turnos. Vos solo te ocupás de lo importante.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.3}>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2.5 mb-9">
-              {["Andando en menos de 2 semanas", "Recordatorios que matan las ausencias", "Sin contrato largo"].map((item, i) => (
+              {["Puesta en marcha acordada por escrito", "Recordatorios antes de cada turno"].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-[13px] text-text-muted">
                   <span className="text-accent font-bold text-[14px]">✓</span>
                   {item}
@@ -100,7 +135,7 @@ export default function VslHeroScene() {
             <div className="flex flex-wrap justify-center lg:justify-start gap-3.5 mb-6">
               <div style={{ display: "inline-block", borderRadius: "13px", padding: "1px", background: "linear-gradient(135deg, rgba(240,253,244,1) 0%, rgba(34,197,94,0.6) 50%, rgba(22,163,74,1) 100%)", boxShadow: "0 0 24px rgba(34,197,94,0.25)" }}>
                 <button data-cal-namespace="30min" data-cal-link={CAL_LINK} data-cal-config='{"layout":"month_view"}' className="inline-flex items-center gap-2 px-8 py-4 text-black font-bold text-[15px] rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer" style={{ borderRadius: "12px", background: "linear-gradient(180deg, #62e995 0%, #2bc961 46%, #15a046 100%)", boxShadow: "inset 0 1.5px 0 rgba(255,255,255,0.5), inset 0 -14px 22px -12px rgba(3,30,15,0.55), 0 10px 26px -8px rgba(34,197,94,0.55), 0 0 28px rgba(34,197,94,0.28)" }}>
-                  Quiero la agenda llena →
+                  Agendá tu llamada →
                 </button>
               </div>
               <button onClick={() => setShowVsl(true)} className="inline-flex items-center gap-2 px-7 py-4 text-[15px] font-medium rounded-xl transition-all duration-200 hover:border-accent hover:text-accent cursor-pointer" style={{ color: "#e4e4e7", border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.02)" }}>
@@ -120,9 +155,8 @@ export default function VslHeroScene() {
       {/* ── Modal VSL ── */}
       {showVsl && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(4px)" }} onClick={() => setShowVsl(false)}>
-          <div className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Video de presentación" className="relative w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
+            <button ref={closeRef} type="button" aria-label="Cerrar video" onClick={() => setShowVsl(false)} className="absolute -top-10 right-0 text-white/70 hover:text-white text-3xl leading-none cursor-pointer">×</button>
             <video src={VSL} controls autoPlay playsInline className="w-full rounded-xl" style={{ border: "1px solid rgba(34,197,94,0.3)", boxShadow: "0 0 60px rgba(34,197,94,0.15)" }} />
           </div>
         </div>

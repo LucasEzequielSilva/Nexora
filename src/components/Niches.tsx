@@ -10,8 +10,8 @@ const niches = [
       </svg>
     ),
     title: "Clínicas y consultorios",
-    before: { val: "15–20%", desc: "ausentismo mensual sin recordatorios automáticos" },
-    after: { val: "< 3%", desc: "recordatorio 24hs y 2hs antes con confirmación" },
+    pain: "Turnos que se pierden o quedan vacíos cuando nadie contesta a tiempo",
+    change: "Se contesta, se agenda y se confirma el turno por WhatsApp, al lado de tu equipo",
   },
   {
     icon: (
@@ -20,8 +20,8 @@ const niches = [
       </svg>
     ),
     title: "Barberías y salones",
-    before: { val: "5–10", desc: "turnos perdidos por semana por no responder a tiempo" },
-    after: { val: "~0", desc: "el sistema responde y agenda 24/7 sin intervención" },
+    pain: "Mensajes que quedan sin contestar mientras estás con un cliente",
+    change: "Se responde y se agenda por WhatsApp",
   },
   {
     icon: (
@@ -31,8 +31,8 @@ const niches = [
       </svg>
     ),
     title: "Gimnasios y studios",
-    before: { val: "2 hs", desc: "diarias en gestión manual de clases y turnos" },
-    after: { val: "15 min", desc: "revisión del dashboard, el resto es automático" },
+    pain: "Clases y turnos que se gestionan a mano",
+    change: "Pide confirmación y te arma el día cerrado",
   },
   {
     icon: (
@@ -42,8 +42,8 @@ const niches = [
       </svg>
     ),
     title: "Inmobiliarias",
-    before: { val: "+6 hs", desc: "promedio para responder una consulta entrante" },
-    after: { val: "< 2 min", desc: "respuesta automática y calificación del lead al instante" },
+    pain: "Consultas que se enfrían esperando respuesta",
+    change: "Las consultas se contestan por WhatsApp y quedan ordenadas",
   },
   {
     icon: (
@@ -53,8 +53,8 @@ const niches = [
       </svg>
     ),
     title: "Veterinarias",
-    before: { val: "40%", desc: "de pacientes que no vuelven a control sin seguimiento" },
-    after: { val: "+30%", desc: "retención por recordatorio automático de vacunas y controles" },
+    pain: "El control que se pasa porque nadie se acuerda de avisar",
+    change: "Recordatorios antes de cada turno de control",
   },
   {
     icon: (
@@ -66,8 +66,8 @@ const niches = [
       </svg>
     ),
     title: "Estudios profesionales",
-    before: { val: "Sin web", desc: "invisible en Google para nuevos clientes que buscan el servicio" },
-    after: { val: "+SEO", desc: "landing propia indexada con turnos online desde el día uno" },
+    pain: "Sin una web propia que muestre tu trabajo",
+    change: "Web propia con tu marca",
   },
 ];
 
@@ -78,17 +78,17 @@ export default function Niches() {
         <div className="inline-flex items-center gap-3 mb-5">
           <span className="h-px w-8 bg-accent opacity-50" />
           <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
-            Qué cambia por rubro
+            Para quién
           </span>
           <span className="h-px w-8 bg-accent opacity-50" />
         </div>
         <h2 className="text-[clamp(26px,3.5vw,40px)] font-extrabold tracking-tight mb-3">
-          El impacto concreto,
+          Qué cambia
           <br />
-          por tipo de negocio
+          en cada tipo de negocio
         </h2>
         <p className="text-text-secondary text-base mb-10">
-          Datos basados en lo que el sistema resuelve en cada rubro. Sin vueltas.
+          Hoy lo tenemos andando en un consultorio de ortodoncia; en otros rubros lo armamos a medida y lo vemos en la llamada.
         </p>
       </FadeUp>
 
@@ -133,31 +133,22 @@ export default function Niches() {
               {/* Divider */}
               <div className="h-px w-full mb-4" style={{ background: "rgba(255,255,255,0.06)" }} />
 
-              {/* Before / After */}
+              {/* El dolor / Lo que cambia */}
               <div className="grid grid-cols-2 gap-3 flex-1">
-                <div className="flex flex-col gap-1">
-                  <span className="text-[9.5px] font-bold uppercase tracking-wider text-text-muted">
-                    Antes
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted">
+                    Hoy
                   </span>
-                  <span
-                    className="text-[18px] font-extrabold leading-none line-through"
-                    style={{ color: "#a1a1aa", textDecorationColor: "#ef4444" }}
-                  >
-                    {niche.before.val}
-                  </span>
-                  <span className="text-[10px] text-text-muted leading-snug mt-1">
-                    {niche.before.desc}
+                  <span className="text-[12.5px] text-text-secondary leading-snug">
+                    {niche.pain}
                   </span>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[9.5px] font-bold uppercase tracking-wider text-text-muted">
-                    Con Nexora
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent">
+                    Lo que cambia
                   </span>
-                  <span className="text-[18px] font-extrabold leading-none text-accent">
-                    {niche.after.val}
-                  </span>
-                  <span className="text-[10px] text-text-muted leading-snug mt-1">
-                    {niche.after.desc}
+                  <span className="text-[12.5px] text-text-primary leading-snug">
+                    {niche.change}
                   </span>
                 </div>
               </div>

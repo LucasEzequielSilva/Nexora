@@ -60,7 +60,7 @@ const casosClinica: Caso[] = [
   {
     key: "agendamiento",
     label: "Agendamiento de turnos",
-    desc: "El paciente escribe a cualquier hora, el sistema le ofrece los horarios libres y cierra el turno al instante. Aunque sean las 11 de la noche.",
+    desc: "Te escriben a cualquier hora y el sistema ofrece los horarios libres y cierra el turno al instante. Aunque sean las 11 de la noche.",
     frena: "El turno que se iba porque nadie contestaba a tiempo.",
     video: "/casos/agendamiento.mp4",
     icon: "calendar",
@@ -68,15 +68,15 @@ const casosClinica: Caso[] = [
   {
     key: "cancelaciones",
     label: "Cancelaciones",
-    desc: "Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo paciente. La agenda no queda con huecos.",
-    frena: "Las horas muertas que igual pagás.",
+    desc: "Si alguien cancela, el sistema libera el horario y le ofrece una nueva fecha.",
+    frena: "El turno cancelado que quedaba sin nueva fecha.",
     video: "/casos/cancelaciones.mp4",
     icon: "x",
   },
   {
     key: "reprogramacion",
     label: "Reprogramación",
-    desc: "El paciente pide otro día y el sistema reacomoda la agenda solo. Tu recepción no toca nada.",
+    desc: "Si te piden otro día, el sistema reacomoda la agenda. Tu equipo no tiene que mover nada a mano.",
     frena: "El ida y vuelta eterno por WhatsApp para mover un turno.",
     video: "/casos/reprogramacion.mp4",
     icon: "refresh",
@@ -84,7 +84,7 @@ const casosClinica: Caso[] = [
   {
     key: "recordatorios",
     label: "Recordatorios",
-    desc: "Avisa 24h y 2h antes. El paciente confirma de un toque y la agenda se actualiza sola.",
+    desc: "Avisa antes del turno. Te confirman de un toque y tu agenda se actualiza.",
     frena: "El ausentismo que te come la agenda mes a mes.",
     video: "/casos/recordatorios.mp4",
     icon: "bell",
@@ -103,24 +103,23 @@ interface CasosDeUsoProps {
   heading?: string;
   subheading?: string;
   casos?: Caso[];
-  /* prefijo del caption bajo el celular; se le agrega " · {caso.label}".
-     default cita el consultorio de Raquel; la general lo reenmarca como "negocio real". */
+  /* prefijo del caption bajo el celular; se le agrega " · {caso.label}". */
   captionPrefix?: React.ReactNode;
 }
 
 export default function CasosDeUso({
   heading = "El sistema se ocupa del turno de punta a punta.",
-  subheading = "Desde que el paciente escribe hasta que confirma. Tocá un caso y mirá cómo lo resuelve solo.",
+  subheading = "Desde que te escriben hasta que confirman. Tocá un caso y mirá cómo se resuelve.",
   casos = casosClinica,
   captionPrefix = (
-    <>Grabado en el consultorio de la <span className="text-text-secondary font-semibold">Dra. Raquel</span></>
+    <>Así responde el sistema de la <span className="text-text-secondary font-semibold">Dra. Raquel</span></>
   ),
 }: CasosDeUsoProps = {}) {
   const [active, setActive] = useState(0);
   const caso = casos[active];
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section id="casos" className="relative py-24 px-6 overflow-hidden">
       <div className="relative z-10 mx-auto" style={{ maxWidth: "1080px" }}>
         <FadeUp>
           <div className="text-center mb-12">
@@ -215,10 +214,6 @@ export default function CasosDeUso({
                 >
                   <div className="relative rounded-[34px] overflow-hidden" style={{ background: "#0b141a", aspectRatio: "9 / 19.3" }}>
                     <div className="absolute top-[9px] left-1/2 -translate-x-1/2 rounded-full z-20" style={{ width: 84, height: 21, background: "#000" }} />
-                    <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(0,0,0,0.45)", border: "1px solid rgba(34,197,94,0.3)", backdropFilter: "blur(6px)" }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                      <span className="text-[9px] font-mono uppercase tracking-wider text-accent">Real</span>
-                    </div>
                     <video
                       key={caso.key}
                       src={caso.video}

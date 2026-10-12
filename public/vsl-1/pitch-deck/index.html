@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nexora · Deck-VSL Clínicas</title>
+<title>Nexora · Cómo funciona para clínicas</title>
+<meta name="robots" content="noindex,nofollow" />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
@@ -42,7 +43,6 @@
   .grad{background:linear-gradient(120deg,#fff 30%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
   .body{font-size:1.4vw;line-height:1.5;color:#C7CBD1;max-width:52%;margin-top:1.7vw;font-weight:500}
   .body.wide{max-width:74%}
-  .muted{color:var(--muted)}
 
   /* glass cards */
   .cardrow{display:flex;gap:1.4vw;margin-top:2.4vw}
@@ -57,9 +57,9 @@
   .numc{width:2.3vw;height:2.3vw;border-radius:50%;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.5);color:var(--accent);
     display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:1.15vw;margin-bottom:.8vw}
 
-  .pill{display:inline-flex;align-items:center;gap:.6vw;border:1px solid rgba(34,197,94,.5);color:var(--accent);border-radius:999px;
+  .pill{text-decoration:none;display:inline-flex;align-items:center;gap:.6vw;border:1px solid rgba(34,197,94,.5);color:var(--accent);border-radius:999px;
     font-size:.95vw;letter-spacing:.04em;font-weight:700;padding:.7vw 1.3vw;background:rgba(34,197,94,.05);cursor:pointer}
-  .cta{display:inline-flex;align-items:center;gap:1vw;background:var(--accent);color:#04220f;font-weight:900;font-size:1.8vw;
+  .cta{align-self:flex-start;display:inline-flex;align-items:center;gap:1vw;background:var(--accent);color:#04220f;font-weight:900;font-size:1.8vw;
     padding:1.2vw 2.5vw;border-radius:.9vw;border:none;cursor:pointer;margin-top:2.4vw;box-shadow:0 0 60px rgba(34,197,94,.4)}
   .cta:focus-visible,.pill:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
@@ -96,6 +96,7 @@
   .calc-r{display:flex;justify-content:space-between;align-items:center;gap:1vw;background:var(--card);border:1px solid var(--cardbd);border-radius:.7vw;padding:.85vw 1.1vw}
   .calc-r label{font-size:1.05vw;color:#C7CBD1}
   .calc-r input{width:7vw;background:rgba(0,0,0,.4);border:1px solid var(--cardbd);color:var(--accent);font-weight:700;font-size:1.1vw;text-align:right;padding:.45vw .6vw;border-radius:.4vw;font-family:inherit}
+  .calc-r input::placeholder{color:var(--muted);font-weight:400}
   .calc-r input:focus{outline:2px solid var(--accent);outline-offset:1px}
   .calc-out{flex:.9;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.4);border-radius:1vw;padding:2vw;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 0 50px rgba(34,197,94,.12)}
   .calc-out .lbl{font-size:.92vw;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
@@ -121,8 +122,8 @@
   /* proof */
   .proof{display:flex;gap:1.8vw;align-items:center;background:var(--card);border:1px solid var(--cardbd);border-radius:1.2vw;padding:2vw;margin-top:2.2vw;max-width:82%;backdrop-filter:blur(8px);box-shadow:0 0 60px rgba(34,197,94,.1)}
   .proof img{width:7vw;height:7vw;border-radius:50%;object-fit:cover;flex:none;border:2px solid rgba(34,197,94,.4)}
-  .proof .pq{font-size:1.5vw;line-height:1.35;color:#fff;font-weight:500}
-  .proof .pw{font-size:.85vw;color:var(--muted);margin-top:.9vw;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+  .proof .pw{font-size:.85vw;color:var(--accent);margin-bottom:.7vw;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+  .proof .pd{font-size:1.25vw;line-height:1.45;color:#D5D8DE;font-weight:500}
 
   /* steps */
   .steps{display:flex;gap:1vw;margin-top:2.4vw}
@@ -164,30 +165,30 @@
 <body>
 <a href="#deck" class="skip">Saltar al contenido</a>
 <div id="stage">
-  <div class="deck" id="deck" role="region" aria-roledescription="presentación" aria-label="Deck VSL Nexora">
+  <div class="deck" id="deck" role="region" aria-roledescription="presentación" aria-label="Presentación de Nexora">
     <div class="progress" id="bar"></div>
 
     <!-- 1 PORTADA -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Portada"
-      data-note="HOOK (0:00–0:12): 'Si tenés un consultorio, en 3 minutos te muestro cómo frenar la fuga de turnos: que tu agenda se llene y se confirme sola por WhatsApp, 24/7. Y te lo muestro andando en un consultorio real.'">
+      data-note="HOOK (0:00–0:12): 'Si tenés un consultorio, en unos minutos te muestro cómo se agendan y se confirman los turnos por WhatsApp, a cualquier hora. Y te lo muestro andando en un consultorio real.'">
       <div style="position:relative;z-index:2;max-width:58%">
         <div class="pillkick">Solo para consultorios y clínicas</div>
-        <h1 class="s-xl">Tu agenda se llena<br>y se confirma <span class="accent">sola.</span></h1>
-        <p class="body wide">Una IA conversacional agenda, confirma y recuerda cada turno por WhatsApp, 24/7. Vos dejás de contestar mensajes a las 11 de la noche.</p>
+        <h1 class="s-md">Tus turnos se agendan<br>y se confirman <span class="accent">por WhatsApp.</span></h1>
+        <p class="body wide">Un empleado nuevo que nunca duerme: agenda, confirma y recuerda cada turno por WhatsApp. Vos dejás de contestar mensajes a las 11 de la noche.</p>
       </div>
       <div class="notif-stack" aria-hidden="true">
         <div class="notif"><div class="ni">✅</div><div><b>Turno agendado</b><span>Ana López · jueves 10:30 · vía WhatsApp</span></div></div>
         <div class="notif"><div class="ni">🔔</div><div><b>Recordatorio enviado</b><span>“¿Confirmás tu turno de mañana?”</span></div></div>
-        <div class="notif"><div class="ni">📋</div><div><b>Paciente confirmó</b><span>Cargado al CRM, sin tocar nada</span></div></div>
+        <div class="notif"><div class="ni">📋</div><div><b>Turno confirmado</b><span>Ya figura en tu agenda</span></div></div>
       </div>
     </section>
 
     <!-- 2 LA FUGA -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="La fuga de turnos"
-      data-note="'Un paciente te escribe un sábado a la noche. Si no le contestás en minutos, ya está buscando otro consultorio. Eso es una fuga de turnos: no lo perdés por precio ni calidad, lo perdés porque nadie llegó a contestar. Y gotea todos los días.'">
+      data-note="'Un sábado a la noche te escriben para sacar turno. Si no contestás a tiempo, ese turno se va a otro lado. Eso es una fuga de turnos: no lo perdés por precio ni calidad, lo perdés porque nadie llegó a contestar.'">
       <div class="kick">El problema tiene nombre</div>
       <h1 class="s-lg">Tu consultorio tiene<br>una <span class="accent">fuga de turnos.</span></h1>
-      <p class="body">Un paciente escribe un sábado a las 23:14. Si nadie contesta en minutos, ya está sacando turno en otro lado. No lo perdés por precio: lo perdés porque nadie contestó a tiempo. Y gotea todos los días.</p>
+      <p class="body">Un sábado a las 23:14 te escriben para sacar turno. Si nadie contesta a tiempo, ese turno se va a otro lado. No lo perdés por precio: lo perdés porque nadie llegó a contestar.</p>
       <div style="position:absolute;right:7%;top:50%;transform:translateY(-50%)" aria-hidden="true">
         <div class="phone">
           <div class="wa-top"><div class="wa-av">C</div><div><div class="wa-name">Consultorio</div><div class="wa-status" style="color:#8A93A6">últ. vez 18:30</div></div></div>
@@ -200,48 +201,48 @@
       </div>
     </section>
 
-    <!-- 3 COSTO / CALC -->
+    <!-- 3 El cálculo -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="La fuga en plata"
-      data-note="'Hacé una cuenta conmigo. ¿Cuánto sale una consulta? Multiplicalo por los turnos que se te escapan cada semana, más las ausencias del mes. Ese número —que en muchos consultorios pasa el millón— es la fuga, en plata.'">
+      data-note="'Hacé una cuenta conmigo. ¿Cuánto sale una consulta? Multiplicalo por los turnos que se te escapan cada semana, más las ausencias del mes. Ese número es la fuga, en plata.'">
       <div class="kick">La fuga, en plata</div>
       <h1 class="s-md">Hacé la cuenta con <span class="accent">tus</span> números.</h1>
       <div class="calc">
         <div class="calc-in">
-          <div class="calc-r"><label for="c1">Precio de una consulta ($)</label><input id="c1" type="number" value="40000" /></div>
-          <div class="calc-r"><label for="c2">Turnos que se escapan / semana</label><input id="c2" type="number" value="4" /></div>
-          <div class="calc-r"><label for="c3">Ausencias / mes</label><input id="c3" type="number" value="10" /></div>
+          <div class="calc-r"><label for="c1">Precio de una consulta ($)</label><input id="c1" type="number" placeholder="—" /></div>
+          <div class="calc-r"><label for="c2">Turnos que se escapan / semana</label><input id="c2" type="number" placeholder="—" /></div>
+          <div class="calc-r"><label for="c3">Ausencias / mes</label><input id="c3" type="number" placeholder="—" /></div>
         </div>
         <div class="calc-out" aria-live="polite">
-          <div class="lbl">Dejás sobre la mesa, por mes</div>
-          <div class="big" id="cout">$1.040.000</div>
-          <div class="pm">y se va sin que la veas</div>
+          <div class="lbl">Tu cuenta, por mes</div>
+          <div class="big" id="cout">—</div>
+          <div class="pm">con los números que cargaste</div>
         </div>
       </div>
     </section>
 
     <!-- 4 LO OBVIO -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Por qué lo obvio no alcanza"
-      data-note="'La salida obvia no alcanza. Más recepción es cara y no cubre noches ni fines de semana. Los recordatorios a mano se olvidan. Y tu agenda agenda… pero no le contesta al paciente. El problema no es tu equipo.'">
+      data-note="'La salida obvia no alcanza. Sumar más gente a recepción no cubre noches ni fines de semana. Los recordatorios a mano se olvidan. Y tu agenda actual guarda los turnos, pero alguien tiene que contestar los mensajes. El problema no es tu equipo.'">
       <div class="kick">Y lo obvio no la frena</div>
       <h1 class="s-md">El problema no es tu equipo.</h1>
       <div class="cardrow">
-        <div class="card x"><div class="clbl">✕ Más recepción</div><div class="ctext">Cara — y no cubre noches ni fines de semana.</div></div>
+        <div class="card x"><div class="clbl">✕ Sumar más gente a recepción</div><div class="ctext">No cubre noches ni fines de semana.</div></div>
         <div class="card x"><div class="clbl">✕ Recordatorios a mano</div><div class="ctext">Se olvidan en la primera semana ocupada.</div></div>
-        <div class="card x"><div class="clbl">✕ Tu agenda</div><div class="ctext">Agenda… pero no le contesta al paciente.</div></div>
+        <div class="card x"><div class="clbl">✕ Tu agenda actual</div><div class="ctext">Guarda los turnos, pero alguien tiene que contestar los mensajes.</div></div>
       </div>
-      <p class="body" style="margin-top:1.8vw">Ninguna persona puede estar 24/7 metida en el WhatsApp.</p>
+      <p class="body" style="margin-top:1.8vw">Ninguna persona puede estar metida en el WhatsApp a cualquier hora.</p>
     </section>
 
-    <!-- 5 MECANISMO (video vsl_web) -->
+    <!-- 5 Cómo funciona -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="El mecanismo"
-      data-note="'Eso es lo que instalamos: un asistente con IA que vive en tu WhatsApp y se ocupa del turno de punta a punta. Paciente escribe, el sistema responde, turno confirmado y al CRM. Y vos no tocás nada.'">
+      data-note="'Eso es lo que instalamos: un empleado nuevo que vive en tu WhatsApp y se ocupa del turno de punta a punta. Te escriben, el sistema responde, turno confirmado y al CRM.'">
       <div class="kick">Lo que instalamos</div>
       <h1 class="s-lg">Se ocupa del turno<br><span class="accent">de punta a punta.</span></h1>
-      <p class="body wide">Una IA conversacional vive en tu WhatsApp y trabaja al lado de tu agenda. Vos no tocás nada.</p>
+      <p class="body wide">Un empleado nuevo vive en tu WhatsApp y trabaja al lado de tu agenda.</p>
       <div class="eq">
-        <div class="e"><b>Paciente escribe</b><span>a cualquier hora</span></div>
+        <div class="e"><b>Te escriben</b><span>a cualquier hora</span></div>
         <div class="op">+</div>
-        <div class="e"><b>El sistema responde</b><span>24/7, sin recepción</span></div>
+        <div class="e"><b>El sistema responde</b><span>al lado de tu recepción</span></div>
         <div class="op">=</div>
         <div class="e"><b class="accent">Turno confirmado</b><span>agendado y al CRM</span></div>
       </div>
@@ -249,7 +250,7 @@
 
     <!-- 6 CASOS (video agendamiento) -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Los 5 casos"
-      data-note="'Mirá todo lo que se ocupa solo. Tocá cada caso: agenda a cualquier hora; si cancelan, libera y reasigna; reprograma; recuerda y confirma; y te arma el día cerrado. Esto está grabado en el consultorio de la Dra. Raquel.'">
+      data-note="'Mirá todo lo que hace por el turno. Tocá cada caso: agenda a cualquier hora; si cancelan, libera el horario y ofrece una nueva fecha; reprograma; recuerda y confirma; y te arma el día cerrado. Son conversaciones de ejemplo de cómo se resuelve cada caso.'">
       <div class="kick">El turno, de punta a punta</div>
       <h1 class="s-md">Cada cosa que hace, <span class="accent">mata un dolor.</span></h1>
       <div class="cases">
@@ -262,12 +263,12 @@
         </div>
         <div class="case-right" style="flex-direction:row;gap:2.6vw;align-items:center;justify-content:center">
           <div class="phone" style="width:16.5vw;flex:none;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 70px rgba(34,197,94,.18)" aria-hidden="true">
-            <div class="wa-top"><div class="wa-av">A</div><div><div class="wa-name">Asiri · Consultorio</div><div class="wa-status">en línea</div></div></div>
+            <div class="wa-top"><div class="wa-av">T</div><div><div class="wa-name">Tu consultorio</div><div class="wa-status">en línea</div></div></div>
             <div class="wa-body" id="wa-chat"></div>
           </div>
           <div role="tabpanel" aria-live="polite" style="width:25vw;flex:none;display:flex;flex-direction:column;justify-content:center">
             <div class="l" style="font-size:.82vw;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700">Qué hace</div>
-            <div class="t" id="cp-d" style="font-size:1.25vw;color:#D5D8DE;line-height:1.4;margin-top:.4vw">El paciente escribe a cualquier hora, el sistema ofrece los horarios libres y cierra el turno al instante.</div>
+            <div class="t" id="cp-d" style="font-size:1.25vw;color:#D5D8DE;line-height:1.4;margin-top:.4vw">Te escriben a cualquier hora y el sistema ofrece los horarios libres y cierra el turno al instante.</div>
             <div class="l" style="font-size:.82vw;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-top:1.5vw">Te saca de encima</div>
             <div class="t acc" id="cp-f" style="font-size:1.25vw;color:var(--accent);line-height:1.4;margin-top:.4vw">El turno que se iba porque nadie contestaba a tiempo.</div>
           </div>
@@ -277,28 +278,28 @@
 
     <!-- 7 PRUEBA (raquel.png) -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="La prueba"
-      data-note="'Esto no es una idea linda en una diapositiva. Hoy ya está andando en el consultorio de la Dra. Raquel Rodríguez, ortodoncista en Jujuy. Agenda sola, recuerda y confirma, y la encuentran en Google. No te inflo con cien casos: tengo uno, andando y productivo.'">
+      data-note="'Esto no es una idea linda en una diapositiva. Hoy ya está andando en el consultorio de la Dra. Raquel Rodríguez, ortodoncista en Jujuy. Agenda los turnos por WhatsApp, recuerda y confirma. No te inflo con cien casos: tengo uno, andando.'">
       <div class="kick">No te pido que me creas</div>
       <h1 class="s-md">Hoy ya está andando en un <span class="accent">consultorio real.</span></h1>
       <div class="proof">
-        <img src="https://www.nexoragrowth.es/raquel/raquel.png" alt="Dra. Raquel Rodríguez" />
+        <img src="/raquel/raquel.png" alt="Dra. Raquel Rodríguez" />
         <div>
-          <div class="pq">“Agenda turnos sola por WhatsApp a cualquier hora, recuerda y confirma cada cita, y deriva las urgencias a mi equipo.”</div>
-          <div class="pw">Dra. Raquel Rodríguez · Ortodoncia · Jujuy · En producción</div>
+          <div class="pw">Dra. Raquel Rodríguez · Ortodoncia · Jujuy</div>
+          <p class="pd">En su consultorio, el sistema agenda los turnos por WhatsApp a cualquier hora, recuerda y confirma cada turno, y le pasa a su equipo lo que necesita una persona.</p>
         </div>
       </div>
-      <div style="margin-top:1.5vw"><span class="pill">↗ raquelrodriguez.com.ar</span></div>
+      <div style="margin-top:1.5vw"><a class="pill" href="https://raquelrodriguez.com.ar" target="_blank" rel="noopener">↗ raquelrodriguez.com.ar</a></div>
     </section>
 
     <!-- 8 PROCESO -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Cómo se entrega"
-      data-note="'Y es simple de tu lado. Una llamada corta donde vemos por dónde se te escapan los turnos. Lo adaptamos a tu consultorio, lo dejamos andando en menos de dos semanas, lo prendemos con vos y te damos soporte.'">
+      data-note="'Y es simple de tu lado. Una llamada corta donde vemos por dónde se te escapan los turnos. Lo adaptamos a tu consultorio, lo dejamos andando con la puesta en marcha acordada por escrito, lo prendemos con vos y te damos soporte.'">
       <div class="kick">Cómo se entrega · sin misterio</div>
       <h1 class="s-md">De la llamada al sistema andando.</h1>
       <div class="steps">
         <div class="st"><div class="numc">1</div><b>Diagnóstico</b><p>Vemos por dónde gotea.</p></div>
         <div class="st"><div class="numc">2</div><b>Adaptación</b><p>A tu consultorio.</p></div>
-        <div class="st"><div class="numc">3</div><b>Andando</b><p>En menos de 2 semanas.</p></div>
+        <div class="st"><div class="numc">3</div><b>Andando</b><p>Puesta en marcha acordada por escrito.</p></div>
         <div class="st"><div class="numc">4</div><b>En marcha</b><p>Lo prendemos con vos.</p></div>
         <div class="st"><div class="numc">5</div><b>Soporte</b><p>Y mejora continua.</p></div>
       </div>
@@ -306,92 +307,89 @@
 
     <!-- 9 STACK -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Todo lo que incluye"
-      data-note="'Y esto no es una pieza suelta: es un sistema completo. La asistente que agenda, confirma, recuerda, reprograma, reactiva y escala urgencias. Tu agenda online, el CRM, el panel, tu web con SEO. Y de nuestro lado: setup, andando en 2 semanas, soporte. Todo junto.'">
+      data-note="'Y esto no es una pieza suelta: es un sistema completo. El asistente agenda turnos a cualquier hora, libera el horario cuando alguien cancela y ofrece una nueva fecha, reprograma cuando te piden otro día, avisa antes de cada turno y pide confirmación para armarte el día cerrado. Y tu web con tu marca. Todo junto.'">
       <div class="kick">Todo lo que incluye</div>
       <h1 class="s-md">Un sistema completo. <span class="accent">Todo junto.</span></h1>
-      <div class="cardrow">
-        <div class="card"><div class="clbl">La asistente 24/7</div><ul><li>Agenda a cualquier hora</li><li>Confirma cada turno</li><li>Recordatorios 24h y 2h</li><li>Reprograma sola</li><li>Reactiva pacientes</li><li>Escala urgencias</li></ul></div>
-        <div class="card"><div class="clbl">La infraestructura</div><ul><li>Agenda online con tu marca</li><li>CRM de pacientes</li><li>Panel de métricas y ausencias</li><li>Web propia con SEO local</li></ul></div>
-        <div class="card"><div class="clbl">El respaldo</div><ul><li>Setup completo — no tocás nada</li><li>Andando en 2 semanas</li><li>Soporte + mejora continua</li><li>Al lado de tu agenda actual</li></ul></div>
+      <div class="cardrow" style="align-items:flex-start">
+        <div class="card"><div class="clbl">El asistente</div><ul><li>Agenda turnos a cualquier hora</li><li>Libera el horario cuando alguien cancela y ofrece una nueva fecha</li><li>Reprograma cuando te piden otro día</li><li>Avisa antes de cada turno</li><li>Pide confirmación y te arma el día cerrado</li></ul></div>
+        <div class="card"><div class="clbl">Tu web</div><ul><li>Web propia con tu marca</li></ul></div>
       </div>
     </section>
 
-    <!-- 10 ROI -->
-    <section class="slide" role="group" aria-roledescription="slide" aria-label="ROI"
-      data-note="'Acordate del número que sacaste antes: lo que se te va cada mes. El sistema sale una fracción de eso — se paga solo con los turnos que recuperás. El número exacto lo vemos en la llamada.'">
+    <!-- 10 El cálculo -->
+    <section class="slide" role="group" aria-roledescription="slide" aria-label="El cálculo"
+      data-note="'Acordate del número que sacaste antes: lo que se te va cada mes. El número exacto lo vemos en la llamada.'">
       <div class="kick">La cuenta que importa</div>
-      <h1 class="s-lg">Cuesta una <span class="accent">fracción</span><br>de lo que ya perdés.</h1>
+      <h1 class="s-lg">El número lo vemos<br><span class="accent">en tu llamada.</span></h1>
       <div class="cardrow" style="max-width:62%">
-        <div class="card x"><div class="clbl">La fuga</div><div class="ctext">Cientos de miles, todos los meses.</div></div>
-        <div class="card"><div class="clbl">El sistema</div><div class="ctext">Una fracción — se paga solo con los turnos que recuperás.</div></div>
+        <div class="card x"><div class="clbl">La fuga</div><div class="ctext">Lo que se te escapa cada mes, con tus números.</div></div>
+        <div class="card"><div class="clbl">El sistema</div><div class="ctext">Se arma según tu consultorio; lo vemos en la llamada.</div></div>
       </div>
-      <p class="body" style="margin-top:1.6vw;font-size:1.1vw">El número exacto lo vemos en la llamada, según tu consultorio.</p>
     </section>
 
-    <!-- 11 OBJECIONES -->
-    <section class="slide" role="group" aria-roledescription="slide" aria-label="Objeciones"
-      data-note="'Dos cosas que siempre me preguntan. Una: no reemplaza a tu recepcionista, la libera de la parte mecánica. Y dos: si el paciente quiere una persona, lo pasa a tu equipo al toque. Nada se siente frío.'">
-      <div class="kick">Las dos preguntas de siempre</div>
+    <!-- 11 Dudas frecuentes -->
+    <section class="slide" role="group" aria-roledescription="slide" aria-label="Dudas frecuentes"
+      data-note="'Dos preguntas que aparecen seguido. Una: no reemplaza a tu recepcionista, la libera de la parte mecánica. Y dos: si quien escribe quiere una persona, el asistente lo pasa a tu equipo. Nada se siente frío.'">
+      <div class="kick">Dos preguntas para aclarar</div>
       <h1 class="s-md">No reemplaza a nadie. <span class="accent">Libera a todos.</span></h1>
       <div class="cardrow">
         <div class="card"><div class="clbl">Tu recepcionista</div><div class="ctext">Deja la parte mecánica y atiende mejor a quien tiene enfrente.</div></div>
-        <div class="card"><div class="clbl">¿Y si quiere una persona?</div><div class="ctext">La asistente lo pasa a tu equipo al toque. Nada se siente frío.</div></div>
+        <div class="card"><div class="clbl">¿Y si quiere una persona?</div><div class="ctext">El asistente lo pasa a tu equipo. Nada se siente frío.</div></div>
       </div>
-      <p class="body" style="margin-top:1.8vw">Trabaja al lado de Dentalink, Drapp o lo que ya uses.</p>
+      <p class="body" style="margin-top:1.8vw">Trabaja al lado del sistema que ya usás; lo verificamos con vos en la llamada.</p>
     </section>
 
     <!-- 11b CONFIANZA -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Confianza y seguridad"
-      data-note="'Y sé lo que estás pensando: ¿y si se manda una macana con un paciente? Por eso está pensado para un consultorio. Es supervisado: cuando algo se sale del libreto, escala a tu equipo. Solo maneja turnos —no toca historias clínicas ni da consejos médicos—. Trabaja al lado de tu sistema. Y arranca acotado, se afina con el uso.'">
+      data-note="'Y sé lo que estás pensando: ¿y si se manda una macana con quien te escribe? Por eso está pensado para un consultorio. Es supervisado: cuando algo se sale del libreto, te lo pasa a vos. Solo maneja turnos, y no da indicaciones médicas: lo clínico te lo pasa a vos. Trabaja al lado de tu sistema, y lo verificamos con vos en la llamada. Y arranca acotado, se afina con el uso.'">
       <div class="kick">Pensado para un consultorio</div>
-      <h1 class="s-md">Un paciente no es un <span class="accent">lead cualquiera.</span></h1>
+      <h1 class="s-md">Cada mensaje es una persona<br><span class="accent">que espera una respuesta.</span></h1>
       <div class="cardrow">
-        <div class="card"><div class="clbl">Supervisado</div><div class="ctext">Cuando algo se sale del libreto, escala a un humano de tu equipo.</div></div>
-        <div class="card"><div class="clbl">Solo turnos</div><div class="ctext">No toca historias clínicas ni da consejos médicos.</div></div>
-        <div class="card"><div class="clbl">A tu lado</div><div class="ctext">Trabaja junto a Dentalink o Drapp — no las pisa.</div></div>
+        <div class="card"><div class="clbl">Supervisado</div><div class="ctext">Cuando algo se sale del libreto, te lo pasa a vos.</div></div>
+        <div class="card"><div class="clbl">Solo turnos</div><div class="ctext">No da indicaciones médicas: lo clínico te lo pasa a vos.</div></div>
+        <div class="card"><div class="clbl">A tu lado</div><div class="ctext">Trabaja junto a tu sistema de gestión: lo verificamos con vos en la llamada.</div></div>
         <div class="card"><div class="clbl">Se afina con el uso</div><div class="ctext">Arranca acotado y mejora supervisado.</div></div>
       </div>
     </section>
 
-    <!-- 12 GARANTIA -->
-    <section class="slide" role="group" aria-roledescription="slide" aria-label="Garantía"
-      data-note="'Y no te jugás nada raro: si en dos semanas no está andando, seguimos trabajando sin que pagues un peso más hasta que lo esté. Sin contrato largo.'">
-      <div class="kick">Reversión de riesgo</div>
-      <h1 class="s-lg">Andando en 2 semanas.<br><span class="accent">O seguimos hasta que lo esté.</span></h1>
-      <p class="body wide">Sin contrato largo. El riesgo lo ponemos nosotros.</p>
+    <!-- 12 Lo que queda por escrito -->
+    <section class="slide" role="group" aria-roledescription="slide" aria-label="Lo que queda por escrito"
+      data-note="'Lo que se entrega queda por escrito. Lo vemos en la llamada, antes de arrancar.'">
+      <div class="kick">Antes de arrancar</div>
+      <h1 class="s-lg">Lo que se entrega<br><span class="accent">queda por escrito.</span></h1>
+      <p class="body wide">Lo vemos juntos en la llamada.</p>
     </section>
 
-    <!-- 13 ESCASEZ -->
-    <section class="slide" role="group" aria-roledescription="slide" aria-label="Escasez"
-      data-note="'Tomamos un número limitado de consultorios por mes, porque a cada uno lo instalamos a mano y bien. Y cada semana que esperás, la fuga sigue.'">
-      <div class="kick">Por capacidad, no por apuro</div>
-      <h1 class="s-xl">Solo <span class="accent">3 cupos</span><br>este mes.</h1>
-      <p class="body wide">Instalamos pocos consultorios por mes para cuidar cada instalación. Y cada semana que esperás, la fuga sigue goteando.</p>
+    <!-- 13 Cómo lo armamos -->
+    <section class="slide" role="group" aria-roledescription="slide" aria-label="Cómo lo armamos"
+      data-note="'Cada consultorio se arma a medida: primero entendemos cómo trabajás y con eso definimos qué incluye y cuándo estaría andando.'">
+      <div class="kick">Cómo lo armamos</div>
+      <h1 class="s-xl">Cada consultorio<br>se arma <span class="accent">a medida.</span></h1>
+      <p class="body wide">Primero entendemos cómo trabajás y con eso definimos qué incluye y cuándo estaría andando.</p>
     </section>
 
-    <!-- 14 REFRAME -->
-    <section class="slide" role="group" aria-roledescription="slide" aria-label="Reframe"
-      data-note="'Pensalo así: tus pacientes te van a escribir igual, hoy y este fin de semana. La única pregunta es si alguien les contesta a tiempo… o si esos turnos se siguen yendo en silencio. Eso lo elegís vos.'">
+    <!-- 14 La decisión -->
+    <section class="slide" role="group" aria-roledescription="slide" aria-label="La decisión"
+      data-note="'Pensalo así: te van a escribir igual, hoy y este fin de semana. La única pregunta es si alguien contesta a tiempo… o si esos turnos se siguen yendo en silencio. Eso lo elegís vos.'">
       <div class="kick">La decisión</div>
-      <h1 class="s-lg">Tus pacientes van<br>a escribir igual.</h1>
+      <h1 class="s-lg">Te van a<br>escribir igual.</h1>
       <p class="body wide">La pregunta es si alguien contesta a tiempo — o si la fuga sigue, en silencio. <span class="accent">Eso lo elegís vos.</span></p>
     </section>
 
     <!-- 15 CTA -->
     <section class="slide" role="group" aria-roledescription="slide" aria-label="Llamada a la acción"
-      data-note="'Si querés ver si el tuyo califica, agendá una llamada de 30 minutos, sin compromiso. Te muestro el sistema en vivo y vos decidís. El botón está abajo. Nos vemos del otro lado.'">
+      data-note="'Si querés ver si el tuyo califica, agendá una llamada corta, sin compromiso. Te muestro cómo se vería en tu consultorio y vos decidís. El botón está abajo. Nos vemos del otro lado.'">
       <div class="kick">Próximo paso</div>
-      <h1 class="s-xl">Agendá tu llamada.<br><span class="accent">Gratis.</span></h1>
-      <p class="body wide">30 minutos, sin compromiso. Te muestro el sistema en vivo y vos decidís.</p>
-      <button class="cta" onclick="alert('Reemplazar por el link de agenda')">Agendar mi llamada →</button>
-      <p class="body" style="margin-top:1.2vw;font-size:1vw">Solo 3 cupos este mes · <span class="muted">[ link de agenda — completar ]</span></p>
+      <h1 class="s-xl">Agendá tu <span class="accent">llamada.</span></h1>
+      <p class="body wide">Una llamada corta, sin compromiso. Te muestro cómo se vería en tu consultorio y vos decidís.</p>
+      <button class="cta" onclick="alert('Reemplazar por el link de agenda')">Agendá tu llamada →</button>
     </section>
 
     <!-- chrome -->
-    <div class="topbar"><span>NEXORA · CLÍNICAS</span><span class="arrow"><span></span>→</span><span>SISTEMA 24/7</span></div>
+    <div class="topbar"><span>NEXORA · CLÍNICAS</span><span class="arrow"><span></span>→</span><span>SISTEMA A CUALQUIER HORA</span></div>
     <div class="wordmark">NEX<b>ORA</b></div>
     <div class="pageno" id="pageno">01 / 16</div>
-    <div class="cam" id="cam" aria-hidden="true">cám.<br>Lucas</div>
+    <div class="cam" id="cam" aria-hidden="true">cámara</div>
   </div>
 </div>
 
@@ -420,6 +418,8 @@
   document.getElementById('next').onclick=()=>go(1);
   document.getElementById('prev').onclick=()=>go(-1);
   window.addEventListener('keydown',e=>{
+    const t=e.target&&e.target.tagName;
+    if(t==='INPUT'||t==='TEXTAREA'||t==='BUTTON')return;
     if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();go(1);}
     else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(-1);}
     else if(e.key==='Home'){i=0;render();}else if(e.key==='End'){i=slides.length-1;render();}
@@ -427,14 +427,16 @@
     else if(e.key.toLowerCase()==='c')cam.classList.toggle('show');
     else if(e.key.toLowerCase()==='f'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
   });
+  document.addEventListener('mousedown',e=>{if(e.target.closest&&e.target.closest('button'))e.preventDefault();});
   const c1=document.getElementById('c1'),c2=document.getElementById('c2'),c3=document.getElementById('c3'),cout=document.getElementById('cout');
-  function calc(){const v=(Number(c2.value)*4+Number(c3.value))*Number(c1.value)||0;cout.textContent='$'+v.toLocaleString('es-AR');}
+  const num=el=>Math.max(0,Number(el.value)||0);
+  function calc(){const v=(num(c2)*4+num(c3))*num(c1);cout.textContent=v>0?'$'+v.toLocaleString('es-AR'):'—';}
   [c1,c2,c3].forEach(el=>el.addEventListener('input',calc));calc();
   const caseData=[
-    {chat:[['in','Hola! Quería sacar un turno esta semana','19:42'],['out','¡Hola! Soy Asiri, la secretaria virtual 🤗 Tengo Mié 16:40 o Jue 10:30. ¿Cuál te queda?','19:42'],['in','Jueves 10:30','19:43'],['out','¡Buenísimo! Te agendé el jueves 10:30 ✅ Te recuerdo el día antes 😊','19:43']],d:'El paciente escribe a cualquier hora, el sistema ofrece los horarios libres y cierra el turno al instante.',f:'El turno que se iba porque nadie contestaba a tiempo.'},
-    {chat:[['in','Necesito cancelar mi turno de mañana','09:02'],['out','¡Hola! Soy Asiri 🤗 Listo, lo cancelé. ¿Querés que te ofrezca otra fecha?','09:02'],['note','Horario liberado para otro paciente']],d:'Si alguien cancela, el sistema libera el horario al toque y se lo ofrece al próximo paciente.',f:'Las horas muertas que igual pagás.'},
-    {chat:[['in','Me podés cambiar el turno para el jueves?','18:40'],['out','¡Claro! El jueves tengo 10:30 o 16:00. ¿Cuál preferís?','18:40'],['in','10:30','18:41'],['out','Listo, te reprogramé para el jueves 10:30 ✅','18:41']],d:'El paciente pide otro día y el sistema reacomoda la agenda solo. Tu recepción no toca nada.',f:'El ida y vuelta eterno por WhatsApp para mover un turno.'},
-    {chat:[['out','✨ Recordatorio ✨ Te esperamos mañana a las 10:30. ¿Confirmás tu asistencia? 😊','19:00'],['in','Confirmo','19:12'],['out','¡Perfecto! Te esperamos 🤗','19:12']],d:'Avisa 24h y 2h antes. El paciente confirma de un toque y la agenda se actualiza sola.',f:'El ausentismo que te come la agenda mes a mes.'},
+    {chat:[['in','Hola! Quería sacar un turno esta semana','19:42'],['out','¡Hola! Te ayudo con tu turno 🤗 Tengo Mié 16:40 o Jue 10:30. ¿Cuál te queda?','19:42'],['in','Jueves 10:30','19:43'],['out','¡Buenísimo! Te agendé el jueves 10:30 ✅ Te voy a avisar antes del turno 😊','19:43']],d:'Te escriben a cualquier hora y el sistema ofrece los horarios libres y cierra el turno al instante.',f:'El turno que se iba porque nadie contestaba a tiempo.'},
+    {chat:[['in','Necesito cancelar mi turno de mañana','09:02'],['out','¡Hola! 🤗 Listo, lo cancelé. ¿Querés que te ofrezca otra fecha?','09:02'],['note','Horario liberado']],d:'Si alguien cancela, el sistema libera el horario y le ofrece una nueva fecha.',f:'El turno cancelado que quedaba sin nueva fecha.'},
+    {chat:[['in','Me podés cambiar el turno para el jueves?','18:40'],['out','¡Claro! El jueves tengo 10:30 o 16:00. ¿Cuál preferís?','18:40'],['in','10:30','18:41'],['out','Listo, te reprogramé para el jueves 10:30 ✅','18:41']],d:'Si te piden otro día, el sistema reacomoda la agenda. Tu equipo no tiene que mover nada a mano.',f:'El ida y vuelta eterno por WhatsApp para mover un turno.'},
+    {chat:[['out','✨ Recordatorio ✨ Te esperamos mañana a las 10:30. ¿Confirmás tu asistencia? 😊','19:00'],['in','Confirmo','19:12'],['out','¡Perfecto! Te esperamos 🤗','19:12']],d:'Avisa antes del turno. Te confirman de un toque y tu agenda se actualiza.',f:'El ausentismo que te come la agenda mes a mes.'},
     {chat:[['out','¡Hola! Te recuerdo tu turno de hoy 16:00. ¿Seguís viniendo?','11:30'],['in','Sí 👍','11:35'],['out','¡Buenísimo 😊 la esperamos!','11:35'],['note','Día confirmado · agenda cerrada']],d:'Pide confirmación y te arma el día cerrado: sabés quién viene antes de abrir.',f:'Llegar a la mañana sin saber si la agenda es real.'}
   ];
   const tabs=[...document.querySelectorAll('.case-tab')];
