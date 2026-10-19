@@ -88,11 +88,11 @@ const CONFIRMS: { icon: "wp" | "check" | "plus" | "cal"; title: string; text: st
   { icon: "wp", title: "Ana López", text: "“Hola, confirmo asistencia para el jueves 15:30 👍”" },
   { icon: "check", title: "Turno confirmado", text: "Ana López · jueves 15:30. Recordatorio enviado ✓✓" },
   { icon: "wp", title: "Bruno Méndez", text: "“¿Tenés turno para ortodoncia esta semana?”" },
-  { icon: "plus", title: "Nuevo paciente cargado", text: "Bruno Méndez · vino de WhatsApp, al CRM solo." },
+  { icon: "plus", title: "Turno agendado", text: "Bruno Méndez · vino de WhatsApp y quedó en la agenda." },
   { icon: "wp", title: "Carla Ríos", text: "“Necesito reprogramar, ¿puede ser el viernes?”" },
   { icon: "cal", title: "Turno reprogramado", text: "Carla Ríos · pasó al viernes 10:00. Agenda al día." },
   { icon: "wp", title: "Martín Paz", text: "“Confirmo asistencia, gracias 🙌”" },
-  { icon: "check", title: "Ausencia evitada", text: "Sofía Vega · confirmó el control de hoy ✓✓" },
+  { icon: "check", title: "Asistencia confirmada", text: "Sofía Vega · confirmó el control de hoy ✓✓" },
 ];
 let confirmSeed = 0;
 
@@ -161,10 +161,10 @@ export function CrmPill() {
       <span className="w-11 h-11 rounded-xl flex items-center justify-center text-[20px] font-bold text-black shrink-0" style={{ background: "linear-gradient(135deg, #4ade80, #16a34a)" }}>+</span>
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-start gap-2">
-          <p className="text-[14px] font-bold text-white leading-tight">Nuevo paciente cargado</p>
+          <p className="text-[14px] font-bold text-white leading-tight">Turno agendado</p>
           <span className="text-[11px] text-text-muted shrink-0">Ahora</span>
         </div>
-        <p className="text-[12px] text-text-muted leading-snug mt-1">Ana López · vino de WhatsApp, al CRM solo.</p>
+        <p className="text-[12px] text-text-muted leading-snug mt-1">Ana López · vino de WhatsApp y quedó en la agenda.</p>
       </div>
     </div>
   );

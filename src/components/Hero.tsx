@@ -6,52 +6,6 @@ import FadeUp from "./FadeUp";
 
 const CAL_LINK = "nexoragrowth/30min";
 
-/* Capturas de funciones reales de las demos, flotando alrededor del título */
-const floats = [
-  { img: "/demos/sweet-zona.png", pos: "left-[1%] top-[11%]", rotate: "-6deg", w: 170, h: 300 },
-  { img: "/demos/barberia.png", pos: "left-[3%] top-[48%]", rotate: "4deg", w: 248, h: 150 },
-  { img: "/demos/tnw-booking.png", pos: "left-[6%] bottom-[6%]", rotate: "-3deg", w: 236, h: 150 },
-  { img: "/demos/lavadero.png", pos: "right-[2%] top-[12%]", rotate: "5deg", w: 270, h: 150 },
-  { img: "/demos/sweet-items.png", pos: "right-[1%] top-[43%]", rotate: "6deg", w: 170, h: 300 },
-  { img: "/demos/tapizados.png", pos: "right-[5%] bottom-[7%]", rotate: "-4deg", w: 248, h: 150 },
-];
-
-function FloatCard({ img, pos, rotate, w, h }: { img: string; pos: string; rotate: string; w: number; h: number }) {
-  return (
-    <div
-      className={`hidden xl:block absolute ${pos}`}
-      style={{ width: w, transform: `rotate(${rotate})`, zIndex: 1, opacity: 0.9 }}
-    >
-      <div
-        className="rounded-xl overflow-hidden"
-        style={{
-          border: "1px solid rgba(34,197,94,0.18)",
-          boxShadow: "0 24px 60px rgba(0,0,0,0.55)",
-          background: "#16191f",
-        }}
-      >
-        <div
-          className="flex items-center gap-1.5 px-3 py-2"
-          style={{ background: "rgba(0,0,0,0.5)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
-        >
-          <span className="w-2 h-2 rounded-full" style={{ background: "#ff5f57" }} />
-          <span className="w-2 h-2 rounded-full" style={{ background: "#febc2e" }} />
-          <span className="w-2 h-2 rounded-full" style={{ background: "#28c840" }} />
-        </div>
-        <div
-          style={{
-            height: h,
-            backgroundColor: "#0e1014",
-            backgroundImage: `url(${img})`,
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-          }}
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function Hero() {
   useEffect(() => {
     (async () => {
@@ -77,11 +31,6 @@ export default function Hero() {
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 50%, transparent 90%)",
         }}
       />
-
-      {/* Capturas flotantes */}
-      {floats.map((f) => (
-        <FloatCard key={f.img} {...f} />
-      ))}
 
       {/* Contenido centrado */}
       <div className="relative w-full max-w-[760px] mx-auto py-20 px-6 text-center" style={{ zIndex: 2 }}>
@@ -117,14 +66,14 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="text-[18px] text-text-muted leading-[1.75] max-w-[560px] mx-auto mb-9 font-light">
-            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma solo — 24/7, sin que tu equipo toque nada.
+          <p className="text-[18px] text-text-secondary leading-[1.75] max-w-[560px] mx-auto mb-9 font-light">
+            Dejá de perder turnos por no contestar a tiempo y de cargar con las ausencias. El sistema responde, agenda y confirma turnos por WhatsApp a cualquier hora, y tu equipo se queda con lo que necesita a una persona.
           </p>
         </FadeUp>
 
         <FadeUp delay={0.3}>
           <div className="flex flex-wrap justify-center gap-6 mb-10">
-            {["Sistema activo en menos de 2 semanas", "Soporte WhatsApp incluido", "Sin contrato largo"].map((item, i) => (
+            {["Puesta en marcha acordada por escrito"].map((item, i) => (
               <span key={i} className="flex items-center gap-2 text-[13px] text-text-muted">
                 <span className="text-accent font-bold text-[14px]">✓</span>
                 {item}
@@ -166,11 +115,11 @@ export default function Hero() {
             </div>
 
             <a
-              href="#planes"
+              href="#casos"
               className="inline-flex items-center px-7 py-4 text-[15px] font-medium rounded-lg transition-all duration-200 hover:border-accent hover:text-accent"
               style={{ color: "#e4e4e7", border: "1px solid rgba(255,255,255,0.08)", background: "transparent" }}
             >
-              Ver los planes
+              Ver cómo funciona
             </a>
           </div>
         </FadeUp>

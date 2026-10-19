@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Particles from "@/components/Particles";
+import MotionProvider from "@/components/MotionProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -17,28 +18,30 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+  metadataBase: new URL("https://www.nexoragrowth.es"),
+  alternates: { canonical: "./" },
+  title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
   description:
-    "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes. Sistema activo en menos de 2 semanas.",
+    "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
   openGraph: {
-    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
     type: "website",
     images: [
       {
         url: "/thumbnail-profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nexora — WhatsApp, Agenda y CRM automatizados",
+        width: 1024,
+        height: 1024,
+        alt: "Logo de Nexora",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Nexora — WhatsApp, Agenda y CRM que trabajan solos",
+    card: "summary",
+    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
     description:
-      "Automatizamos turnos, respuestas y seguimiento por WhatsApp para que tu negocio no pierda clientes.",
+      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
     images: ["/thumbnail-profile.jpg"],
   },
 };
@@ -60,7 +63,7 @@ export default function RootLayout({
       </head>
       <body className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}>
         <Particles fixed />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

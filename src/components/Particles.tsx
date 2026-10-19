@@ -37,10 +37,13 @@ export default function Particles({ fixed = false }: { fixed?: boolean }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    /* Sin animación si la persona pidió menos movimiento. */
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const resize = () => {
       const rect = canvas.parentElement?.getBoundingClientRect();
       if (!rect) return;
-      const dpr = window.devicePixelRatio;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
       canvas.style.width = rect.width + "px";
