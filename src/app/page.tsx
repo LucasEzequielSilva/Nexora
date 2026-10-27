@@ -12,9 +12,7 @@ import CalProvider from "@/components/CalProvider";
    Estructura espejada de la VSL:
    Hero → Casos de uso → Para quién (rubros) → Calculador + Sistema completo → Prueba (Raquel) → FAQ → CTA.
 
-   Secciones de la general que quedaron fuera de este flujo (siguen en el repo, listas para
-   reactivar si se quiere: PainPoints, TransformSection, HowItWorksSection, Comparison,
-   ProcessSection, LeadCapture). Se priorizó el flujo de la VSL para no duplicar el discurso. */
+   Secciones de la general que quedaron fuera de este flujo: se borraron del repo. */
 
 /* Casos de uso generalizados (mismos demos que la VSL, redactados para cualquier negocio de turnos). */
 const casosGeneral: Caso[] = [
