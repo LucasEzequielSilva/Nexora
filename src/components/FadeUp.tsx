@@ -11,13 +11,14 @@ const MOTION = {
   div: motion.div,
   section: motion.section,
   article: motion.article,
+  li: motion.li,
 } as const;
 
 interface FadeUpProps {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "section" | "article";
+  as?: "div" | "section" | "article" | "li";
 }
 
 export default function FadeUp({
