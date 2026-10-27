@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTACard from "@/components/CTACard";
 import Footer from "@/components/Footer";
-import CalProvider from "@/components/CalProvider";
+import Header from "@/components/Header";
 
 /* Página general: mismo esqueleto que /vsl-1 con otra piel, sin precios (el número se ve en la llamada).
    Estructura espejada de la VSL:
@@ -93,7 +93,7 @@ const faqsGeneral = [
 export default function Home() {
   return (
     <div className="relative z-[2]">
-      <CalProvider />
+      <Header />
 
       <Hero />
 
