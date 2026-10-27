@@ -25,7 +25,7 @@ const DESCRIPCION =
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexoragrowth.es"),
   alternates: { canonical: "./" },
-  title: { default: TITULO, template: "%s · Nexora" },
+  title: TITULO,
   description: DESCRIPCION,
   openGraph: {
     title: TITULO,

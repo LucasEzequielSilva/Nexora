@@ -11,7 +11,7 @@ import { EMAIL } from "@/lib/contacto";
 const ACTUALIZADA = "27 de octubre de 2026";
 
 export const metadata: Metadata = {
-  title: "Política de privacidad",
+  title: "Política de privacidad · Nexora",
   description: "Qué datos junta Nexora, para qué los usa y cómo pedir que los corrijamos o los borremos.",
   alternates: { canonical: "/privacidad" },
 };

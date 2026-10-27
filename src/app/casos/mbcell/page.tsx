@@ -6,7 +6,7 @@ import FadeUp from "@/components/FadeUp";
    ni clientes, ni precios, ni cuánto vende. Tampoco con qué está hecho. */
 
 export const metadata: Metadata = {
-  title: "Caso MB Cell",
+  title: "Caso MB Cell · Nexora",
   description:
     "El sistema de gestión de MB Cell: compras, stock, ventas, canje y consignación en un solo lugar, con las cuentas que antes se hacían a mano.",
   alternates: { canonical: "/casos/mbcell" },

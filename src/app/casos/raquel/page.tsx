@@ -7,7 +7,7 @@ import { Flecha } from "@/components/Iconos";
    confirmados. Su foto y su web se muestran con su OK. Nada de pacientes ni de conversaciones. */
 
 export const metadata: Metadata = {
-  title: "Caso Dra. Raquel Rodríguez",
+  title: "Caso Dra. Raquel Rodríguez · Nexora",
   description:
     "La web y el sistema que atiende el WhatsApp del consultorio de la Dra. Raquel Rodríguez, ortodoncista en San Salvador de Jujuy.",
   alternates: { canonical: "/casos/raquel" },
