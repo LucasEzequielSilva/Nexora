@@ -58,9 +58,10 @@ export default function Privacidad() {
               <p>Solo los que vos nos das:</p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  Si completás un formulario nuestro, en este sitio o en un anuncio: tu nombre, tu WhatsApp o tu correo, y
-                  lo que nos cuentes de tu negocio (a qué se dedica, cuántos son, qué te come más tiempo y cuándo lo
-                  querés resolver).
+                  Si completás un formulario nuestro, en este sitio o en un anuncio: tu nombre, tu WhatsApp (o tu correo,
+                  si el formulario lo pide) y lo que nos cuentes de tu negocio (a qué se dedica, cuántos son, qué te come
+                  más tiempo y cuándo lo querés resolver). Junto con eso guardamos la fecha y de qué anuncio o link
+                  llegaste.
                 </li>
                 <li>Si nos escribís por WhatsApp, Instagram o correo: tu nombre, tu contacto y lo que nos escribas.</li>
                 <li>
@@ -89,22 +90,29 @@ export default function Privacidad() {
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Vercel, donde está alojado este sitio.</li>
+                <li>Neon, la base de datos donde quedan guardadas las consultas del formulario de este sitio.</li>
                 <li>Meta (Facebook, Instagram y WhatsApp), si nos escribís por ahí o completás el formulario de un anuncio.</li>
                 <li>Cal.com, si agendás la llamada desde el sitio.</li>
-                <li>Las herramientas en las que ordenamos las consultas que recibimos.</li>
+                <li>Las herramientas en las que ordenamos las consultas que recibimos y nos avisamos entre nosotros.</li>
               </ul>
               <p>Algunos de esos servicios guardan la información fuera de la Argentina.</p>
             </Parte>
 
             <Parte titulo="Cookies y medición">
               <p>
-                Hoy este sitio no usa cookies propias ni herramientas de publicidad o de medición. Como cualquier sitio,
-                el servicio que lo aloja registra datos técnicos de cada visita (por ejemplo, la dirección IP y el
+                Este sitio no usa cookies para seguir a quien lo visita ni herramientas de publicidad. Como cualquier
+                sitio, el servicio que lo aloja registra datos técnicos de cada visita (por ejemplo, la dirección IP y el
                 navegador) para que funcione y sea seguro.
               </p>
               <p>
+                En la página de nuestros anuncios contamos, sin datos personales, cuántas visitas llegan de cada anuncio,
+                cuántas personas empiezan y mandan el formulario y cuántas tocan el botón de WhatsApp. Para eso no usamos
+                cookies ni guardamos tu IP, tu navegador ni nada en tu teléfono. La IP se usa solo en el momento, para
+                frenar envíos repetidos.
+              </p>
+              <p>
                 Si agendás una llamada, la agenda la maneja Cal.com, que puede usar sus propias cookies. Si en algún
-                momento sumamos herramientas de medición o de publicidad, lo vamos a contar en esta página antes de
+                momento sumamos otras herramientas de medición o de publicidad, lo vamos a contar en esta página antes de
                 usarlas.
               </p>
             </Parte>
