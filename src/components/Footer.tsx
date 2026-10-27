@@ -68,8 +68,8 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-[13px] text-text-muted">
           <p>Nexora · La Plata, Argentina</p>
-          <Link href="/" className="hover:text-text-secondary transition-colors">
-            nexoragrowth.es
+          <Link href="/privacidad" className="hover:text-text-secondary transition-colors">
+            Política de privacidad
           </Link>
         </div>
       </div>
