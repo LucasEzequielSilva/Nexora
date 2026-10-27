@@ -106,9 +106,10 @@ export default function Privacidad() {
               </p>
               <p>
                 En la página de nuestros anuncios contamos, sin datos personales, cuántas visitas llegan de cada anuncio,
-                cuántas personas empiezan y mandan el formulario y cuántas tocan el botón de WhatsApp. Para eso no usamos
-                cookies ni guardamos tu IP, tu navegador ni nada en tu teléfono. La IP se usa solo en el momento, para
-                frenar envíos repetidos.
+                cuántas personas empiezan y mandan el formulario y cuántas tocan el botón de WhatsApp. De cada visita
+                guardamos también el dominio del sitio del que llegaste (por ejemplo, instagram.com), sin la dirección
+                completa. Para eso no usamos cookies ni guardamos tu IP, tu navegador ni nada en tu teléfono. La IP se usa
+                solo en el momento, para frenar envíos repetidos.
               </p>
               <p>
                 Si agendás una llamada, la agenda la maneja Cal.com, que puede usar sus propias cookies. Si en algún
