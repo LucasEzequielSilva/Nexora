@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { EQUIPO, LARGOS, URGENCIA, validarConsulta, type Consulta } from "@/lib/diagnostico/consulta";
+import { contar } from "@/lib/diagnostico/evento";
 import type { Origen } from "@/lib/diagnostico/origen";
 import BotonWhatsapp from "./BotonWhatsapp";
 import { Flecha, Tilde } from "./Iconos";
@@ -24,8 +25,13 @@ export default function Formulario({ origen, whatsapp }: { origen: Origen; whats
   const [error, setError] = useState("");
   const [fallo, setFallo] = useState(false);
   const [codigo, setCodigo] = useState("");
+  const empezo = useRef(false);
 
   const cambiar = (k: keyof Consulta) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (!empezo.current) {
+      empezo.current = true;
+      contar("inicio", origen);
+    }
     setC((x) => ({ ...x, [k]: e.target.value }));
     if (estado === "error" && !fallo) setEstado("listo");
   };
@@ -83,6 +89,7 @@ export default function Formulario({ origen, whatsapp }: { origen: Origen; whats
           <BotonWhatsapp
             numero={whatsapp}
             mensaje={`Hola, soy ${nombre}. Dejé la consulta ${codigo} en la web.`}
+            origen={origen}
             className={`${s.secundario} mt-6`}
           >
             ¿Querés adelantarte? Escribinos
@@ -224,6 +231,7 @@ export default function Formulario({ origen, whatsapp }: { origen: Origen; whats
           <BotonWhatsapp
             numero={whatsapp}
             mensaje={`Hola, soy ${c.nombre.trim()}. Quiero el diagnóstico.\nMi negocio: ${c.negocio.trim()}.\nLo que más tiempo me come: ${c.dolor.trim()}.`}
+            origen={origen}
             className={`${s.secundario} w-full`}
           >
             Mandalo por WhatsApp

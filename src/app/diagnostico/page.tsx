@@ -4,6 +4,7 @@ import { encabezadoPara } from "@/lib/diagnostico/textos";
 import BotonWhatsapp from "./BotonWhatsapp";
 import Formulario from "./Formulario";
 import { Flecha } from "./Iconos";
+import Visita from "./Visita";
 import s from "./diagnostico.module.css";
 
 /* Landing de la pauta (/diagnostico): una sola oferta, el diagnóstico con Valentino, sin precio.
@@ -58,6 +59,7 @@ export default async function Diagnostico({
 
   return (
     <>
+      <Visita origen={origen} />
       <div className={s.fondo} aria-hidden="true" />
 
       <header className="mx-auto flex max-w-[1120px] items-center justify-between px-5 pt-6 sm:px-8">
@@ -85,6 +87,7 @@ export default async function Diagnostico({
           <BotonWhatsapp
             numero={whatsapp}
             mensaje="Hola, quiero el diagnóstico."
+            origen={origen}
             className="mt-4 inline-block text-[15px] text-[#a7b0c0] underline underline-offset-4 hover:text-[#f3f5f9]"
           >
             ¿Preferís WhatsApp? Escribinos
