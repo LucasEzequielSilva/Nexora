@@ -70,13 +70,14 @@ export default function Casos() {
             href="/casos/raquel"
             className="group corners flex h-full flex-col rounded-3xl border border-border bg-bg-card overflow-hidden hover:border-accent/40 transition-colors"
           >
-            <div className="relative h-[260px] overflow-hidden">
+            {/* La foto es vertical: cuando la tarjeta ocupa todo el ancho (tablet) va más alta para no cortarle la cara */}
+            <div className="relative h-[260px] sm:h-[440px] lg:h-[260px] overflow-hidden">
               <Image
                 src="/raquel/raquel.png"
                 alt="Retrato de la Dra. Raquel Rodríguez"
                 fill
                 sizes="(min-width: 1024px) 380px, 100vw"
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                className="object-cover object-[center_10%] transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
             </div>
