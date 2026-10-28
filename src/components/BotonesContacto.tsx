@@ -13,9 +13,9 @@ const tamanos: Record<Tam, string> = {
   lg: "px-7 py-3.5 text-[15px]",
 };
 const primario =
-  "bg-accent text-accent-ink hover:bg-accent-hover shadow-[0_0_0_1px_rgba(0,230,118,0.4),0_8px_30px_-8px_rgba(0,230,118,0.55)] hover:shadow-[0_0_0_1px_rgba(0,230,118,0.6),0_10px_40px_-6px_rgba(0,230,118,0.7)]";
+  "destello bg-accent text-accent-ink hover:bg-accent-hover hover:-translate-y-px shadow-[0_0_0_1px_rgba(0,230,118,0.4),0_8px_30px_-8px_rgba(0,230,118,0.55)] hover:shadow-[0_0_0_1px_rgba(0,230,118,0.6),0_10px_40px_-6px_rgba(0,230,118,0.7)]";
 const secundario =
-  "border border-border-strong bg-white/[0.04] text-text-primary hover:bg-white/[0.08] hover:border-white/25";
+  "border border-border-strong bg-white/[0.04] backdrop-blur-md text-text-primary hover:bg-white/[0.08] hover:border-white/25";
 
 export function BotonAgenda({ tam = "lg", texto = "Agendá tu llamada", className = "" }: { tam?: Tam; texto?: string; className?: string }) {
   if (!hayAgenda) return null;

@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
+import Cielo from "@/components/Cielo";
+import LuzPuntero from "@/components/LuzPuntero";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -55,6 +57,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${plusJakarta.variable} ${dmSans.variable} antialiased`}>
+        <Cielo />
+        <LuzPuntero />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

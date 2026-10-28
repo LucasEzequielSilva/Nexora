@@ -35,12 +35,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 md:bg-transparent md:border-transparent md:backdrop-blur-none ${
         conFondo || abierto ? "bg-bg-primary/80 backdrop-blur-xl border-b border-border" : "border-b border-transparent"
       }`}
     >
       <CalProvider />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 h-[68px] flex items-center justify-between gap-6">
+      {/* En escritorio, al bajar, la barra se achica y queda como una píldora de vidrio flotando */}
+      <div
+        className={`mx-auto px-4 sm:px-6 h-[68px] flex items-center justify-between gap-6 transition-all duration-500 ease-out ${
+          conFondo
+            ? "max-w-6xl md:max-w-5xl md:mt-3 md:h-[58px] md:rounded-full md:border md:border-white/10 md:bg-bg-primary/70 md:backdrop-blur-xl md:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.7)] md:pr-2"
+            : "max-w-6xl"
+        }`}
+      >
         <Link href="/" onClick={cerrar} className="shrink-0" aria-label="Nexora, ir al inicio">
           <Image src="/logo_white.png" alt="Nexora" width={4544} height={616} priority className="h-[22px] w-auto" />
         </Link>

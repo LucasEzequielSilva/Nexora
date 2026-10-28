@@ -35,7 +35,7 @@ export default function Encabezado({
   return (
     <FadeUp className={`${centrado ? "text-center mx-auto" : ""} max-w-[720px] ${className}`}>
       <Etiqueta>{etiqueta}</Etiqueta>
-      <h2 className="mt-5 text-[clamp(2rem,4.4vw,3.1rem)] font-extrabold leading-[1.06] text-text-primary">{titulo}</h2>
+      <h2 className="titulo-degrade mt-5 text-[clamp(2rem,4.4vw,3.1rem)] font-extrabold leading-[1.06] text-text-primary">{titulo}</h2>
       {bajada && <p className="mt-5 text-[17px] leading-relaxed text-text-secondary">{bajada}</p>}
     </FadeUp>
   );
