@@ -1,15 +1,14 @@
-import { NextResponse } from "next/server";
-import { EQUIPO, URGENCIA, esCalificada, textoDe, validarConsulta } from "@/lib/diagnostico/consulta";
-import { entorno, guardarConsulta, hayBase } from "@/lib/diagnostico/datos";
+import { after, NextResponse } from "next/server";
+import { avisar, linkAlPanel } from "@/lib/diagnostico/aviso";
+import { validarConsulta } from "@/lib/diagnostico/consulta";
+import { guardarConsulta, hayBase } from "@/lib/diagnostico/datos";
 import { origenDeCuerpo } from "@/lib/diagnostico/origen";
 import { ipDe, limitado, mismoSitio } from "@/lib/diagnostico/pedido";
 
-// Recibe la consulta del formulario de /diagnostico y la guarda con un código.
+// Recibe la consulta del formulario de /diagnostico, la guarda con un código y avisa.
 // Env vars (server-side):
-//   DATABASE_URL           base Neon donde quedan las consultas (obligatoria)
-//   DIAGNOSTICO_AVISO_URL  opcional, recibe cada consulta para avisarle a quien atiende.
-//                          La conecta Lucas con el OK de Cogne: nunca al Portal ni a un flujo
-//                          que le escriba solo a la persona.
+//   DATABASE_URL  base Neon donde quedan las consultas (obligatoria)
+//   El aviso por WhatsApp y el webhook son opcionales: sus variables están en lib/diagnostico/aviso.ts.
 
 export const runtime = "nodejs";
 
@@ -50,29 +49,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: NO_SE_GUARDO }, { status: 500 });
   }
 
-  const aviso = process.env.DIAGNOSTICO_AVISO_URL;
-  if (aviso) {
-    const c = v.consulta;
-    await fetch(aviso, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        origen: "landing-diagnostico",
-        entorno: entorno(),
-        codigo: guardada.codigo,
-        creado: guardada.creado,
-        calificada: esCalificada(c),
-        nombre: c.nombre,
-        whatsapp: c.whatsapp,
-        negocio: c.negocio,
-        equipo: textoDe(EQUIPO, c.equipo),
-        dolor: c.dolor,
-        urgencia: textoDe(URGENCIA, c.urgencia),
-        anuncio: origen.anuncio,
-      }),
-      signal: AbortSignal.timeout(3000),
-    }).catch((e) => console.error("[diagnostico] aviso", e instanceof Error ? e.message : e));
-  }
+  const panel = linkAlPanel(req);
+  after(() => avisar({ consulta: v.consulta, codigo: guardada.codigo, creado: guardada.creado, origen, panel }));
 
   return NextResponse.json({ ok: true, codigo: guardada.codigo });
 }

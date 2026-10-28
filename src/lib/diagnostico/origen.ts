@@ -21,6 +21,10 @@ export const limpio = (v: unknown, n = LARGO) =>
 
 export const anguloDe = (anuncio: string) => anuncio.match(/\bA(\d{2})\b/i)?.[0].toUpperCase() ?? "";
 
+/* Cómo se nombra el origen: el anuncio si vino de uno; si no, fuente / medio. Igual que ETIQUETA en datos.ts. */
+export const etiquetaDe = (o: Origen) =>
+  o.anuncio || (o.fuente ? o.fuente + (o.medio ? ` / ${o.medio}` : "") : "(directo)");
+
 type Params = Record<string, string | string[] | undefined>;
 
 const primero = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);

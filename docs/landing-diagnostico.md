@@ -13,9 +13,23 @@ Página a la que llegan los anuncios. Tiene una sola oferta: el diagnóstico de 
 | `DATABASE_URL` | Base Neon donde quedan las consultas y los conteos. Se crea desde Vercel (Storage, Neon). Las tablas `diagnostico_*` se crean solas | El formulario avisa que no pudo guardar y no se cuenta nada |
 | `DIAGNOSTICO_PANEL_CLAVE` | Clave del panel y de los conteos, de 12 caracteres o más | El panel pide configurarla |
 | `DIAGNOSTICO_WHATSAPP` | Número de Nexora con código de país y solo dígitos (54 9, característica y número) | No aparece ningún botón de WhatsApp |
-| `DIAGNOSTICO_AVISO_URL` | Opcional. Recibe cada consulta para avisarle a quien atiende. La conecta Lucas con el OK de Cogne: nunca al Portal ni a un flujo que le escriba solo a la persona | No avisa; las consultas se ven en el panel |
+| `DIAGNOSTICO_EVOLUTION_URL` | Servidor de Evolution (v2) donde Lucas conectó por QR el número de Nexora. Solo `https://` | No avisa por WhatsApp; las consultas se ven en el panel |
+| `DIAGNOSTICO_EVOLUTION_INSTANCIA` | Nombre de la conexión del número de Nexora en ese servidor. Nunca la de Raquel | Ídem |
+| `DIAGNOSTICO_EVOLUTION_CLAVE` | La clave de esa conexión sola, no la general del servidor | Ídem |
+| `DIAGNOSTICO_AVISO_A` | Quién recibe el aviso: 549, característica y número, solo dígitos | Ídem |
+| `DIAGNOSTICO_AVISO_URL` | Opcional. Recibe cada consulta entera para avisarle a quien atiende. La conecta Lucas con el OK de Cogne: nunca al Portal ni a un flujo que le escriba solo a la persona | No manda nada a un webhook |
 
 Van en Production y en Preview. Si las dos usan la misma base, cada fila guarda su entorno y el panel muestra solo producción salvo que se toque "Sumar vistas previas".
+
+## El aviso por WhatsApp
+
+Cada vez que entra una consulta, el número de Nexora le manda un WhatsApp a `DIAGNOSTICO_AVISO_A`. Le escribe solo a quien atiende, nunca a la persona que dejó la consulta.
+
+- **Qué dice:** el código, el nombre, el negocio, cuándo lo quiere resolver ("Ahora" va en negrita), de qué anuncio vino, un link para escribirle y otro al panel. Lo que le come el tiempo queda solo en el panel.
+- **Las de prueba:** las consultas de una vista previa llegan con `PRUEBA (preview)` adelante.
+- **No demora a la persona:** el aviso sale después de responderle al formulario. Si falla, la consulta igual queda guardada y se ve en el panel.
+- **El freno:** el número va por QR, que no es la vía oficial de Meta, así que se cuida. Si entran más de 10 consultas en una hora, manda un solo mensaje para mirar el panel y no avisa más hasta que baje el ritmo.
+- **Para probarlo:** en el panel, "Mandarme uno de prueba". Si falla, el panel lo dice: lo más probable es que el número se haya desconectado y haya que volver a escanear el QR.
 
 ## El link de cada anuncio
 
@@ -54,6 +68,7 @@ Para lo orgánico, el mismo esquema a mano. Por ejemplo, la bio de Instagram: `?
 - **Evento:** el tipo, los UTM, el dominio del que vino (solo en la visita), la fecha y el entorno.
 - **Lo que no se guarda:** cookies de visitantes, IP, navegador ni nada en el teléfono. La IP se usa solo en memoria, para frenar pedidos seguidos.
 - **El panel:** usa una cookie propia, solo para quien entra con la clave.
+- **El aviso:** pasa por WhatsApp el nombre, el número, el negocio, la urgencia y el origen de cada consulta. No guarda nada más.
 
 ## Para el juez de la Marketing Machine
 
@@ -69,6 +84,7 @@ Devuelve, solo de producción y sin datos personales, una fila por origen. Cada 
 - [ ] `/privacidad` publicada: la arma el chat de la web y el formulario ya la linkea.
 - [ ] `DATABASE_URL` y `DIAGNOSTICO_PANEL_CLAVE` cargadas en Vercel.
 - [ ] Una consulta de prueba en la vista previa, vista en el panel con "Sumar vistas previas".
-- [ ] `DIAGNOSTICO_WHATSAPP`, cuando haya número.
+- [ ] `DIAGNOSTICO_WHATSAPP` con el número de Nexora.
+- [ ] El número conectado por Lucas, las cuatro variables del aviso cargadas y "Mandarme uno de prueba" recibido.
 - [ ] Los parámetros de URL cargados en cada anuncio.
 - [ ] El destino de los anuncios, decidido por Cogne con Lucas.

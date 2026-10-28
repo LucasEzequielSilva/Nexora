@@ -42,6 +42,14 @@ export function whatsappLimpio(v: string) {
   return digitos >= 8 && digitos <= 15 ? solo : "";
 }
 
+/* Link de WhatsApp solo si el número se puede leer con seguridad (con 54 adelante o 10 dígitos de Argentina). */
+export function linkWhatsapp(numero: string) {
+  let d = numero.replace(/\D/g, "");
+  if (d.length === 11 && d.startsWith("0")) d = d.slice(1);
+  if (d.length === 10) d = `549${d}`;
+  return d.startsWith("54") && d.length >= 12 && d.length <= 13 ? `https://wa.me/${d}` : "";
+}
+
 export function validarConsulta(v: unknown): { ok: true; consulta: Consulta } | { ok: false; error: string } {
   const o = v && typeof v === "object" ? (v as Record<string, unknown>) : {};
   const consulta: Consulta = {

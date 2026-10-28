@@ -99,7 +99,16 @@ export async function registrarEvento(tipo: TipoEvento, o: Origen, referente: st
     VALUES (${entorno()}, ${tipo}, ${o.fuente}, ${o.medio}, ${o.campana}, ${o.conjunto}, ${o.anuncio}, ${o.angulo}, ${referente})`;
 }
 
-/* Cómo se nombra el origen en los conteos: el anuncio si vino de uno; si no, fuente / medio. */
+/* Consultas de la última hora, de todos los entornos: el freno de los avisos por WhatsApp. */
+export async function consultasDeLaUltimaHora() {
+  await asegurarEsquema();
+  const filas = await sql()`
+    SELECT count(*)::int AS n FROM diagnostico_consultas WHERE creado > now() - interval '1 hour'`;
+  return Number(filas[0]?.n ?? 0);
+}
+
+/* Cómo se nombra el origen en los conteos: el anuncio si vino de uno; si no, fuente / medio.
+   Igual que etiquetaDe en origen.ts. */
 const ETIQUETA = `CASE WHEN anuncio <> '' THEN anuncio
   WHEN fuente <> '' THEN fuente || CASE WHEN medio <> '' THEN ' / ' || medio ELSE '' END
   ELSE '(directo)' END`;

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-import { EQUIPO, URGENCIA, esCalificada, textoDe } from "@/lib/diagnostico/consulta";
+import { hayAvisoPorWhatsapp } from "@/lib/diagnostico/aviso";
+import { EQUIPO, URGENCIA, esCalificada, linkWhatsapp, textoDe } from "@/lib/diagnostico/consulta";
 import { hayBase, resumenPorOrigen, ultimasConsultas, type FilaConsulta, type FilaResumen } from "@/lib/diagnostico/datos";
 import { COOKIE_PANEL, RUTA_PANEL, claveConfigurada, diasDe, sesionValida } from "@/lib/diagnostico/panel";
 import s from "../diagnostico.module.css";
+import { probarAviso } from "./acciones";
 
 /* Panel de /diagnostico, con clave: las consultas para escribirles y los conteos por anuncio.
    Meta mide el creativo (clics, costo por visita); acá se mide la oferta (de las visitas, cuántas
@@ -24,12 +26,32 @@ const fecha = (iso: string) =>
 
 const porcentaje = (a: number, b: number) => (b ? `${Math.round((a / b) * 100)}%` : "—");
 
-/* Link de WhatsApp solo si el número se puede leer con seguridad (con 54 adelante o 10 dígitos de Argentina). */
-function linkWhatsapp(numero: string) {
-  let d = numero.replace(/\D/g, "");
-  if (d.length === 11 && d.startsWith("0")) d = d.slice(1);
-  if (d.length === 10) d = `549${d}`;
-  return d.startsWith("54") && d.length >= 12 && d.length <= 13 ? `https://wa.me/${d}` : "";
+const RESULTADO_AVISO: Record<string, string> = {
+  ok: "Mandé el aviso de prueba. Si en un minuto no te llegó, que Lucas revise la conexión del número.",
+  error: "No se pudo mandar el aviso. Puede que el número se haya desconectado: que Lucas lo vuelva a conectar.",
+  falta: "Faltan variables del aviso en Vercel.",
+  espera: "Probaste varias veces seguidas. Esperá unos minutos.",
+};
+
+function AvisoWhatsapp({ resultado }: { resultado: string }) {
+  const configurado = hayAvisoPorWhatsapp();
+  return (
+    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-white/[0.08] bg-[#0b101b] px-4 py-3 text-[14px]">
+      <span className="text-[#a7b0c0]">
+        {configurado
+          ? "Aviso por WhatsApp: configurado."
+          : "Aviso por WhatsApp: sin configurar. Faltan las variables DIAGNOSTICO_EVOLUTION_* y DIAGNOSTICO_AVISO_A en Vercel."}
+      </span>
+      {configurado && (
+        <form action={probarAviso}>
+          <button type="submit" className="text-[#00e676] underline underline-offset-2">
+            Mandarme uno de prueba
+          </button>
+        </form>
+      )}
+      {RESULTADO_AVISO[resultado] && <p className="w-full text-[#f3f5f9]">{RESULTADO_AVISO[resultado]}</p>}
+    </div>
+  );
 }
 
 function Marco({ children }: { children: React.ReactNode }) {
@@ -172,6 +194,8 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
           </button>
         </form>
       </div>
+
+      <AvisoWhatsapp resultado={typeof sp.aviso === "string" ? sp.aviso : ""} />
 
       <div className="mt-5 flex flex-wrap gap-2">
         {[7, 30, 90].map((d) => (
