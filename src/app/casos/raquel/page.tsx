@@ -28,7 +28,7 @@ export default function CasoRaquel() {
         </p>
       }
       imagen={
-        <div className="corners relative mx-auto w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-bg-card">
+        <div className="corners relative mx-auto w-full max-w-[380px] aspect-[4/5] rounded-3xl overflow-hidden border border-border bg-bg-card/60 backdrop-blur-sm">
           <Image
             src="/raquel/raquel.png"
             alt="Retrato de la Dra. Raquel Rodríguez"
@@ -72,7 +72,7 @@ export default function CasoRaquel() {
           href={WEB}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block rounded-2xl border border-border bg-bg-card overflow-hidden hover:border-accent/40 transition-colors"
+          className="group block rounded-2xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden hover:border-accent/40 transition-colors"
         >
           <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
             <span className="w-2.5 h-2.5 rounded-full bg-white/15" />

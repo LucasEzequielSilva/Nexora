@@ -110,7 +110,7 @@ export default function Servicios() {
             key={s.titulo}
             delay={(i % 3) * 0.06}
             as="article"
-            className="group flex flex-col rounded-2xl border border-border bg-bg-card p-6 md:p-7 hover:border-border-strong hover:bg-bg-card-hover transition-colors"
+            className="group luz filo flex flex-col rounded-2xl border border-border bg-bg-card/60 backdrop-blur-sm p-6 md:p-7 hover:border-border-strong hover:bg-bg-card-hover/70 transition-colors"
           >
             <span className="w-11 h-11 rounded-xl border border-accent/20 bg-accent/[0.07] text-accent flex items-center justify-center">
               {ICONOS[s.icono]}

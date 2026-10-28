@@ -55,7 +55,7 @@ export default function PaginaCaso({
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 space-y-16 md:space-y-20 pb-20">{children}</div>
 
         <section className="relative mx-auto max-w-6xl px-4 sm:px-6 pb-16">
-          <FadeUp className="corners rounded-3xl border border-border bg-bg-card p-8 md:p-12 text-center">
+          <FadeUp className="corners rounded-3xl border border-border bg-bg-card/60 backdrop-blur-sm p-8 md:p-12 text-center">
             <h2 className="text-[clamp(1.7rem,3.6vw,2.5rem)] font-extrabold leading-tight text-text-primary">{cierre}</h2>
             <p className="mt-4 text-[16px] text-text-secondary max-w-[520px] mx-auto">
               Contanos cómo trabajás y te mostramos cómo sería en tu negocio. Sin compromiso.

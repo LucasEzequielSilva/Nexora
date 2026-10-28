@@ -5,7 +5,7 @@ import { EQUIPO, FOTO_GRUPAL } from "@/lib/equipo";
 
 export default function Equipo() {
   return (
-    <section id="equipo" className="relative border-y border-border bg-bg-secondary overflow-hidden">
+    <section id="equipo" className="relative border-y border-border bg-white/[0.012] overflow-hidden">
       <div className="absolute right-[-200px] top-[-120px] w-[620px] h-[520px] glow-accent pointer-events-none" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
         <Encabezado
@@ -30,7 +30,7 @@ export default function Equipo() {
               as="li"
               key={p.nombre}
               delay={i * 0.05}
-              className="flex flex-col rounded-2xl border border-border bg-bg-card overflow-hidden"
+              className="luz filo flex flex-col rounded-2xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden"
             >
               <div className="relative aspect-[4/5] bg-[radial-gradient(circle_at_50%_30%,rgba(0,230,118,0.12),transparent_65%)]">
                 {p.foto ? (

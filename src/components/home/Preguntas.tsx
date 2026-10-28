@@ -58,7 +58,7 @@ export default function Preguntas() {
             <div
               key={p.q}
               className={`rounded-2xl border transition-colors ${
-                estaAbierta ? "border-accent/30 bg-bg-card" : "border-border bg-bg-card/60 hover:bg-bg-card"
+                estaAbierta ? "border-accent/30 bg-bg-card/60 backdrop-blur-sm" : "border-border bg-bg-card/60 hover:bg-bg-card"
               }`}
             >
               <h3>

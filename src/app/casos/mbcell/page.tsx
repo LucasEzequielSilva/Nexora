@@ -69,7 +69,7 @@ export default function CasoMbCell() {
           <FadeUp
             key={p.titulo}
             delay={(i % 3) * 0.06}
-            className="rounded-2xl border border-border bg-bg-card p-6 hover:border-border-strong hover:bg-bg-card-hover transition-colors"
+            className="rounded-2xl border border-border bg-bg-card/60 backdrop-blur-sm p-6 hover:border-border-strong hover:bg-bg-card-hover/70 transition-colors"
           >
             <span className="font-display text-[13px] font-bold text-accent">{String(i + 1).padStart(2, "0")}</span>
             <h3 className="mt-3 text-[18px] font-bold leading-snug text-text-primary">{p.titulo}</h3>

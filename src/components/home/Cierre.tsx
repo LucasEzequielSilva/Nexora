@@ -12,7 +12,7 @@ const PASOS = [
 export default function Cierre() {
   return (
     <section id="contacto" className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
-      <FadeUp className="corners relative overflow-hidden rounded-[28px] border border-border bg-bg-card">
+      <FadeUp className="borde-vivo relative overflow-hidden rounded-[28px] border border-border bg-bg-card/60 backdrop-blur-sm">
         <div className="absolute inset-0 grid-bg opacity-70 pointer-events-none" aria-hidden="true" />
         <div className="absolute left-1/2 -translate-x-1/2 top-[-160px] w-[700px] h-[420px] glow-accent pointer-events-none" aria-hidden="true" />
 

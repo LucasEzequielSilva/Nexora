@@ -19,10 +19,12 @@ export default function Home() {
       <main>
         <Hero />
         <CintaDolores />
+        <div className="linea-luz" aria-hidden="true" />
         <Servicios />
         <Proceso />
         <Casos />
         <Equipo />
+        <div className="linea-luz" aria-hidden="true" />
         <Preguntas />
         <Cierre />
       </main>

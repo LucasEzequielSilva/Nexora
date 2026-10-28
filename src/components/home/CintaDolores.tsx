@@ -18,7 +18,7 @@ function Fila({ oculta = false }: { oculta?: boolean }) {
       {DOLORES.map((d) => (
         <li
           key={d}
-          className="shrink-0 rounded-full border border-border bg-bg-card px-5 py-2.5 text-[14.5px] text-text-secondary whitespace-nowrap"
+          className="shrink-0 rounded-full border border-border bg-bg-card/60 backdrop-blur-sm px-5 py-2.5 text-[14.5px] text-text-secondary whitespace-nowrap"
         >
           {d}
         </li>

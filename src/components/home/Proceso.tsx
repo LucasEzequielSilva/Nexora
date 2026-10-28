@@ -36,7 +36,7 @@ const PASOS = [
 
 export default function Proceso() {
   return (
-    <section id="proceso" className="relative border-y border-border bg-bg-secondary">
+    <section id="proceso" className="relative border-y border-border bg-white/[0.012]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28 self-start">
           <Encabezado
@@ -70,7 +70,7 @@ export default function Proceso() {
                 as="li"
                 key={p.titulo}
                 delay={i * 0.05}
-                className="relative flex gap-5 rounded-2xl border border-border bg-bg-card p-5 md:p-6"
+                className="luz filo flex gap-5 rounded-2xl border border-border bg-bg-card/60 backdrop-blur-sm p-5 md:p-6"
               >
                 <span className="relative z-[1] shrink-0 w-[34px] h-[34px] mt-0.5 rounded-full border border-accent/40 bg-bg-primary text-accent font-display text-[13px] font-bold flex items-center justify-center">
                   {String(i + 1).padStart(2, "0")}

@@ -68,7 +68,7 @@ export default function Casos() {
         <FadeUp as="article" className="lg:col-span-1">
           <Link
             href="/casos/raquel"
-            className="group corners flex h-full flex-col rounded-3xl border border-border bg-bg-card overflow-hidden hover:border-accent/40 transition-colors"
+            className="group luz filo flex h-full flex-col rounded-3xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden hover:border-accent/40 transition-colors"
           >
             {/* La foto es vertical: cuando la tarjeta ocupa todo el ancho (tablet) va más alta para no cortarle la cara */}
             <div className="relative h-[260px] sm:h-[440px] lg:h-[260px] overflow-hidden">
@@ -98,7 +98,7 @@ export default function Casos() {
         <FadeUp as="article" delay={0.06}>
           <Link
             href="/casos/mbcell"
-            className="group flex h-full flex-col rounded-3xl border border-border bg-bg-card overflow-hidden hover:border-accent/40 transition-colors"
+            className="group luz filo flex h-full flex-col rounded-3xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden hover:border-accent/40 transition-colors"
           >
             <div className="relative h-[260px] overflow-hidden border-b border-border bg-[radial-gradient(circle_at_30%_20%,rgba(0,230,118,0.08),transparent_60%)]">
               <PanelGestion />
@@ -118,7 +118,7 @@ export default function Casos() {
         </FadeUp>
 
         <FadeUp as="article" delay={0.12}>
-          <div className="flex h-full flex-col rounded-3xl border border-border bg-bg-card overflow-hidden">
+          <div className="luz filo flex h-full flex-col rounded-3xl border border-border bg-bg-card/60 backdrop-blur-sm overflow-hidden">
             <div className="relative h-[260px] overflow-hidden border-b border-border">
               <PanelReglas />
               <span className="absolute top-4 right-4 rounded-full border border-white/15 bg-bg-primary/70 px-3 py-1 text-[12px] font-semibold text-text-secondary">
