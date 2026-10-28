@@ -9,8 +9,8 @@ import type { Origen } from "./origen";
    (VERCEL_ENV) y el panel muestra solo producción salvo que se pida lo contrario.
    No se guardan IP, navegador ni cookies: solo los UTM y lo que la persona escribe. */
 
-export type TipoEvento = "visita" | "inicio" | "whatsapp";
-export const TIPOS_EVENTO: readonly TipoEvento[] = ["visita", "inicio", "whatsapp"];
+export type TipoEvento = "visita" | "video" | "inicio" | "agenda" | "whatsapp";
+export const TIPOS_EVENTO: readonly TipoEvento[] = ["visita", "video", "inicio", "agenda", "whatsapp"];
 
 export const hayBase = () => Boolean(process.env.DATABASE_URL);
 export const entorno = () => process.env.VERCEL_ENV || "development";
@@ -116,15 +116,18 @@ const ETIQUETA = `CASE WHEN anuncio <> '' THEN anuncio
 export type FilaResumen = {
   origen: string;
   visitas: number;
+  videos: number;
   inicios: number;
   envios: number;
   calificadas: number;
   proximos: number;
+  agendaron: number;
   whatsapp: number;
 };
 
-/* Por origen: visitas → empezaron el formulario → lo mandaron → dijeron "ahora" (y "próximos meses")
-   → tocaron WhatsApp. Los envíos salen de las consultas guardadas, no de un evento del navegador. */
+/* Por origen: visitas → miraron el video → empezaron el formulario → lo mandaron → dijeron "ahora"
+   (y "próximos meses") → agendaron → tocaron WhatsApp. Los envíos salen de las consultas guardadas,
+   no de un evento del navegador; "agendaron" sale del aviso de Cal en el navegador. */
 export async function resumenPorOrigen(dias: number, todos: boolean): Promise<FilaResumen[]> {
   await asegurarEsquema();
   const q = sql();
@@ -132,7 +135,9 @@ export async function resumenPorOrigen(dias: number, todos: boolean): Promise<Fi
     WITH ev AS (
       SELECT ${q.unsafe(ETIQUETA)} AS origen,
         count(*) FILTER (WHERE tipo = 'visita') AS visitas,
+        count(*) FILTER (WHERE tipo = 'video') AS videos,
         count(*) FILTER (WHERE tipo = 'inicio') AS inicios,
+        count(*) FILTER (WHERE tipo = 'agenda') AS agendaron,
         count(*) FILTER (WHERE tipo = 'whatsapp') AS whatsapp
       FROM diagnostico_eventos
       WHERE creado > now() - make_interval(days => ${dias}::int) AND (${todos}::boolean OR entorno = 'production')
@@ -148,10 +153,12 @@ export async function resumenPorOrigen(dias: number, todos: boolean): Promise<Fi
     )
     SELECT coalesce(ev.origen, co.origen) AS origen,
       coalesce(ev.visitas, 0)::int AS visitas,
+      coalesce(ev.videos, 0)::int AS videos,
       coalesce(ev.inicios, 0)::int AS inicios,
       coalesce(co.envios, 0)::int AS envios,
       coalesce(co.calificadas, 0)::int AS calificadas,
       coalesce(co.proximos, 0)::int AS proximos,
+      coalesce(ev.agendaron, 0)::int AS agendaron,
       coalesce(ev.whatsapp, 0)::int AS whatsapp
     FROM ev FULL OUTER JOIN co ON ev.origen = co.origen
     ORDER BY visitas DESC, envios DESC, origen`;

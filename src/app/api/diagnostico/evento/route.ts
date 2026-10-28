@@ -3,7 +3,8 @@ import { TIPOS_EVENTO, hayBase, registrarEvento } from "@/lib/diagnostico/datos"
 import { limpio, origenDeCuerpo } from "@/lib/diagnostico/origen";
 import { ipDe, limitado, mismoSitio } from "@/lib/diagnostico/pedido";
 
-// Cuenta los pasos de /diagnostico (visita, inicio del formulario, clic a WhatsApp) por origen.
+// Cuenta los pasos de /diagnostico (visita, play del video, inicio del formulario, reserva en la
+// agenda, clic a WhatsApp) por origen.
 // Los envíos no pasan por acá: salen de las consultas guardadas. Sin DATABASE_URL no cuenta nada.
 
 export const runtime = "nodejs";

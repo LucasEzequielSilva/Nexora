@@ -54,6 +54,18 @@ function AvisoWhatsapp({ resultado }: { resultado: string }) {
   );
 }
 
+/* Qué está cargado en Vercel para la página: así se ve sin abrir la landing. */
+function Configuracion() {
+  const cal = Boolean(process.env.DIAGNOSTICO_CAL);
+  const video = Boolean(process.env.DIAGNOSTICO_VIDEO);
+  return (
+    <p className="mt-3 text-[14px] text-[#a7b0c0]">
+      Agenda: {cal ? "configurada." : "sin configurar (DIAGNOSTICO_CAL): les escribe Valentino."} Video:{" "}
+      {video ? "cargado." : "sin video (DIAGNOSTICO_VIDEO): la página sale sin ese lugar."}
+    </p>
+  );
+}
+
 function Marco({ children }: { children: React.ReactNode }) {
   return <main className="mx-auto max-w-[1120px] px-5 py-10 sm:px-8">{children}</main>;
 }
@@ -173,13 +185,15 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
   const total = resumen.reduce(
     (t, f) => ({
       visitas: t.visitas + f.visitas,
+      videos: t.videos + f.videos,
       inicios: t.inicios + f.inicios,
       envios: t.envios + f.envios,
       calificadas: t.calificadas + f.calificadas,
       proximos: t.proximos + f.proximos,
+      agendaron: t.agendaron + f.agendaron,
       whatsapp: t.whatsapp + f.whatsapp,
     }),
-    { visitas: 0, inicios: 0, envios: 0, calificadas: 0, proximos: 0, whatsapp: 0 },
+    { visitas: 0, videos: 0, inicios: 0, envios: 0, calificadas: 0, proximos: 0, agendaron: 0, whatsapp: 0 },
   );
   const url = (d: number, t: boolean) => `${RUTA_PANEL}?dias=${d}${t ? "&ver=todo" : ""}`;
 
@@ -196,6 +210,7 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
       </div>
 
       <AvisoWhatsapp resultado={typeof sp.aviso === "string" ? sp.aviso : ""} />
+      <Configuracion />
 
       <div className="mt-5 flex flex-wrap gap-2">
         {[7, 30, 90].map((d) => (
@@ -208,12 +223,14 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
         </Filtro>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Tarjeta titulo="Visitas" valor={total.visitas} />
+        <Tarjeta titulo="Vieron el video" valor={total.videos} nota={`${porcentaje(total.videos, total.visitas)} de las visitas`} />
         <Tarjeta titulo="Empezaron el formulario" valor={total.inicios} nota={porcentaje(total.inicios, total.visitas)} />
         <Tarjeta titulo="Lo mandaron" valor={total.envios} nota={`${porcentaje(total.envios, total.visitas)} de las visitas`} />
         <Tarjeta titulo={'Dijeron "Ahora"'} valor={total.calificadas} nota="calificadas, provisorio" />
         <Tarjeta titulo="Próximos meses" valor={total.proximos} />
+        <Tarjeta titulo="Agendaron" valor={total.agendaron} nota={`${porcentaje(total.agendaron, total.calificadas)} de las que dijeron "Ahora"`} />
         <Tarjeta titulo="Clics a WhatsApp" valor={total.whatsapp} />
       </div>
 
@@ -222,23 +239,25 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
         El origen es el nombre del anuncio (utm_content); si no vino de uno, la fuente y el medio del link.
       </p>
       <div className="mt-4 overflow-x-auto rounded-xl border border-white/[0.08]">
-        <table className="w-full min-w-[720px] text-left text-[14px]">
+        <table className="w-full min-w-[860px] text-left text-[14px]">
           <thead className="bg-white/[0.03] text-[#7c869a]">
             <tr>
               <th className="px-3 py-2 font-medium">Origen</th>
               <th className="px-3 py-2 text-right font-medium">Visitas</th>
+              <th className="px-3 py-2 text-right font-medium">Video</th>
               <th className="px-3 py-2 text-right font-medium">Empezaron</th>
               <th className="px-3 py-2 text-right font-medium">Mandaron</th>
               <th className="px-3 py-2 text-right font-medium">% envío</th>
               <th className="px-3 py-2 text-right font-medium">Ahora</th>
               <th className="px-3 py-2 text-right font-medium">Próx. meses</th>
+              <th className="px-3 py-2 text-right font-medium">Agendaron</th>
               <th className="px-3 py-2 text-right font-medium">WhatsApp</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/[0.06]">
             {resumen.length === 0 && (
               <tr>
-                <td colSpan={8} className="px-3 py-4 text-[#7c869a]">
+                <td colSpan={10} className="px-3 py-4 text-[#7c869a]">
                   Todavía no hay visitas en este período.
                 </td>
               </tr>
@@ -247,11 +266,13 @@ export default async function Panel({ searchParams }: { searchParams: Promise<Pa
               <tr key={f.origen}>
                 <td className="max-w-[320px] break-words px-3 py-2">{f.origen}</td>
                 <td className="px-3 py-2 text-right">{f.visitas}</td>
+                <td className="px-3 py-2 text-right">{f.videos}</td>
                 <td className="px-3 py-2 text-right">{f.inicios}</td>
                 <td className="px-3 py-2 text-right">{f.envios}</td>
                 <td className="px-3 py-2 text-right">{porcentaje(f.envios, f.visitas)}</td>
                 <td className="px-3 py-2 text-right">{f.calificadas}</td>
                 <td className="px-3 py-2 text-right">{f.proximos}</td>
+                <td className="px-3 py-2 text-right">{f.agendaron}</td>
                 <td className="px-3 py-2 text-right">{f.whatsapp}</td>
               </tr>
             ))}

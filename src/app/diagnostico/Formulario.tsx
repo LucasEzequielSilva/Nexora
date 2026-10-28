@@ -1,16 +1,18 @@
 "use client";
 
-import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
-import { EQUIPO, LARGOS, URGENCIA, validarConsulta, type Consulta } from "@/lib/diagnostico/consulta";
+import { useCallback, useRef, useState, type ChangeEvent, type FormEvent } from "react";
+import { EQUIPO, LARGOS, URGENCIA, esCalificada, validarConsulta, type Consulta } from "@/lib/diagnostico/consulta";
 import { contar } from "@/lib/diagnostico/evento";
 import type { Origen } from "@/lib/diagnostico/origen";
+import Agenda from "./Agenda";
 import BotonWhatsapp from "./BotonWhatsapp";
 import { Flecha, Tilde } from "./Iconos";
 import s from "./diagnostico.module.css";
 
 /* El formulario que califica (borrador del plan de la campaña 1): qué hace el negocio, cuántos son,
    qué le come más tiempo, cuándo lo quiere resolver, nombre y WhatsApp. Guarda la consulta con un
-   código y, si hay número, ofrece seguir por WhatsApp con ese código. */
+   código. Si calificó y hay agenda (DIAGNOSTICO_CAL), elige día y horario ahí mismo; si no, le
+   escribe Valentino, y si hay número puede adelantarse por WhatsApp con ese código. */
 
 type Estado = "listo" | "enviando" | "hecho" | "error";
 
@@ -18,14 +20,16 @@ const VACIA: Consulta = { nombre: "", whatsapp: "", negocio: "", equipo: "", dol
 
 const etiqueta = "block text-[15px] font-medium text-[#f3f5f9] mb-2";
 
-export default function Formulario({ origen, whatsapp }: { origen: Origen; whatsapp: string }) {
+export default function Formulario({ origen, whatsapp, calLink }: { origen: Origen; whatsapp: string; calLink: string }) {
   const [c, setC] = useState<Consulta>(VACIA);
   const [trampa, setTrampa] = useState("");
   const [estado, setEstado] = useState<Estado>("listo");
   const [error, setError] = useState("");
   const [fallo, setFallo] = useState(false);
   const [codigo, setCodigo] = useState("");
+  const [agendo, setAgendo] = useState(false);
   const empezo = useRef(false);
+  const marcarAgendado = useCallback(() => setAgendo(true), []);
 
   const cambiar = (k: keyof Consulta) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (!empezo.current) {
@@ -69,6 +73,24 @@ export default function Formulario({ origen, whatsapp }: { origen: Origen; whats
   }
 
   const nombre = c.nombre.trim().split(" ")[0];
+
+  if (estado === "hecho" && calLink && codigo && esCalificada(c)) {
+    return (
+      <div role="status">
+        <h3 className="text-center text-[24px] font-extrabold">Listo{nombre ? `, ${nombre}` : ""}.</h3>
+        <p className="mx-auto mb-5 mt-2 max-w-[38ch] text-center text-[16px] leading-relaxed text-[#a7b0c0]">
+          {agendo ? "Quedó agendado. Te llega la confirmación por mail." : "Elegí día y horario para la charla con Valentino."}
+        </p>
+        <Agenda calLink={calLink} nombre={c.nombre.trim()} codigo={codigo} origen={origen} alAgendar={marcarAgendado} />
+        {!agendo && (
+          <p className="mt-5 text-center text-[14px] leading-relaxed text-[#7c869a]">
+            ¿No te queda ningún horario? Te escribe Valentino por WhatsApp. Tu consulta quedó con el código{" "}
+            <span className="font-bold text-[#f3f5f9]">{codigo}</span>.
+          </p>
+        )}
+      </div>
+    );
+  }
 
   if (estado === "hecho") {
     return (

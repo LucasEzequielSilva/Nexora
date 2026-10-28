@@ -33,7 +33,7 @@
   z-index: -1;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse 60% 50% at 30% 0%, rgba(0, 230, 118, 0.14), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 230, 118, 0.14), transparent 70%),
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: auto, 48px 48px, 48px 48px;
@@ -137,6 +137,12 @@ input:focus-visible + .opcion {
   opacity: 0.6;
   transform: none;
   box-shadow: none;
+}
+
+/* El llamado principal, debajo del video: un solo botón, más grande. */
+.botonGrande {
+  padding: 18px 34px;
+  font-size: 18px;
 }
 
 .secundario {
