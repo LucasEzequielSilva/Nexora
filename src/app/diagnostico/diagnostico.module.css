@@ -1,0 +1,174 @@
+/* Identidad de la pauta (v1): fondo #070A12, un solo acento #00E676, Plus Jakarta Sans en los
+   títulos y DM Sans en el cuerpo. Todo queda dentro de /diagnostico: no toca globals.css. */
+
+.marco {
+  --d-fondo: #070a12;
+  --d-tarjeta: #0b101b;
+  --d-borde: rgba(255, 255, 255, 0.08);
+  --d-acento: #00e676;
+  --d-texto: #f3f5f9;
+  --d-texto-2: #a7b0c0;
+  --d-texto-3: #7c869a;
+
+  position: relative;
+  z-index: 1; /* tapa las partículas fijas del layout general */
+  isolation: isolate;
+  min-height: 100vh;
+  background: var(--d-fondo);
+  color: var(--d-texto);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* Plus Jakarta Sans en los títulos (la variable la carga el layout general). */
+.marco :where(h1, h2, h3) {
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Grilla sutil y brillo radial detrás del título. */
+.fondo {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 720px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 230, 118, 0.14), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent);
+}
+
+/* Esquinas marcadas en la tarjeta del formulario. */
+.esquinas {
+  position: relative;
+}
+.esquinas::before,
+.esquinas::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--d-acento);
+  border-style: solid;
+  pointer-events: none;
+}
+.esquinas::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 14px;
+}
+.esquinas::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 14px;
+}
+
+.campo {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #070b14;
+  padding: 12px 14px;
+  font-size: 16px; /* 16px: el iPhone no hace zoom al tocar */
+  line-height: 1.4;
+  color: var(--d-texto);
+  transition: border-color 150ms, box-shadow 150ms;
+}
+.campo::placeholder {
+  color: #5e6779;
+}
+.campo:focus {
+  outline: none;
+  border-color: rgba(0, 230, 118, 0.6);
+  box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.15);
+}
+
+.opcion {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 9px 14px;
+  font-size: 15px;
+  color: var(--d-texto-2);
+  cursor: pointer;
+  transition: border-color 150ms, background 150ms, color 150ms;
+}
+.opcion:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+input:checked + .opcion {
+  border-color: var(--d-acento);
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--d-texto);
+}
+input:focus-visible + .opcion {
+  outline: 2px solid var(--d-acento);
+  outline-offset: 2px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: var(--d-acento);
+  padding: 14px 22px;
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #04110a;
+  transition: transform 150ms, box-shadow 150ms, opacity 150ms;
+}
+.boton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 230, 118, 0.25);
+}
+.boton:focus-visible {
+  outline: 2px solid var(--d-texto);
+  outline-offset: 3px;
+}
+.boton:disabled {
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* El llamado principal, debajo del video: un solo botón, más grande. */
+.botonGrande {
+  padding: 18px 34px;
+  font-size: 18px;
+}
+
+.secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 13px 20px;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--d-texto);
+  transition: border-color 150ms;
+}
+.secundario:hover {
+  border-color: var(--d-acento);
+}
+
+.pregunta summary {
+  list-style: none;
+  cursor: pointer;
+}
+.pregunta summary::-webkit-details-marker {
+  display: none;
+}
+.pregunta[open] .signo {
+  transform: rotate(45deg);
+}
