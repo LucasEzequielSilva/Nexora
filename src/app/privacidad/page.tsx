@@ -66,6 +66,8 @@ export default function Privacidad() {
                 <li>Si nos escribís por WhatsApp, Instagram o correo: tu nombre, tu contacto y lo que nos escribas.</li>
                 <li>
                   Si agendás una llamada: los datos que cargues al reservar (nombre, correo y lo que quieras contarnos).
+                  Si la agendás después de completar el formulario de un anuncio, la reserva lleva también tu nombre y el
+                  código de tu consulta, para unirla con lo que nos contaste.
                 </li>
               </ul>
               <p>
@@ -106,7 +108,8 @@ export default function Privacidad() {
               </p>
               <p>
                 En la página de nuestros anuncios contamos, sin datos personales, cuántas visitas llegan de cada anuncio,
-                cuántas personas empiezan y mandan el formulario y cuántas tocan el botón de WhatsApp. De cada visita
+                cuántas personas empiezan y mandan el formulario, cuántas tocan el botón de WhatsApp, cuántas le dan play
+                al video y cuántas reservan una llamada (que hubo una reserva, sin el día ni la hora). De cada visita
                 guardamos también el dominio del sitio del que llegaste (por ejemplo, instagram.com), sin la dirección
                 completa. Para eso no usamos cookies ni guardamos tu IP, tu navegador ni nada en tu teléfono. La IP se usa
                 solo en el momento, para frenar envíos repetidos.
