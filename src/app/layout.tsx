@@ -1,49 +1,52 @@
-import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Particles from "@/components/Particles";
 import MotionProvider from "@/components/MotionProvider";
+import Cielo from "@/components/Cielo";
+import LuzPuntero from "@/components/LuzPuntero";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
+
+const TITULO = "Nexora · La estructura que le falta a tu negocio";
+const DESCRIPCION =
+  "Agencia de La Plata para negocios que ya facturan. Primero entendemos cómo trabajás y dónde se te va el tiempo o la plata. Después construimos.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexoragrowth.es"),
   alternates: { canonical: "./" },
-  title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
-  description:
-    "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
+  title: TITULO,
+  description: DESCRIPCION,
   openGraph: {
-    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
-    description:
-      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
+    title: TITULO,
+    description: DESCRIPCION,
     type: "website",
-    images: [
-      {
-        url: "/thumbnail-profile.jpg",
-        width: 1024,
-        height: 1024,
-        alt: "Logo de Nexora",
-      },
-    ],
+    locale: "es_AR",
+    siteName: "Nexora",
+    images: [{ url: "/thumbnail-profile.jpg", width: 1024, height: 1024, alt: "Logo de Nexora" }],
   },
   twitter: {
     card: "summary",
-    title: "Nexora — WhatsApp, agenda y CRM para negocios de turnos",
-    description:
-      "Un empleado nuevo en tu WhatsApp que responde, agenda y confirma turnos, al lado de tu equipo.",
+    title: TITULO,
+    description: DESCRIPCION,
     images: ["/thumbnail-profile.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#070A12",
 };
 
 export default function RootLayout({
@@ -53,16 +56,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <head>
-        {/* Fontshare — Satoshi (body) */}
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${plusJakarta.variable} ${spaceMono.variable} antialiased`}>
-        <Particles fixed />
+      <body className={`${plusJakarta.variable} ${dmSans.variable} antialiased`}>
+        <Cielo />
+        <LuzPuntero />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

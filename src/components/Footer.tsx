@@ -1,63 +1,78 @@
 import Image from "next/image";
+import Link from "next/link";
+import { IconoInstagram, IconoMail, IconoWhatsapp } from "./Iconos";
+import { SECCIONES } from "@/lib/secciones";
+import { EMAIL, INSTAGRAM_URL, INSTAGRAM_USUARIO, hayWhatsapp, whatsappUrl } from "@/lib/contacto";
 
 export default function Footer() {
   return (
-    <footer className="text-center py-14 px-6 text-[13px] text-text-muted">
-      {/* Gradient top divider */}
-      <div
-        className="mb-10 h-px w-full max-w-[840px] mx-auto"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent)",
-        }}
-      />
+    <footer className="border-t border-border mt-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div>
+          <Image src="/logo_white.png" alt="Nexora" width={4544} height={616} className="h-[20px] w-auto mb-5" />
+          <p className="text-[15px] text-text-secondary max-w-[300px] leading-relaxed">
+            Instalamos la estructura que le falta a tu negocio. Desde La Plata.
+          </p>
+        </div>
 
-      {/* Logo */}
-      <Image
-        src="/logo_white.png"
-        alt="Nexora"
-        width={100}
-        height={14}
-        className="mx-auto mb-6 opacity-60"
-      />
+        <div>
+          <p className="text-[12px] font-semibold tracking-[0.14em] text-text-muted mb-4">SECCIONES</p>
+          <ul className="space-y-2.5">
+            {SECCIONES.map((s) => (
+              <li key={s.href}>
+                <a href={s.href} className="text-[14px] text-text-secondary hover:text-text-primary transition-colors">
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Social icons */}
-      <div className="flex items-center justify-center gap-3 mb-6">
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/nexorasistem.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="w-8 h-8 rounded-lg border border-border flex items-center justify-center transition-colors duration-200 hover:border-[rgba(34,197,94,0.4)]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            className="w-4 h-4 stroke-text-muted fill-none stroke-[1.5]"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-          </svg>
-        </a>
+        <div>
+          <p className="text-[12px] font-semibold tracking-[0.14em] text-text-muted mb-4">CONTACTO</p>
+          <ul className="space-y-2.5">
+            {hayWhatsapp && (
+              <li>
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+                >
+                  <IconoWhatsapp /> WhatsApp
+                </a>
+              </li>
+            )}
+            <li>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+              >
+                <IconoInstagram /> @{INSTAGRAM_USUARIO}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="inline-flex items-center gap-2 text-[14px] text-text-secondary hover:text-text-primary transition-colors"
+              >
+                <IconoMail /> {EMAIL}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      {/* Contacto */}
-      <div className="flex items-center justify-center gap-6 mb-5 flex-wrap">
-        <a
-          href="mailto:hola@nexoragrowth.es"
-          className="text-[12px] text-text-muted hover:text-text-secondary transition-colors duration-200"
-        >
-          Contacto: hola@nexoragrowth.es
-        </a>
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-[13px] text-text-muted">
+          <p>Nexora · La Plata, Argentina</p>
+          <Link href="/privacidad" className="hover:text-text-secondary transition-colors">
+            Política de privacidad
+          </Link>
+        </div>
       </div>
-
-      {/* Copyright */}
-      <p className="text-[12px] text-text-muted">
-        &copy; 2026 Nexora Growth &middot; Todos los derechos reservados
-      </p>
     </footer>
   );
 }
